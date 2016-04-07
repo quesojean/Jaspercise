@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://www.w3.org/2001/XMLSchema"
+		targetNamespace="http://www.jaspersoft.com/2007/SL/XMLSchema"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:jsdomain="http://www.jaspersoft.com/2007/SL/XMLSchema"
+		elementFormDefault="qualified"
+		attributeFormDefault="unqualified"
+		version="1.0">
+
+	<xsd:annotation>
+		<xsd:documentation>
+
+			Copyright (C) 2005-2014 TIBCO Software Inc. All rights reserved.
+			http://www.jaspersoft.com.
+			Licensed under commercial JasperSoft Subscription License Agreement
+
+		</xsd:documentation>
+	</xsd:annotation>
+
+	<!-- Root element -->
+
+	<xsd:element name="schema" type="jsdomain:SchemaType">
+	</xsd:element>
+
+	<xsd:complexType name="SchemaType">
+		<xsd:all>
+			<xsd:element name="itemGroups" type="jsdomain:ItemGroupsType" minOccurs="0"/>
+			<xsd:element name="items" type="jsdomain:ItemsType" minOccurs="0"/>
+			<xsd:element name="resources" type="jsdomain:ResourcesType"/>
+			<xsd:element name="dataSources" type="jsdomain:DataSourcesType" minOccurs="0"/>
+		</xsd:all>
+		<xsd:attribute name="version" type="xsd:decimal" use="required"/>
+	</xsd:complexType>
+
+	<!-- Presentation Objects -->
+
+	<xsd:complexType name="ObjectsType">
+		<xsd:all>
+			<xsd:element name="Items" type="jsdomain:ItemsType"/>
+			<xsd:element name="ItemGroups" type="jsdomain:ItemGroupsType" minOccurs="0"/>
+		</xsd:all>
+	</xsd:complexType>
+
+	<xsd:complexType name="ItemsType">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="item" type="jsdomain:ItemType"/>
+		</xsd:choice>
+	</xsd:complexType>
+
+	<xsd:complexType name="ItemType">
+		<xsd:attribute name="id" type="xsd:string" use="required"/>
+		<xsd:attribute name="resourceId" type="xsd:string" use="required"/>
+		<xsd:attribute name="label" type="xsd:string"/>
+		<xsd:attribute name="description" type="xsd:string"/>
+		<xsd:attribute name="labelId" type="xsd:string"/>
+		<xsd:attribute name="descriptionId" type="xsd:string"/>
+		<xsd:attribute name="dimensionOrMeasure" type="xsd:string"/>
+		<xsd:attribute name="defaultMask" type="xsd:string"/>
+		<xsd:attribute name="defaultAgg" type="xsd:string"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="ItemGroupsType">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="itemGroup" type="jsdomain:ItemGroupType"/>
+		</xsd:choice>
+	</xsd:complexType>
+
+	<xsd:complexType name="ItemGroupType">
+		<xsd:complexContent>
+			<xsd:extension base="jsdomain:ItemType">
+				<xsd:all>
+					<xsd:element name="itemGroups" type="jsdomain:ItemGroupsType" minOccurs="0"/>
+					<xsd:element name="items" type="jsdomain:ItemsType" minOccurs="0"/>
+				</xsd:all>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="DataSourcesType">
+		<xsd:choice minOccurs="1" maxOccurs="unbounded">
+			<xsd:element name="jdbcDataSource" type="jsdomain:DataSourceType"/>
+		</xsd:choice>
+	</xsd:complexType>
+
+	<xsd:complexType name="DataSourceType">
+		<xsd:all>
+			<xsd:element name="schemaMap" type="jsdomain:SchemaMapType"/>
+		</xsd:all>
+		<xsd:attribute name="id" type="xsd:ID" use="required"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="SchemaMapType">
+		<xsd:choice minOccurs="1" maxOccurs="unbounded">
+			<xsd:element name="entry" type="jsdomain:SchemaEntryType"/>
+		</xsd:choice>
+	</xsd:complexType>
+
+	<xsd:complexType name="SchemaEntryType">
+		<xsd:choice minOccurs="1" maxOccurs="1">
+			<xsd:element name="string" type="xsd:string"/>
+		</xsd:choice>
+		<xsd:attribute name="key" type="xsd:string" use="required"/>
+	</xsd:complexType>
+
+	<!-- Resources -->
+
+	<xsd:complexType name="ResourcesType">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+
+
+
+			<xsd:element name="jdbcTable" type="jsdomain:AnyDatasetType"/>
+
+			<xsd:element name="jdbcQuery" type="jsdomain:AnyDatasetType"/>
+			<xsd:element name="memory" type="jsdomain:AnyDatasetType"/>
+			<xsd:element name="null" type="jsdomain:AnyDatasetType"/>
+			<xsd:element name="dataSetRef" type="jsdomain:DataSetRefType"/>
+			<xsd:element name="jrQueryDataSet" type="jsdomain:JrQueryDataSetType"/>
+		</xsd:choice>
+	</xsd:complexType>
+
+	<!-- xsd is a PITA because the only way to use extension is to restrict order of elements;
+		 you can't just use xsd:all. The dataset types here are a grab bag of possible elements and attributes.
+		 This is not ideal but I don't want to change everything I'm doing just for xsd.
+
+		 2015-02-06 thorick
+					take special note:
+					any changes that you make to AnyDatasetType might have to be duplicated in the
+					DataSetRefType  or you may be mysterious schema validation errors at deploy time
+	 -->
+	<xsd:complexType name="AnyDatasetType">
+		<xsd:all>
+			<xsd:element name="fieldList" minOccurs="1">
+				<xsd:complexType>
+					<xsd:choice minOccurs="1" maxOccurs="unbounded">
+						<xsd:element name="field" type="jsdomain:FieldType" />
+					</xsd:choice>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="groupList" minOccurs="0" maxOccurs="1">
+				<xsd:complexType>
+					<xsd:choice minOccurs="1" maxOccurs="unbounded">
+						<xsd:element name="group" type="jsdomain:GroupType" />
+					</xsd:choice>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="joinOptions" type="jsdomain:JoinOptionsType" minOccurs="0"/>
+			<xsd:element name="joinInfo" type="jsdomain:JoinInfoType" minOccurs="0" />
+
+			<!-- only one of 'joinList' or 'joinDataSetList' may appear, validation delegated to java impl class -->
+			<xsd:element name="joinList" type="jsdomain:JoinListType" minOccurs="0" />
+			<xsd:element name="joinedDataSetList" type="jsdomain:JoinedDataSetListType" minOccurs="0" />
+
+			<xsd:element name="tableRefList" type="jsdomain:TableRefListType" minOccurs="0" />
+
+			<xsd:element name="filterString" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+			<!-- used for jrQuery and jdbcQuery -->
+			<xsd:element name="query" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+			<!-- used for memory ds or any other ds with a source -->
+			<xsd:element name="source" type="jsdomain:ResourcesType" minOccurs="0" maxOccurs="1"/>
+		</xsd:all>
+		<xsd:attribute name="id" type="xsd:string" use="required"/>
+		<xsd:attribute name="datasourceId" type="xsd:string"/>
+		<!-- used for jdbcTable -->
+		<xsd:attribute name="tableName" type="xsd:string"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="FieldType">
+		<xsd:all>
+			<xsd:element name="propertyMap" minOccurs="0" maxOccurs="1">
+				<xsd:complexType>
+					<xsd:choice minOccurs="0" maxOccurs="unbounded">
+						<xsd:element name="entry" type="jsdomain:entryType"/>
+					</xsd:choice>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:all>
+		<xsd:attribute name="id" type="xsd:string" use="required"/>
+		<xsd:attribute name="type" type="xsd:string" use="required"/>
+		<xsd:attribute name="dataSetExpression" type="xsd:string" use="optional"/>
+		<xsd:attribute name="fieldDBName" type="xsd:string" use="optional"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="entryType">
+		<xsd:all>
+			<xsd:element name="string" type="xsd:string" minOccurs="0"/>
+		</xsd:all>
+		<xsd:attribute name="key" type="xsd:string" use="required"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="GroupType">
+		<xsd:attribute name="columnName" type="xsd:string" use="required"/>
+		<xsd:attribute name="ascending" type="xsd:string" use="optional"/>
+	</xsd:complexType>
+
+	<!--
+
+	 2015-02-06 thorick
+				take special note:
+				any changes that you make to DataSetRefType might have to be duplicated in the
+				AnyDatasetType  or you may be mysterious schema validation errors at deploy time
+				-->
+	<xsd:complexType name="DataSetRefType">
+		<xsd:all>
+			<xsd:element name="fieldList" minOccurs="0" maxOccurs="1">
+				<xsd:complexType>
+					<xsd:choice minOccurs="1" maxOccurs="unbounded">
+						<xsd:element name="fieldRef" type="jsdomain:FieldRefType"/>
+					</xsd:choice>
+				</xsd:complexType>
+			</xsd:element>
+			<!--
+		  <xsd:element name="joinOptions" type="jsdomain:JoinOptionsType" minOccurs="0"/>
+		  -->
+			<xsd:element name="joinInfo" type="jsdomain:JoinInfoType" minOccurs="0"/>
+			<!-- only one of 'joinList' or 'joinDataSetList' may appear, validation delegated to java impl class -->
+			<xsd:element name="joinList" type="jsdomain:JoinListType" minOccurs="0" />
+			<xsd:element name="joinedDataSetList" type="jsdomain:JoinedDataSetListType" minOccurs="0" />
+		</xsd:all>
+		<xsd:attribute name="id" type="xsd:string" use="required"/>
+		<xsd:attribute name="referenceId" type="xsd:string" use="required"/>
+		<xsd:attribute name="dataSetType" type="xsd:string" use="optional"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="JoinInfoType">
+		<xsd:attribute name="alias" type="xsd:string" use="required"/>
+		<xsd:attribute name="referenceId" type="xsd:string" use="required"/>
+		<xsd:attribute name="joinType" type="jsdomain:JointTypeType" default="inner"/>
+
+		<!-- added for v6.1 Advanced Joins -->
+		<!--
+		<xsd:attribute name="includeAllJoinsInSelectedTableSubset" type="xsd:boolean" default="true" use="optional"/>
+		<xsd:attribute name="includeAllDataIslandJoins" type="xsd:boolean" default="false" use="optional"/>
+		-->
+	</xsd:complexType>
+
+	<xsd:complexType name="JoinOptionsType">
+		<xsd:attribute name="includeAllDataIslandJoins" type="xsd:boolean" default="false" use="optional"/>
+		<xsd:attribute name="suppressCircularJoins" type="xsd:boolean" default="false" use="optional"/>
+	</xsd:complexType>
+
+	<!--
+	  2014-09-16  thorick
+				  Unfortunately, the SQL Join generation runtime expects to see the Join type
+				  expressed as JoinInfo static values:  inner, leftOuter, rightOuter, fullOuter
+				  and this is NOT what was in schema_1_0
+				  and this is what we want for complexJoins
+				  so we have to add the new entries so that they will pass schema validation.
+	-->
+	<xsd:simpleType name="JointTypeType">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="inner|left outer|leftOuter|right outer|rightOuter|full outer|fullOuter|" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="FieldRefType">
+		<xsd:attribute name="id" type="xsd:string" use="required"/>
+		<xsd:attribute name="referenceId" type="xsd:string" use="required"/>
+	</xsd:complexType>
+
+	<!-- JoinList and Join are new for 5.7 -->
+	<xsd:complexType name="JoinListType">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="join" type="jsdomain:JoinType"/>
+		</xsd:choice>
+	</xsd:complexType>
+
+
+	<xsd:complexType name="JoinType">
+		<xsd:attribute name="left" type="xsd:string" use="required"/>
+		<xsd:attribute name="right" type="xsd:string" use="required"/>
+		<xsd:attribute name="type" type="jsdomain:JointTypeType" default="inner"/>
+		<xsd:attribute name="expr" type="xsd:string" use="required"/>
+
+		<!-- added for v6.1 Advanced Joins -->
+		<xsd:attribute name="weight" type="xsd:int" use="optional" default="1"/>
+	</xsd:complexType>
+
+	<!-- TableRefList and TableRef are new for 5.7 -->
+	<xsd:complexType name="TableRefListType">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="tableRef" type="jsdomain:TableRefType"/>
+		</xsd:choice>
+	</xsd:complexType>
+
+	<!-- validation of any allowed CONSTANT values is delegated to the Java implementation -->
+	<xsd:complexType name="TableRefType">
+		<!--
+			 The 'id' of the table as used in the Domain schema.
+			 This is specifically not identical to name of the Table in an actual datastore
+			 though it can happen to be the same
+		-->
+		<xsd:attribute name="tableId" type="xsd:string" use="required"/>
+		<!--
+			The 'alias' of the table.
+			A specific use case of this value is that it is the alias of a table
+			as used in a DOM-EL expression in a <join> 'expr' attribute
+			e.g.  'store1.id == employee1.storeId'  where 'store1' is a tableAlias
+
+		-->
+		<xsd:attribute name="tableAlias" type="xsd:string" use="optional"/>
+		<!-- added for v6.1 Advanced Joins -->
+		<xsd:attribute name="alwaysIncludeTable" type="xsd:boolean" default="false" use="optional"/>
+
+	</xsd:complexType>
+
+	<xsd:complexType name="JoinedDataSetListType">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="joinedDataSetRef" type="jsdomain:JoinedDataSetRefType"/>
+		</xsd:choice>
+	</xsd:complexType>
+
+	<xsd:complexType name="JoinedDataSetRefType">
+		<xsd:choice minOccurs="1" maxOccurs="1">
+			<xsd:element name="joinString" type="xsd:string"/>
+		</xsd:choice>
+	</xsd:complexType>
+
+	<xsd:complexType name="JrQueryDataSetType">
+		<xsd:all>
+			<xsd:element name="fieldList" minOccurs="1">
+				<xsd:complexType>
+					<xsd:choice minOccurs="1" maxOccurs="unbounded">
+						<xsd:element name="field" type="jsdomain:FieldType"/>
+					</xsd:choice>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="query" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="dsReferenceURI" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+		</xsd:all>
+		<xsd:attribute name="id" type="xsd:string" use="optional"/>
+		<xsd:attribute name="datasourceId" type="xsd:string" use="required"/>
+		<xsd:attribute name="queryLanguage" type="xsd:string" use="optional"/>
+		<xsd:attribute name="maxRows" type="xsd:string" use="optional"/>
+	</xsd:complexType>
+
+</xsd:schema>

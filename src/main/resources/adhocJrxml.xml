@@ -1,0 +1,1336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="adhocReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="30" bottomMargin="30" uuid="faccc34e-21ad-47eb-b06f-c7fef7323dee">
+	<property name="adhoc.metadata.version" value="89"/>
+	<property name="adhoc.topic.escape.variable.chars"/>
+	<parameter name="Active_1" class="java.lang.String">
+		<defaultValueExpression><![CDATA["Yes"]]></defaultValueExpression>
+	</parameter>
+	<queryString language="domain">
+		<![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<query xmlns="http://www.jaspersoft.com/2007/SL/XMLSchema">
+  <queryFields>
+    <queryField id="dbo_Users.Active" />
+    <queryField id="dbo_Users.FirstName" />
+    <queryField id="dbo_Users.MiddleName" />
+    <queryField id="dbo_Users.LastName" />
+    <queryField id="dbo_Users.KnownAs" />
+    <queryField id="dbo_Users.AssistantName" />
+    <queryField id="dbo_Users.Email" />
+    <queryField id="dbo_Users.UserName" />
+    <queryField id="dbo_Users.EmployeeID" />
+    <queryField id="dbo_Users.Company" />
+    <queryField id="dbo_Users.CostCenter1" />
+    <queryField id="dbo_Users.CostCenter2" />
+    <queryField id="dbo_Users.Custom01" />
+    <queryField id="dbo_Users.Custom02" />
+    <queryField id="dbo_Users.Custom03" />
+    <queryField id="dbo_Users.Custom04" />
+    <queryField id="dbo_Users.Custom05" />
+    <queryField id="dbo_Users.Custom06" />
+    <queryField id="dbo_Users.Custom07" />
+    <queryField id="dbo_Users.Custom08" />
+    <queryField id="dbo_Users.Custom09" />
+    <queryField id="dbo_Users.Department" />
+    <queryField id="dbo_Users.Extension" />
+    <queryField id="dbo_Users.Fax" />
+    <queryField id="dbo_Users.JobTitle" />
+    <queryField id="dbo_Users.Mobile" />
+    <queryField id="dbo_Users.Pager" />
+    <queryField id="dbo_Users.Phone" />
+    <queryField id="dbo_Users.RouteName" />
+    <queryField id="dbo_Users.StopName" />
+    <queryField id="dbo_Vw_CostCenters_15Levels.CCCode" />
+    <queryField id="dbo_Vw_CostCenters_15Levels.Level_1_CCCode" />
+    <queryField id="dbo_Vw_CostCenters_15Levels.Level_2_CCCode" />
+    <queryField id="dbo_Vw_CostCenters_15Levels.Level_3_CCCode" />
+    <queryField id="dbo_Vw_CostCenters_15Levels.Level_4_CCCode" />
+    <queryField id="dbo_Vw_CostCenters_15Levels.Level_5_CCCode" />
+    <queryField id="dbo_Vw_CostCenters_15Levels.Level_6_CCCode" />
+    <queryField id="dbo_Vw_CostCenters_15Levels.Level_7_CCCode" />
+    <queryField id="dbo_Vw_CostCenters_15Levels.Level_8_CCCode" />
+    <queryField id="dbo_Vw_CostCenters_15Levels.Level_9_CCCode" />
+    <queryField id="dbo_Vw_CostCenters_15Levels.Level_10_CCCode" />
+    <queryField id="dbo_Vw_CostCenters_15Levels.Level_11_CCCode" />
+    <queryField id="dbo_Vw_CostCenters_15Levels.Level_12_CCCode" />
+    <queryField id="dbo_Vw_CostCenters_15Levels.Level_13_CCCode" />
+    <queryField id="dbo_Vw_CostCenters_15Levels.Level_14_CCCode" />
+    <queryField id="dbo_Vw_CostCenters_15Levels.CCName" />
+    <queryField id="dbo_Vw_CostCenters_15Levels.Level_1_Name" />
+    <queryField id="dbo_Vw_CostCenters_15Levels.Level_2_Name" />
+    <queryField id="dbo_Vw_CostCenters_15Levels.Level_3_Name" />
+    <queryField id="dbo_Vw_CostCenters_15Levels.Level_4_Name" />
+    <queryField id="dbo_Vw_CostCenters_15Levels.Level_5_Name" />
+    <queryField id="dbo_Vw_CostCenters_15Levels.Level_6_Name" />
+    <queryField id="dbo_Vw_CostCenters_15Levels.Level_7_Name" />
+    <queryField id="dbo_Vw_CostCenters_15Levels.Level_8_Name" />
+    <queryField id="dbo_Vw_CostCenters_15Levels.Level_9_Name" />
+    <queryField id="dbo_Vw_CostCenters_15Levels.Level_10_Name" />
+    <queryField id="dbo_Vw_CostCenters_15Levels.Level_11_Name" />
+    <queryField id="dbo_Vw_CostCenters_15Levels.Level_12_Name" />
+    <queryField id="dbo_Vw_CostCenters_15Levels.Level_13_Name" />
+    <queryField id="dbo_Vw_CostCenters_15Levels.Level_14_Name" />
+    <queryField id="dbo_Buildings.Name" />
+    <queryField id="dbo_Buildings.BuildingCode" />
+    <queryField id="dbo_Buildings.Address" />
+    <queryField id="dbo_Buildings.City" />
+    <queryField id="dbo_Buildings.PostalCode" />
+    <queryField id="dbo_Countries.CountryName" />
+    <queryField id="dbo_MoveRoomList.RoomName" />
+    <queryField id="dbo_MoveRoomList.SquareFeet" />
+    <queryField id="dbo_SpaceFloors.FloorName" />
+    <queryField id="dbo_MoveRoomTypes.RoomTypeDesc" />
+    <queryField id="dbo_States.StateName" />
+  </queryFields>
+</query>]]>
+	</queryString>
+	<field name="dbo_Users.Active" class="java.lang.String">
+		<property name="semantic.tree.sort.order" value="{&quot;dbo_MoveRoomTypes&quot;:5,&quot;Level_1_Name&quot;:16,&quot;LastName&quot;:3,&quot;StopName&quot;:30,&quot;BuildingCode1&quot;:1,&quot;DateEntered&quot;:34,&quot;Address1&quot;:4,&quot;Level_12_CCCode&quot;:12,&quot;FlWarden&quot;:31,&quot;LastUpdatedByUser&quot;:10,&quot;Level_1_CCCode&quot;:1,&quot;RentableSquareFeet&quot;:3,&quot;KnownAs&quot;:4,&quot;Active&quot;:0,&quot;Email&quot;:6,&quot;Level_8_Name&quot;:23,&quot;Level_3_CCCode&quot;:3,&quot;IDFName&quot;:5,&quot;SignNumber&quot;:4,&quot;Level_4_CCCode&quot;:4,&quot;dbo_Vw_CostCenters_15Levels&quot;:1,&quot;Level_3_Name&quot;:18,&quot;dbo_States&quot;:6,&quot;EmployeeID&quot;:8,&quot;FloorName&quot;:0,&quot;PostalCode1&quot;:7,&quot;StateName1&quot;:6,&quot;Level_6_Name&quot;:21,&quot;dbo_Users&quot;:0,&quot;FirstName&quot;:1,&quot;Level_4_Name&quot;:19,&quot;Level_13_CCCode&quot;:13,&quot;City&quot;:3,&quot;StateName&quot;:0,&quot;Level_13_Name&quot;:28,&quot;MiddleName&quot;:2,&quot;Level_8_CCCode&quot;:8,&quot;Address&quot;:2,&quot;Level_7_CCCode&quot;:7,&quot;Capacity&quot;:1,&quot;dbo_MoveRoomList&quot;:4,&quot;Name1&quot;:0,&quot;CountryName&quot;:0,&quot;RoomTypeDesc&quot;:0,&quot;CCCode&quot;:0,&quot;dbo_SpaceFloors&quot;:3,&quot;Extension&quot;:23,&quot;Level_5_CCCode&quot;:5,&quot;Mobile&quot;:26,&quot;SpecialNeeds&quot;:32,&quot;SquareFeet&quot;:2,&quot;AssistantName&quot;:5,&quot;CCName&quot;:15,&quot;UserType&quot;:12,&quot;Pager&quot;:27,&quot;Level_2_CCCode&quot;:2,&quot;FirstName2&quot;:0,&quot;LastName2&quot;:1,&quot;Level_14_CCCode&quot;:14,&quot;FirstName1&quot;:0,&quot;LastName1&quot;:1,&quot;CostCenter2&quot;:11,&quot;CostCenter1&quot;:10,&quot;City1&quot;:5,&quot;Level_7_Name&quot;:22,&quot;BuildingCode&quot;:1,&quot;RoomID&quot;:7,&quot;UserPermission&quot;:1,&quot;FloorName1&quot;:2,&quot;Level_12_Name&quot;:27,&quot;Phone&quot;:28,&quot;dbo_ParkingBuildings&quot;:11,&quot;Level_11_Name&quot;:26,&quot;Level_11_CCCode&quot;:11,&quot;UserName&quot;:7,&quot;CenterName&quot;:0,&quot;Custom09&quot;:21,&quot;Custom07&quot;:19,&quot;Custom08&quot;:20,&quot;SiteAdmin&quot;:33,&quot;Level_10_Name&quot;:25,&quot;Custom01&quot;:13,&quot;Custom02&quot;:14,&quot;Level_9_CCCode&quot;:9,&quot;dbo_Countries&quot;:7,&quot;Department&quot;:22,&quot;Custom05&quot;:17,&quot;Company&quot;:9,&quot;Custom06&quot;:18,&quot;Custom03&quot;:15,&quot;Custom04&quot;:16,&quot;dbo_Buildings&quot;:2,&quot;Level_9_Name&quot;:24,&quot;LastUpdated&quot;:35,&quot;CreatedByUser&quot;:9,&quot;Fax&quot;:24,&quot;Level_2_Name&quot;:17,&quot;RouteName&quot;:29,&quot;Level_6_CCCode&quot;:6,&quot;Level_5_Name&quot;:20,&quot;IDFTypeName&quot;:6,&quot;Name&quot;:0,&quot;PostalCode&quot;:4,&quot;UserName1&quot;:2,&quot;RoomName&quot;:0,&quot;RoomName1&quot;:3,&quot;JobTitle&quot;:25,&quot;Level_10_CCCode&quot;:10,&quot;UserName2&quot;:2,&quot;Level_14_Name&quot;:29,&quot;dbo_CenterPermissions&quot;:8}"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Active"/>
+		<property name="semantic.item.desc" value="Active"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<property name="adhoc.tree.labels" value="[{&quot;resourceId&quot;:&quot;JoinTree_1&quot;,&quot;label&quot;:&quot;Users&quot;,&quot;uri&quot;:&quot;/dbo_Users&quot;,&quot;labelId&quot;:&quot;&quot;},{&quot;resourceId&quot;:&quot;JoinTree_1&quot;,&quot;label&quot;:&quot;Cost Centers&quot;,&quot;uri&quot;:&quot;/dbo_Vw_CostCenters_15Levels&quot;,&quot;labelId&quot;:&quot;&quot;},{&quot;resourceId&quot;:&quot;JoinTree_1&quot;,&quot;label&quot;:&quot;Building&quot;,&quot;uri&quot;:&quot;/dbo_Buildings&quot;,&quot;labelId&quot;:&quot;&quot;},{&quot;resourceId&quot;:&quot;JoinTree_1&quot;,&quot;label&quot;:&quot;Floor&quot;,&quot;uri&quot;:&quot;/dbo_SpaceFloors&quot;,&quot;labelId&quot;:&quot;&quot;},{&quot;resourceId&quot;:&quot;JoinTree_1&quot;,&quot;label&quot;:&quot;Room&quot;,&quot;uri&quot;:&quot;/dbo_MoveRoomList&quot;,&quot;labelId&quot;:&quot;&quot;},{&quot;resourceId&quot;:&quot;JoinTree_1&quot;,&quot;label&quot;:&quot;Room Type&quot;,&quot;uri&quot;:&quot;/dbo_MoveRoomTypes&quot;,&quot;labelId&quot;:&quot;&quot;},{&quot;resourceId&quot;:&quot;JoinTree_1&quot;,&quot;label&quot;:&quot;State&quot;,&quot;uri&quot;:&quot;/dbo_States&quot;,&quot;labelId&quot;:&quot;&quot;},{&quot;resourceId&quot;:&quot;JoinTree_1&quot;,&quot;label&quot;:&quot;Country&quot;,&quot;uri&quot;:&quot;/dbo_Countries&quot;,&quot;labelId&quot;:&quot;&quot;},{&quot;resourceId&quot;:&quot;JoinTree_1&quot;,&quot;label&quot;:&quot;Center Permissions&quot;,&quot;uri&quot;:&quot;/dbo_CenterPermissions&quot;,&quot;labelId&quot;:&quot;&quot;},{&quot;resourceId&quot;:&quot;JoinTree_1&quot;,&quot;label&quot;:&quot;Created By User&quot;,&quot;uri&quot;:&quot;/CreatedByUser&quot;,&quot;labelId&quot;:&quot;&quot;},{&quot;resourceId&quot;:&quot;JoinTree_1&quot;,&quot;label&quot;:&quot;Last Updated By User&quot;,&quot;uri&quot;:&quot;/LastUpdatedByUser&quot;,&quot;labelId&quot;:&quot;&quot;},{&quot;resourceId&quot;:&quot;JoinTree_1&quot;,&quot;label&quot;:&quot;Parking&quot;,&quot;uri&quot;:&quot;/dbo_ParkingBuildings&quot;,&quot;labelId&quot;:&quot;&quot;}]"/>
+		<property name="semantic.tree.uri" value="/dbo_Users/Active"/>
+		<property name="adhoc.tree.uri" value="/dbo_Users/Active"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Users.Active)"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Users.Active"/>
+		<fieldDescription><![CDATA[Active]]></fieldDescription>
+	</field>
+	<field name="dbo_Users.LastUpdated" class="java.sql.Timestamp">
+		<property name="adhoc.tree.uri" value="/dbo_Users/LastUpdated"/>
+		<property name="semantic.tree.uri" value="/dbo_Users/LastUpdated"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Users.LastUpdated)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Users.LastUpdated"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Last Updated Date"/>
+		<property name="semantic.item.desc" value="LastUpdated"/>
+		<property name="defaultMask" value="medium,hide"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[LastUpdated]]></fieldDescription>
+	</field>
+	<field name="dbo_Users.DateEntered" class="java.sql.Timestamp">
+		<property name="adhoc.tree.uri" value="/dbo_Users/DateEntered"/>
+		<property name="semantic.tree.uri" value="/dbo_Users/DateEntered"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Users.DateEntered)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Users.DateEntered"/>
+		<property name="dimensionOrMeasure" value="Dimension"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Created Date"/>
+		<property name="semantic.item.desc" value="DateEntered"/>
+		<property name="defaultMask" value="medium,hide"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[DateEntered]]></fieldDescription>
+	</field>
+	<field name="dbo_Users.FirstName" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Users/FirstName"/>
+		<property name="semantic.tree.uri" value="/dbo_Users/FirstName"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Users.FirstName)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Users.FirstName"/>
+		<property name="dimensionOrMeasure" value="Dimension"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="First Name"/>
+		<property name="semantic.item.desc" value="FirstName"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[FirstName]]></fieldDescription>
+	</field>
+	<field name="dbo_Users.MiddleName" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Users/MiddleName"/>
+		<property name="semantic.tree.uri" value="/dbo_Users/MiddleName"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Users.MiddleName)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Users.MiddleName"/>
+		<property name="dimensionOrMeasure" value="Dimension"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Middle Name"/>
+		<property name="semantic.item.desc" value="MiddleName"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[MiddleName]]></fieldDescription>
+	</field>
+	<field name="dbo_Users.LastName" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Users/LastName"/>
+		<property name="semantic.tree.uri" value="/dbo_Users/LastName"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Users.LastName)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Users.LastName"/>
+		<property name="dimensionOrMeasure" value="Dimension"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Last Name"/>
+		<property name="semantic.item.desc" value="LastName"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[LastName]]></fieldDescription>
+	</field>
+	<field name="dbo_Users.KnownAs" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Users/KnownAs"/>
+		<property name="semantic.tree.uri" value="/dbo_Users/KnownAs"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Users.KnownAs)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Users.KnownAs"/>
+		<property name="dimensionOrMeasure" value="Dimension"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Known As"/>
+		<property name="semantic.item.desc" value="KnownAs"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[KnownAs]]></fieldDescription>
+	</field>
+	<field name="dbo_Users.AssistantName" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Users/AssistantName"/>
+		<property name="semantic.tree.uri" value="/dbo_Users/AssistantName"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Users.AssistantName)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Users.AssistantName"/>
+		<property name="dimensionOrMeasure" value="Dimension"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Assistant "/>
+		<property name="semantic.item.desc" value="AssistantName"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[AssistantName]]></fieldDescription>
+	</field>
+	<field name="dbo_Users.Email" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Users/Email"/>
+		<property name="semantic.tree.uri" value="/dbo_Users/Email"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Users.Email)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Users.Email"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Email"/>
+		<property name="semantic.item.desc" value="Email"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Email]]></fieldDescription>
+	</field>
+	<field name="dbo_Users.UserName" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Users/UserName"/>
+		<property name="semantic.tree.uri" value="/dbo_Users/UserName"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Users.UserName)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Users.UserName"/>
+		<property name="dimensionOrMeasure" value="Dimension"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="User Name"/>
+		<property name="semantic.item.desc" value="UserName"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[UserName]]></fieldDescription>
+	</field>
+	<field name="dbo_Users.EmployeeID" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Users/EmployeeID"/>
+		<property name="semantic.tree.uri" value="/dbo_Users/EmployeeID"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Users.EmployeeID)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Users.EmployeeID"/>
+		<property name="dimensionOrMeasure" value="Dimension"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Employee ID"/>
+		<property name="semantic.item.desc" value="EmployeeID"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[EmployeeID]]></fieldDescription>
+	</field>
+	<field name="dbo_Users.Company" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Users/Company"/>
+		<property name="semantic.tree.uri" value="/dbo_Users/Company"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Users.Company)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Users.Company"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Company"/>
+		<property name="semantic.item.desc" value="Company"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Company]]></fieldDescription>
+	</field>
+	<field name="dbo_Users.CostCenter1" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Users/CostCenter1"/>
+		<property name="semantic.tree.uri" value="/dbo_Users/CostCenter1"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Users.CostCenter1)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Users.CostCenter1"/>
+		<property name="dimensionOrMeasure" value="Dimension"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Cost Center 1"/>
+		<property name="semantic.item.desc" value="CostCenter1"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[CostCenter1]]></fieldDescription>
+	</field>
+	<field name="dbo_Users.CostCenter2" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Users/CostCenter2"/>
+		<property name="semantic.tree.uri" value="/dbo_Users/CostCenter2"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Users.CostCenter2)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Users.CostCenter2"/>
+		<property name="dimensionOrMeasure" value="Dimension"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Cost Center 2"/>
+		<property name="semantic.item.desc" value="CostCenter2"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[CostCenter2]]></fieldDescription>
+	</field>
+	<field name="dbo_Users.Custom01" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Users/Custom01"/>
+		<property name="semantic.tree.uri" value="/dbo_Users/Custom01"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Users.Custom01)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Users.Custom01"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Custom01"/>
+		<property name="semantic.item.desc" value="Custom01"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Custom01]]></fieldDescription>
+	</field>
+	<field name="dbo_Users.Custom02" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Users/Custom02"/>
+		<property name="semantic.tree.uri" value="/dbo_Users/Custom02"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Users.Custom02)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Users.Custom02"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Custom02"/>
+		<property name="semantic.item.desc" value="Custom02"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Custom02]]></fieldDescription>
+	</field>
+	<field name="dbo_Users.Custom03" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Users/Custom03"/>
+		<property name="semantic.tree.uri" value="/dbo_Users/Custom03"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Users.Custom03)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Users.Custom03"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Custom03"/>
+		<property name="semantic.item.desc" value="Custom03"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Custom03]]></fieldDescription>
+	</field>
+	<field name="dbo_Users.Custom04" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Users/Custom04"/>
+		<property name="semantic.tree.uri" value="/dbo_Users/Custom04"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Users.Custom04)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Users.Custom04"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Custom04"/>
+		<property name="semantic.item.desc" value="Custom04"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Custom04]]></fieldDescription>
+	</field>
+	<field name="dbo_Users.Custom05" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Users/Custom05"/>
+		<property name="semantic.tree.uri" value="/dbo_Users/Custom05"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Users.Custom05)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Users.Custom05"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Custom05"/>
+		<property name="semantic.item.desc" value="Custom05"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Custom05]]></fieldDescription>
+	</field>
+	<field name="dbo_Users.Custom06" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Users/Custom06"/>
+		<property name="semantic.tree.uri" value="/dbo_Users/Custom06"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Users.Custom06)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Users.Custom06"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Custom06"/>
+		<property name="semantic.item.desc" value="Custom06"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Custom06]]></fieldDescription>
+	</field>
+	<field name="dbo_Users.Custom07" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Users/Custom07"/>
+		<property name="semantic.tree.uri" value="/dbo_Users/Custom07"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Users.Custom07)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Users.Custom07"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Custom07"/>
+		<property name="semantic.item.desc" value="Custom07"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Custom07]]></fieldDescription>
+	</field>
+	<field name="dbo_Users.Custom08" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Users/Custom08"/>
+		<property name="semantic.tree.uri" value="/dbo_Users/Custom08"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Users.Custom08)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Users.Custom08"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Custom08"/>
+		<property name="semantic.item.desc" value="Custom08"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Custom08]]></fieldDescription>
+	</field>
+	<field name="dbo_Users.Custom09" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Users/Custom09"/>
+		<property name="semantic.tree.uri" value="/dbo_Users/Custom09"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Users.Custom09)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Users.Custom09"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Custom09"/>
+		<property name="semantic.item.desc" value="Custom09"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Custom09]]></fieldDescription>
+	</field>
+	<field name="dbo_Users.Department" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Users/Department"/>
+		<property name="semantic.tree.uri" value="/dbo_Users/Department"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Users.Department)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Users.Department"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Department"/>
+		<property name="semantic.item.desc" value="Department"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Department]]></fieldDescription>
+	</field>
+	<field name="dbo_Users.Extension" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Users/Extension"/>
+		<property name="semantic.tree.uri" value="/dbo_Users/Extension"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Users.Extension)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Users.Extension"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Extension"/>
+		<property name="semantic.item.desc" value="Extension"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Extension]]></fieldDescription>
+	</field>
+	<field name="dbo_Users.Fax" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Users/Fax"/>
+		<property name="semantic.tree.uri" value="/dbo_Users/Fax"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Users.Fax)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Users.Fax"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Fax"/>
+		<property name="semantic.item.desc" value="Fax"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Fax]]></fieldDescription>
+	</field>
+	<field name="dbo_Users.JobTitle" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Users/JobTitle"/>
+		<property name="semantic.tree.uri" value="/dbo_Users/JobTitle"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Users.JobTitle)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Users.JobTitle"/>
+		<property name="dimensionOrMeasure" value="Dimension"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Job Title"/>
+		<property name="semantic.item.desc" value="JobTitle"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[JobTitle]]></fieldDescription>
+	</field>
+	<field name="dbo_Users.Mobile" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Users/Mobile"/>
+		<property name="semantic.tree.uri" value="/dbo_Users/Mobile"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Users.Mobile)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Users.Mobile"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Mobile"/>
+		<property name="semantic.item.desc" value="Mobile"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Mobile]]></fieldDescription>
+	</field>
+	<field name="dbo_Users.Pager" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Users/Pager"/>
+		<property name="semantic.tree.uri" value="/dbo_Users/Pager"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Users.Pager)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Users.Pager"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Pager"/>
+		<property name="semantic.item.desc" value="Pager"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Pager]]></fieldDescription>
+	</field>
+	<field name="dbo_Users.Phone" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Users/Phone"/>
+		<property name="semantic.tree.uri" value="/dbo_Users/Phone"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Users.Phone)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Users.Phone"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Phone"/>
+		<property name="semantic.item.desc" value="Phone"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Phone]]></fieldDescription>
+	</field>
+	<field name="dbo_Users.RouteName" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Users/RouteName"/>
+		<property name="semantic.tree.uri" value="/dbo_Users/RouteName"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Users.RouteName)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_MailRoutes.RouteName"/>
+		<property name="dimensionOrMeasure" value="Dimension"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Route Name"/>
+		<property name="semantic.item.desc" value="RouteName"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[RouteName]]></fieldDescription>
+	</field>
+	<field name="dbo_Users.StopName" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Users/StopName"/>
+		<property name="semantic.tree.uri" value="/dbo_Users/StopName"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Users.StopName)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_MailInStops.StopName"/>
+		<property name="dimensionOrMeasure" value="Dimension"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Stop Name"/>
+		<property name="semantic.item.desc" value="StopName"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[StopName]]></fieldDescription>
+	</field>
+	<field name="dbo_Vw_CostCenters_15Levels.CCCode" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Vw_CostCenters_15Levels/CCCode"/>
+		<property name="semantic.tree.uri" value="/dbo_Vw_CostCenters_15Levels/CCCode"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Vw_CostCenters_15Levels.CCCode)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Vw_CostCenters_15Levels.CCCode"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="CCCode"/>
+		<property name="semantic.item.desc" value="CCCode"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[CCCode]]></fieldDescription>
+	</field>
+	<field name="dbo_Vw_CostCenters_15Levels.Level_1_CCCode" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_1_CCCode"/>
+		<property name="semantic.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_1_CCCode"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Vw_CostCenters_15Levels.Level_1_CCCode)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_1_CCCode"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Level_1_CCCode"/>
+		<property name="semantic.item.desc" value="Level_1_CCCode"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Level_1_CCCode]]></fieldDescription>
+	</field>
+	<field name="dbo_Vw_CostCenters_15Levels.Level_2_CCCode" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_2_CCCode"/>
+		<property name="semantic.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_2_CCCode"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Vw_CostCenters_15Levels.Level_2_CCCode)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_2_CCCode"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Level_2_CCCode"/>
+		<property name="semantic.item.desc" value="Level_2_CCCode"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Level_2_CCCode]]></fieldDescription>
+	</field>
+	<field name="dbo_Vw_CostCenters_15Levels.Level_3_CCCode" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_3_CCCode"/>
+		<property name="semantic.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_3_CCCode"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Vw_CostCenters_15Levels.Level_3_CCCode)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_3_CCCode"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Level_3_CCCode"/>
+		<property name="semantic.item.desc" value="Level_3_CCCode"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Level_3_CCCode]]></fieldDescription>
+	</field>
+	<field name="dbo_Vw_CostCenters_15Levels.Level_4_CCCode" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_4_CCCode"/>
+		<property name="semantic.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_4_CCCode"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Vw_CostCenters_15Levels.Level_4_CCCode)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_4_CCCode"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Level_4_CCCode"/>
+		<property name="semantic.item.desc" value="Level_4_CCCode"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Level_4_CCCode]]></fieldDescription>
+	</field>
+	<field name="dbo_Vw_CostCenters_15Levels.Level_5_CCCode" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_5_CCCode"/>
+		<property name="semantic.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_5_CCCode"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Vw_CostCenters_15Levels.Level_5_CCCode)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_5_CCCode"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Level_5_CCCode"/>
+		<property name="semantic.item.desc" value="Level_5_CCCode"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Level_5_CCCode]]></fieldDescription>
+	</field>
+	<field name="dbo_Vw_CostCenters_15Levels.Level_6_CCCode" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_6_CCCode"/>
+		<property name="semantic.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_6_CCCode"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Vw_CostCenters_15Levels.Level_6_CCCode)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_6_CCCode"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Level_6_CCCode"/>
+		<property name="semantic.item.desc" value="Level_6_CCCode"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Level_6_CCCode]]></fieldDescription>
+	</field>
+	<field name="dbo_Vw_CostCenters_15Levels.Level_7_CCCode" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_7_CCCode"/>
+		<property name="semantic.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_7_CCCode"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Vw_CostCenters_15Levels.Level_7_CCCode)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_7_CCCode"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Level_7_CCCode"/>
+		<property name="semantic.item.desc" value="Level_7_CCCode"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Level_7_CCCode]]></fieldDescription>
+	</field>
+	<field name="dbo_Vw_CostCenters_15Levels.Level_8_CCCode" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_8_CCCode"/>
+		<property name="semantic.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_8_CCCode"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Vw_CostCenters_15Levels.Level_8_CCCode)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_8_CCCode"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Level_8_CCCode"/>
+		<property name="semantic.item.desc" value="Level_8_CCCode"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Level_8_CCCode]]></fieldDescription>
+	</field>
+	<field name="dbo_Vw_CostCenters_15Levels.Level_9_CCCode" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_9_CCCode"/>
+		<property name="semantic.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_9_CCCode"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Vw_CostCenters_15Levels.Level_9_CCCode)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_9_CCCode"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Level_9_CCCode"/>
+		<property name="semantic.item.desc" value="Level_9_CCCode"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Level_9_CCCode]]></fieldDescription>
+	</field>
+	<field name="dbo_Vw_CostCenters_15Levels.Level_10_CCCode" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_10_CCCode"/>
+		<property name="semantic.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_10_CCCode"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Vw_CostCenters_15Levels.Level_10_CCCode)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_10_CCCode"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Level_10_CCCode"/>
+		<property name="semantic.item.desc" value="Level_10_CCCode"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Level_10_CCCode]]></fieldDescription>
+	</field>
+	<field name="dbo_Vw_CostCenters_15Levels.Level_11_CCCode" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_11_CCCode"/>
+		<property name="semantic.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_11_CCCode"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Vw_CostCenters_15Levels.Level_11_CCCode)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_11_CCCode"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Level_11_CCCode"/>
+		<property name="semantic.item.desc" value="Level_11_CCCode"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Level_11_CCCode]]></fieldDescription>
+	</field>
+	<field name="dbo_Vw_CostCenters_15Levels.Level_12_CCCode" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_12_CCCode"/>
+		<property name="semantic.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_12_CCCode"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Vw_CostCenters_15Levels.Level_12_CCCode)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_12_CCCode"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Level_12_CCCode"/>
+		<property name="semantic.item.desc" value="Level_12_CCCode"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Level_12_CCCode]]></fieldDescription>
+	</field>
+	<field name="dbo_Vw_CostCenters_15Levels.Level_13_CCCode" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_13_CCCode"/>
+		<property name="semantic.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_13_CCCode"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Vw_CostCenters_15Levels.Level_13_CCCode)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_13_CCCode"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Level_13_CCCode"/>
+		<property name="semantic.item.desc" value="Level_13_CCCode"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Level_13_CCCode]]></fieldDescription>
+	</field>
+	<field name="dbo_Vw_CostCenters_15Levels.Level_14_CCCode" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_14_CCCode"/>
+		<property name="semantic.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_14_CCCode"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Vw_CostCenters_15Levels.Level_14_CCCode)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_14_CCCode"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Level_14_CCCode"/>
+		<property name="semantic.item.desc" value="Level_14_CCCode"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Level_14_CCCode]]></fieldDescription>
+	</field>
+	<field name="dbo_Vw_CostCenters_15Levels.CCName" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Vw_CostCenters_15Levels/CCName"/>
+		<property name="semantic.tree.uri" value="/dbo_Vw_CostCenters_15Levels/CCName"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Vw_CostCenters_15Levels.CCName)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Vw_CostCenters_15Levels.CCName"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="CCName"/>
+		<property name="semantic.item.desc" value="CCName"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[CCName]]></fieldDescription>
+	</field>
+	<field name="dbo_Vw_CostCenters_15Levels.Level_1_Name" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_1_Name"/>
+		<property name="semantic.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_1_Name"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Vw_CostCenters_15Levels.Level_1_Name)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_1_Name"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Level_1_Name"/>
+		<property name="semantic.item.desc" value="Level_1_Name"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Level_1_Name]]></fieldDescription>
+	</field>
+	<field name="dbo_Vw_CostCenters_15Levels.Level_2_Name" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_2_Name"/>
+		<property name="semantic.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_2_Name"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Vw_CostCenters_15Levels.Level_2_Name)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_2_Name"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Level_2_Name"/>
+		<property name="semantic.item.desc" value="Level_2_Name"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Level_2_Name]]></fieldDescription>
+	</field>
+	<field name="dbo_Vw_CostCenters_15Levels.Level_3_Name" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_3_Name"/>
+		<property name="semantic.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_3_Name"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Vw_CostCenters_15Levels.Level_3_Name)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_3_Name"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Level_3_Name"/>
+		<property name="semantic.item.desc" value="Level_3_Name"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Level_3_Name]]></fieldDescription>
+	</field>
+	<field name="dbo_Vw_CostCenters_15Levels.Level_4_Name" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_4_Name"/>
+		<property name="semantic.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_4_Name"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Vw_CostCenters_15Levels.Level_4_Name)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_4_Name"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Level_4_Name"/>
+		<property name="semantic.item.desc" value="Level_4_Name"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Level_4_Name]]></fieldDescription>
+	</field>
+	<field name="dbo_Vw_CostCenters_15Levels.Level_5_Name" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_5_Name"/>
+		<property name="semantic.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_5_Name"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Vw_CostCenters_15Levels.Level_5_Name)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_5_Name"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Level_5_Name"/>
+		<property name="semantic.item.desc" value="Level_5_Name"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Level_5_Name]]></fieldDescription>
+	</field>
+	<field name="dbo_Vw_CostCenters_15Levels.Level_6_Name" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_6_Name"/>
+		<property name="semantic.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_6_Name"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Vw_CostCenters_15Levels.Level_6_Name)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_6_Name"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Level_6_Name"/>
+		<property name="semantic.item.desc" value="Level_6_Name"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Level_6_Name]]></fieldDescription>
+	</field>
+	<field name="dbo_Vw_CostCenters_15Levels.Level_7_Name" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_7_Name"/>
+		<property name="semantic.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_7_Name"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Vw_CostCenters_15Levels.Level_7_Name)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_7_Name"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Level_7_Name"/>
+		<property name="semantic.item.desc" value="Level_7_Name"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Level_7_Name]]></fieldDescription>
+	</field>
+	<field name="dbo_Vw_CostCenters_15Levels.Level_8_Name" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_8_Name"/>
+		<property name="semantic.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_8_Name"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Vw_CostCenters_15Levels.Level_8_Name)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_8_Name"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Level_8_Name"/>
+		<property name="semantic.item.desc" value="Level_8_Name"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Level_8_Name]]></fieldDescription>
+	</field>
+	<field name="dbo_Vw_CostCenters_15Levels.Level_9_Name" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_9_Name"/>
+		<property name="semantic.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_9_Name"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Vw_CostCenters_15Levels.Level_9_Name)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_9_Name"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Level_9_Name"/>
+		<property name="semantic.item.desc" value="Level_9_Name"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Level_9_Name]]></fieldDescription>
+	</field>
+	<field name="dbo_Vw_CostCenters_15Levels.Level_10_Name" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_10_Name"/>
+		<property name="semantic.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_10_Name"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Vw_CostCenters_15Levels.Level_10_Name)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_10_Name"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Level_10_Name"/>
+		<property name="semantic.item.desc" value="Level_10_Name"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Level_10_Name]]></fieldDescription>
+	</field>
+	<field name="dbo_Vw_CostCenters_15Levels.Level_11_Name" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_11_Name"/>
+		<property name="semantic.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_11_Name"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Vw_CostCenters_15Levels.Level_11_Name)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_11_Name"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Level_11_Name"/>
+		<property name="semantic.item.desc" value="Level_11_Name"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Level_11_Name]]></fieldDescription>
+	</field>
+	<field name="dbo_Vw_CostCenters_15Levels.Level_12_Name" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_12_Name"/>
+		<property name="semantic.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_12_Name"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Vw_CostCenters_15Levels.Level_12_Name)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_12_Name"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Level_12_Name"/>
+		<property name="semantic.item.desc" value="Level_12_Name"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Level_12_Name]]></fieldDescription>
+	</field>
+	<field name="dbo_Vw_CostCenters_15Levels.Level_13_Name" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_13_Name"/>
+		<property name="semantic.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_13_Name"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Vw_CostCenters_15Levels.Level_13_Name)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_13_Name"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Level_13_Name"/>
+		<property name="semantic.item.desc" value="Level_13_Name"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Level_13_Name]]></fieldDescription>
+	</field>
+	<field name="dbo_Vw_CostCenters_15Levels.Level_14_Name" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_14_Name"/>
+		<property name="semantic.tree.uri" value="/dbo_Vw_CostCenters_15Levels/Level_14_Name"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Vw_CostCenters_15Levels.Level_14_Name)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_14_Name"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Level_14_Name"/>
+		<property name="semantic.item.desc" value="Level_14_Name"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Level_14_Name]]></fieldDescription>
+	</field>
+	<field name="dbo_Buildings.Name" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Buildings/Name"/>
+		<property name="semantic.tree.uri" value="/dbo_Buildings/Name"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Buildings.Name)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Buildings.Name"/>
+		<property name="dimensionOrMeasure" value="Dimension"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Building Name"/>
+		<property name="semantic.item.desc" value="Name"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Name]]></fieldDescription>
+	</field>
+	<field name="dbo_Buildings.BuildingCode" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Buildings/BuildingCode"/>
+		<property name="semantic.tree.uri" value="/dbo_Buildings/BuildingCode"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Buildings.BuildingCode)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Buildings.BuildingCode"/>
+		<property name="dimensionOrMeasure" value="Dimension"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Building Code"/>
+		<property name="semantic.item.desc" value="BuildingCode"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[BuildingCode]]></fieldDescription>
+	</field>
+	<field name="dbo_Buildings.Address" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Buildings/Address"/>
+		<property name="semantic.tree.uri" value="/dbo_Buildings/Address"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Buildings.Address)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Buildings.Address"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Address"/>
+		<property name="semantic.item.desc" value="Address"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[Address]]></fieldDescription>
+	</field>
+	<field name="dbo_Buildings.City" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Buildings/City"/>
+		<property name="semantic.tree.uri" value="/dbo_Buildings/City"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Buildings.City)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Buildings.City"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="City"/>
+		<property name="semantic.item.desc" value="City"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[City]]></fieldDescription>
+	</field>
+	<field name="dbo_Buildings.PostalCode" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Buildings/PostalCode"/>
+		<property name="semantic.tree.uri" value="/dbo_Buildings/PostalCode"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Buildings.PostalCode)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Buildings.PostalCode"/>
+		<property name="dimensionOrMeasure" value="Dimension"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Postal Code"/>
+		<property name="semantic.item.desc" value="PostalCode"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[PostalCode]]></fieldDescription>
+	</field>
+	<field name="CreatedByUser.FirstName1" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/CreatedByUser/FirstName1"/>
+		<property name="semantic.tree.uri" value="/CreatedByUser/FirstName1"/>
+		<property name="aggregateExpression" value="CountAll(CreatedByUser.FirstName1)"/>
+		<property name="resourceId" value="JoinTree_1.CreatedByUser.FirstName"/>
+		<property name="dimensionOrMeasure" value="Dimension"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Created By First Name"/>
+		<property name="semantic.item.desc" value="FirstName1"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[FirstName1]]></fieldDescription>
+	</field>
+	<field name="CreatedByUser.LastName1" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/CreatedByUser/LastName1"/>
+		<property name="semantic.tree.uri" value="/CreatedByUser/LastName1"/>
+		<property name="aggregateExpression" value="CountAll(CreatedByUser.LastName1)"/>
+		<property name="resourceId" value="JoinTree_1.CreatedByUser.LastName"/>
+		<property name="dimensionOrMeasure" value="Dimension"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Created By Last Name"/>
+		<property name="semantic.item.desc" value="LastName1"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[LastName1]]></fieldDescription>
+	</field>
+	<field name="CreatedByUser.UserName1" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/CreatedByUser/UserName1"/>
+		<property name="semantic.tree.uri" value="/CreatedByUser/UserName1"/>
+		<property name="aggregateExpression" value="CountAll(CreatedByUser.UserName1)"/>
+		<property name="resourceId" value="JoinTree_1.CreatedByUser.UserName"/>
+		<property name="dimensionOrMeasure" value="Dimension"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Created By User Name"/>
+		<property name="semantic.item.desc" value="UserName1"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[UserName1]]></fieldDescription>
+	</field>
+	<field name="dbo_Countries.CountryName" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Countries/CountryName"/>
+		<property name="semantic.tree.uri" value="/dbo_Countries/CountryName"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Countries.CountryName)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Countries.CountryName"/>
+		<property name="dimensionOrMeasure" value="Dimension"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Country"/>
+		<property name="semantic.item.desc" value="CountryName"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[CountryName]]></fieldDescription>
+	</field>
+	<field name="LastUpdatedByUser.FirstName2" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/LastUpdatedByUser/FirstName2"/>
+		<property name="semantic.tree.uri" value="/LastUpdatedByUser/FirstName2"/>
+		<property name="aggregateExpression" value="CountAll(LastUpdatedByUser.FirstName2)"/>
+		<property name="resourceId" value="JoinTree_1.LastUpdatedByUser.FirstName"/>
+		<property name="dimensionOrMeasure" value="Dimension"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Last Updated By First Name"/>
+		<property name="semantic.item.desc" value="FirstName2"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[FirstName2]]></fieldDescription>
+	</field>
+	<field name="LastUpdatedByUser.LastName2" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/LastUpdatedByUser/LastName2"/>
+		<property name="semantic.tree.uri" value="/LastUpdatedByUser/LastName2"/>
+		<property name="aggregateExpression" value="CountAll(LastUpdatedByUser.LastName2)"/>
+		<property name="resourceId" value="JoinTree_1.LastUpdatedByUser.LastName"/>
+		<property name="dimensionOrMeasure" value="Dimension"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Last Updated By Last Name"/>
+		<property name="semantic.item.desc" value="LastName2"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[LastName2]]></fieldDescription>
+	</field>
+	<field name="LastUpdatedByUser.UserName2" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/LastUpdatedByUser/UserName2"/>
+		<property name="semantic.tree.uri" value="/LastUpdatedByUser/UserName2"/>
+		<property name="aggregateExpression" value="CountAll(LastUpdatedByUser.UserName2)"/>
+		<property name="resourceId" value="JoinTree_1.LastUpdatedByUser.UserName"/>
+		<property name="dimensionOrMeasure" value="Dimension"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Last Updated By User Name"/>
+		<property name="semantic.item.desc" value="UserName2"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[UserName2]]></fieldDescription>
+	</field>
+	<field name="dbo_MoveRoomList.Capacity" class="java.lang.Integer">
+		<property name="adhoc.tree.uri" value="/dbo_MoveRoomList/Capacity"/>
+		<property name="semantic.tree.uri" value="/dbo_MoveRoomList/Capacity"/>
+		<property name="aggregateExpression" value="Sum(dbo_MoveRoomList.Capacity)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_MoveRoomList.Capacity"/>
+		<property name="dimensionOrMeasure"/>
+		<property name="defaultAgg" value="Sum"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Capacity"/>
+		<property name="semantic.item.desc" value="Capacity"/>
+		<property name="defaultMask" value="#,##0"/>
+		<property name="kind" value="MEASURE"/>
+		<fieldDescription><![CDATA[Capacity]]></fieldDescription>
+	</field>
+	<field name="dbo_MoveRoomList.RoomName" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_MoveRoomList/RoomName"/>
+		<property name="semantic.tree.uri" value="/dbo_MoveRoomList/RoomName"/>
+		<property name="aggregateExpression" value="CountAll(dbo_MoveRoomList.RoomName)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_MoveRoomList.RoomName"/>
+		<property name="dimensionOrMeasure" value="Dimension"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Room"/>
+		<property name="semantic.item.desc" value="RoomName"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[RoomName]]></fieldDescription>
+	</field>
+	<field name="dbo_MoveRoomList.SquareFeet" class="java.math.BigDecimal">
+		<property name="adhoc.tree.uri" value="/dbo_MoveRoomList/SquareFeet"/>
+		<property name="semantic.tree.uri" value="/dbo_MoveRoomList/SquareFeet"/>
+		<property name="aggregateExpression" value="Sum(dbo_MoveRoomList.SquareFeet)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_MoveRoomList.SquareFeet"/>
+		<property name="dimensionOrMeasure" value="Measure"/>
+		<property name="defaultAgg" value="Sum"/>
+		<property name="aggregateType" value="java.math.BigDecimal"/>
+		<property name="adhoc.display" value="Area"/>
+		<property name="semantic.item.desc" value="SquareFeet"/>
+		<property name="defaultMask" value="#,##0.00"/>
+		<property name="kind" value="MEASURE"/>
+		<fieldDescription><![CDATA[SquareFeet]]></fieldDescription>
+	</field>
+	<field name="dbo_MoveRoomList.RentableSquareFeet" class="java.math.BigDecimal">
+		<property name="adhoc.tree.uri" value="/dbo_MoveRoomList/RentableSquareFeet"/>
+		<property name="semantic.tree.uri" value="/dbo_MoveRoomList/RentableSquareFeet"/>
+		<property name="aggregateExpression" value="Sum(dbo_MoveRoomList.RentableSquareFeet)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_MoveRoomList.RentableSquareFeet"/>
+		<property name="dimensionOrMeasure" value="Measure"/>
+		<property name="defaultAgg" value="Sum"/>
+		<property name="aggregateType" value="java.math.BigDecimal"/>
+		<property name="adhoc.display" value="Rentable Area"/>
+		<property name="semantic.item.desc" value="RentableSquareFeet"/>
+		<property name="defaultMask" value="#,##0.00"/>
+		<property name="kind" value="MEASURE"/>
+		<fieldDescription><![CDATA[RentableSquareFeet]]></fieldDescription>
+	</field>
+	<field name="dbo_MoveRoomList.SignNumber" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_MoveRoomList/SignNumber"/>
+		<property name="semantic.tree.uri" value="/dbo_MoveRoomList/SignNumber"/>
+		<property name="aggregateExpression" value="CountAll(dbo_MoveRoomList.SignNumber)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_MoveRoomList.SignNumber"/>
+		<property name="dimensionOrMeasure" value="Dimension"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Description"/>
+		<property name="semantic.item.desc" value="SignNumber"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[SignNumber]]></fieldDescription>
+	</field>
+	<field name="dbo_SpaceFloors.FloorName" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_SpaceFloors/FloorName"/>
+		<property name="semantic.tree.uri" value="/dbo_SpaceFloors/FloorName"/>
+		<property name="aggregateExpression" value="CountAll(dbo_SpaceFloors.FloorName)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_SpaceFloors.FloorName"/>
+		<property name="dimensionOrMeasure" value="Dimension"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Floor"/>
+		<property name="semantic.item.desc" value="FloorName"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[FloorName]]></fieldDescription>
+	</field>
+	<field name="dbo_MoveRoomTypes.RoomTypeDesc" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_MoveRoomTypes/RoomTypeDesc"/>
+		<property name="semantic.tree.uri" value="/dbo_MoveRoomTypes/RoomTypeDesc"/>
+		<property name="aggregateExpression" value="CountAll(dbo_MoveRoomTypes.RoomTypeDesc)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_MoveRoomTypes.RoomTypeDesc"/>
+		<property name="dimensionOrMeasure" value="Dimension"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Room Type"/>
+		<property name="semantic.item.desc" value="RoomTypeDesc"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[RoomTypeDesc]]></fieldDescription>
+	</field>
+	<field name="dbo_States.StateName" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_States/StateName"/>
+		<property name="semantic.tree.uri" value="/dbo_States/StateName"/>
+		<property name="aggregateExpression" value="CountAll(dbo_States.StateName)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_States.StateName"/>
+		<property name="dimensionOrMeasure" value="Dimension"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="State Name"/>
+		<property name="semantic.item.desc" value="StateName"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[StateName]]></fieldDescription>
+	</field>
+	<field name="dbo_MoveRoomList.IDFName" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_MoveRoomList/IDFName"/>
+		<property name="semantic.tree.uri" value="/dbo_MoveRoomList/IDFName"/>
+		<property name="aggregateExpression" value="CountAll(dbo_MoveRoomList.IDFName)"/>
+		<property name="dimensionOrMeasure" value="Dimension"/>
+		<property name="resourceId" value="JoinTree_1.dbo_MoveRoomIDF.IDFName"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Jack Name"/>
+		<property name="semantic.item.desc" value="IDFName"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[IDFName]]></fieldDescription>
+	</field>
+	<field name="dbo_MoveRoomList.IDFTypeName" class="java.lang.String">
+		<property name="aggregate" value="false"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="aggregateMask"/>
+		<property name="adhoc.display" value="Jack Type"/>
+		<property name="semantic.item.desc" value="IDFTypeName"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<property name="semantic.tree.uri" value="/dbo_MoveRoomList/IDFTypeName"/>
+		<property name="adhoc.tree.uri" value="/dbo_MoveRoomList/IDFTypeName"/>
+		<property name="aggregateExpression" value="CountAll(dbo_MoveRoomList.IDFTypeName)"/>
+		<property name="resourceId" value="JoinTree_1.dbo_MoveRoomIDFTypes.IDFTypeName"/>
+		<property name="dimensionOrMeasure" value="Dimension"/>
+		<property name="aggregateArg"/>
+		<property name="adhoc.expression"/>
+		<fieldDescription><![CDATA[IDFTypeName]]></fieldDescription>
+	</field>
+	<field name="dbo_Users.FlWarden" class="java.lang.String">
+		<property name="semantic.tree.uri" value="/dbo_Users/FlWarden"/>
+		<property name="adhoc.tree.uri" value="/dbo_Users/FlWarden"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Users.FlWarden)"/>
+		<property name="dimensionOrMeasure" value="Dimension"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Users.FlWarden"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Floor Warden"/>
+		<property name="semantic.item.desc" value="FlWarden"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[FlWarden]]></fieldDescription>
+	</field>
+	<field name="dbo_Users.SpecialNeeds" class="java.lang.String">
+		<property name="semantic.tree.uri" value="/dbo_Users/SpecialNeeds"/>
+		<property name="adhoc.tree.uri" value="/dbo_Users/SpecialNeeds"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Users.SpecialNeeds)"/>
+		<property name="dimensionOrMeasure" value="Dimension"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Users.SpecialNeeds"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Special Needs"/>
+		<property name="semantic.item.desc" value="SpecialNeeds"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[SpecialNeeds]]></fieldDescription>
+	</field>
+	<field name="dbo_Users.SiteAdmin" class="java.lang.String">
+		<property name="adhoc.tree.uri" value="/dbo_Users/SiteAdmin"/>
+		<property name="semantic.tree.uri" value="/dbo_Users/SiteAdmin"/>
+		<property name="aggregateExpression" value="CountAll(dbo_Users.SiteAdmin)"/>
+		<property name="dimensionOrMeasure" value="Dimension"/>
+		<property name="resourceId" value="JoinTree_1.dbo_Users.SiteAdmin"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="Site Admin"/>
+		<property name="semantic.item.desc" value="SiteAdmin"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[SiteAdmin]]></fieldDescription>
+	</field>
+	<field name="dbo_MoveRoomList.RoomID" class="java.lang.Integer">
+		<property name="adhoc.tree.uri" value="/dbo_MoveRoomList/RoomID"/>
+		<property name="semantic.tree.uri" value="/dbo_MoveRoomList/RoomID"/>
+		<property name="aggregateExpression" value="null"/>
+		<property name="dimensionOrMeasure" value="Dimension"/>
+		<property name="resourceId" value="JoinTree_1.dbo_MoveRoomList.RoomID"/>
+		<property name="defaultAgg" value="None"/>
+		<property name="aggregateType" value="java.lang.Object"/>
+		<property name="adhoc.display" value="iOffice Room ID"/>
+		<property name="semantic.item.desc" value="RoomID"/>
+		<property name="defaultMask" value="#,##0"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[RoomID]]></fieldDescription>
+	</field>
+	<field name="dbo_Users.UserType" class="java.lang.String">
+		<property name="semantic.tree.uri" value="/dbo_Users/UserType"/>
+		<property name="adhoc.tree.uri" value="/dbo_Users/UserType"/>
+		<property name="dimensionOrMeasure" value="Dimension"/>
+		<property name="resourceId" value="JoinTree_1.dbo_UserTypes.Name"/>
+		<property name="adhoc.display" value="User Type"/>
+		<property name="semantic.item.desc" value="User Type"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<fieldDescription><![CDATA[User Type]]></fieldDescription>
+	</field>
+</jasperReport>

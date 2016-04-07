@@ -1,0 +1,1668 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Directory Listing" pageWidth="4785" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="27aa3a29-c10a-4873-84fe-bcfaf182793d">
+	<property name="net.sf.jasperreports.export.xls.collapse.row.span" value="false"/>
+	<property name="net.sf.jasperreports.export.html.border.collapse" value="separate"/>
+	<property name="net.sf.jasperreports.export.docx.frames.as.nested.tables" value="false"/>
+	<property name="com.jaspersoft.jasperserver.adhoc.actual.size" value="true"/>
+	<property name="com.jaspersoft.jasperserver.adhoc.group.indent" value="0"/>
+	<property name="com.jaspersoft.jasperserver.adhoc.min.group.label.width" value="100"/>
+	<property name="com.jaspersoft.jasperserver.adhoc.detail.band.height" value="25"/>
+	<property name="com.jaspersoft.jasperserver.adhoc.header.band.height" value="25"/>
+	<property name="com.jaspersoft.jasperserver.adhoc.crosstab.row.header.width" value="125"/>
+	<property name="com.jaspersoft.jasperserver.adhoc.crosstab.cell.width" value="100"/>
+	<property name="com.jaspersoft.jasperserver.adhoc.crosstab.cell.height" value="20"/>
+	<property name="com.jaspersoft.ji.adhoc.data.adapter" value="true"/>
+	<property name="com.jaspersoft.ji.adhoc" value="1"/>
+	<property name="com.jaspersoft.ji.adhoc.preferredDataStrategy" value="domainDataStrategy"/>
+	<property name="net.sf.jasperreports.export.pdf.tagged" value="false"/>
+	<property name="net.sf.jasperreports.export.pdf.tag.language" value="EN-US"/>
+	<property name="net.sf.jasperreports.text.truncate.suffix" value="..."/>
+	<property name="net.sf.jasperreports.print.keep.full.text" value="true"/>
+	<property name="com.jaspersoft.jasperserver.adhoc.table.flattened.data.set" value="true"/>
+	<import value="com.jaspersoft.ji.adhoc.service.AdhocEngineServiceImpl"/>
+	<import value="com.jaspersoft.ji.adhoc.jr.AdhocReportUtils"/>
+	<style name="ReportDefault" isDefault="true" mode="Transparent" forecolor="#666666" backcolor="#FFFFFF" hAlign="Left" vAlign="Middle" fontName="DejaVu Sans" fontSize="11">
+		<box>
+			<pen lineColor="#AAAAAA"/>
+		</box>
+	</style>
+	<style name="TableBaseFrameStyle" mode="Transparent">
+		<box padding="0">
+			<pen lineWidth="0.0"/>
+		</box>
+	</style>
+	<style name="TableFrameStyle" style="TableBaseFrameStyle">
+		<box padding="1">
+			<topPen lineWidth="1.0" lineColor="#AAAAAA"/>
+			<leftPen lineWidth="1.0" lineColor="#AAAAAA"/>
+			<bottomPen lineWidth="1.0" lineColor="#AAAAAA"/>
+			<rightPen lineWidth="1.0" lineColor="#AAAAAA"/>
+		</box>
+	</style>
+	<style name="TableColumnHeaderFrameStyle" style="TableBaseFrameStyle">
+		<box>
+			<topPen lineWidth="1.0" lineColor="#AAAAAA"/>
+			<leftPen lineWidth="1.0" lineColor="#AAAAAA"/>
+			<bottomPen lineWidth="1.0" lineColor="#AAAAAA"/>
+			<rightPen lineWidth="1.0" lineColor="#AAAAAA"/>
+		</box>
+	</style>
+	<style name="TableColumnFooterFrameStyle" style="TableBaseFrameStyle">
+		<box>
+			<topPen lineWidth="1.0" lineColor="#AAAAAA"/>
+		</box>
+	</style>
+	<style name="TableColumnHeaderTextStyle" style="ReportDefault" mode="Opaque" forecolor="#666666" backcolor="#D5DEE8" hAlign="Left" vAlign="Middle" fontName="DejaVu Sans" fontSize="11" isBold="true">
+		<box leftPadding="5" rightPadding="5">
+			<pen lineWidth="1.0" lineStyle="Solid"/>
+			<topPen lineWidth="1.0" lineColor="#FFFFFF"/>
+			<leftPen lineWidth="1.0" lineColor="#FFFFFF"/>
+			<bottomPen lineWidth="1.0" lineColor="#B1B6BB"/>
+			<rightPen lineWidth="1.0" lineColor="#B1B6BB"/>
+		</box>
+	</style>
+	<style name="TableGroupHeaderFrameStyle" style="TableBaseFrameStyle" mode="Opaque" backcolor="#E3E9EF">
+		<box>
+			<topPen lineWidth="1.0" lineColor="#B1B6BB"/>
+		</box>
+	</style>
+	<style name="TableGroupHeaderTextStyle" style="ReportDefault" mode="Opaque" forecolor="#666666" backcolor="#E3E9EF" hAlign="Left" vAlign="Middle" fontName="DejaVu Sans" fontSize="11" isBold="true">
+		<box leftPadding="5" rightPadding="5">
+			<topPen lineWidth="1.0" lineColor="#B1B6BB"/>
+			<leftPen lineWidth="0.0"/>
+			<bottomPen lineWidth="0.0"/>
+			<rightPen lineWidth="0.0"/>
+		</box>
+	</style>
+	<style name="TableGroupFooterFrameStyle" style="TableBaseFrameStyle" mode="Opaque" backcolor="#E7ECF2">
+		<box>
+			<topPen lineWidth="1.0" lineColor="#E3E9EF"/>
+			<leftPen lineWidth="1.0" lineColor="#E3E9EF"/>
+			<bottomPen lineWidth="1.0" lineColor="#E3E9EF"/>
+			<rightPen lineWidth="1.0" lineColor="#E3E9EF"/>
+		</box>
+	</style>
+	<style name="TableGroupFooterTextStyle" style="ReportDefault" mode="Opaque" forecolor="#666666" backcolor="#E7ECF2" hAlign="Left" vAlign="Middle" fontName="DejaVu Sans" fontSize="11" isBold="true">
+		<box leftPadding="5" rightPadding="5">
+			<topPen lineWidth="1.0" lineColor="#E3E9EF"/>
+			<leftPen lineWidth="1.0" lineColor="#E3E9EF"/>
+			<bottomPen lineWidth="1.0" lineColor="#E3E9EF"/>
+			<rightPen lineWidth="1.0" lineColor="#E3E9EF"/>
+		</box>
+	</style>
+	<style name="TableSummaryFrameStyle" style="TableBaseFrameStyle">
+		<box>
+			<leftPen lineWidth="1.0" lineColor="#AAAAAA"/>
+			<rightPen lineWidth="1.0" lineColor="#AAAAAA"/>
+		</box>
+	</style>
+	<style name="TableSummaryTextNoBorderStyle" style="ReportDefault" mode="Opaque" forecolor="#666666" fontName="DejaVu Sans" isBold="true">
+		<box leftPadding="5" rightPadding="5"/>
+	</style>
+	<style name="TableSummaryTextStyle" style="TableSummaryTextNoBorderStyle">
+		<box>
+			<pen lineWidth="1.0"/>
+		</box>
+	</style>
+	<style name="TableTitleFrameStyle" style="TableFrameStyle">
+		<box topPadding="0" bottomPadding="0">
+			<topPen lineWidth="0.0"/>
+			<leftPen lineWidth="0.0"/>
+			<bottomPen lineWidth="0.0"/>
+			<rightPen lineWidth="0.0"/>
+		</box>
+	</style>
+	<style name="TableTitleTextStyle" style="ReportDefault" mode="Opaque" forecolor="#333333" backcolor="#FFFFFF" hAlign="Center" fontSize="18" isBold="false">
+		<box bottomPadding="8">
+			<pen lineColor="#000000"/>
+			<topPen lineWidth="0.0"/>
+		</box>
+	</style>
+	<style name="TableDetailFrameStyle" style="TableBaseFrameStyle">
+		<box>
+			<leftPen lineWidth="1.0" lineColor="#AAAAAA"/>
+			<rightPen lineWidth="1.0" lineColor="#AAAAAA"/>
+		</box>
+	</style>
+	<style name="TableDetailTextStyle" style="ReportDefault" mode="Opaque" forecolor="#666666" backcolor="#FFFFFF" hAlign="Left" vAlign="Middle" fontName="DejaVu Sans" fontSize="11" isBold="false">
+		<box leftPadding="5" rightPadding="5">
+			<pen lineWidth="1.0" lineStyle="Solid"/>
+			<topPen lineWidth="1.0" lineColor="#E3E9EF"/>
+			<leftPen lineWidth="1.0" lineColor="#E3E9EF"/>
+			<bottomPen lineWidth="1.0" lineColor="#E3E9EF"/>
+			<rightPen lineWidth="1.0" lineColor="#E3E9EF"/>
+		</box>
+	</style>
+	<style name="ChartReportTitle" style="ReportDefault" mode="Opaque" forecolor="#333333" backcolor="#FFFFFF" hAlign="Center" fontSize="18" isBold="false">
+		<box>
+			<pen lineColor="#000000"/>
+			<topPen lineWidth="0.0" lineStyle="Solid"/>
+		</box>
+	</style>
+	<style name="ChartTitle" forecolor="#000000" fontName="DejaVu Sans" fontSize="12" isBold="true"/>
+	<style name="ChartSubtitle" forecolor="#000000" fontName="DejaVu Sans" fontSize="9" isBold="false"/>
+	<style name="ChartLegend" forecolor="#000000" backcolor="#FFFFFF" fontName="DejaVu Sans" fontSize="9" isBold="false"/>
+	<style name="ChartSeriesColor0" backcolor="#87C4FE"/>
+	<style name="ChartSeriesColor1" backcolor="#E96270"/>
+	<style name="ChartSeriesColor2" backcolor="#D1D1D1"/>
+	<style name="ChartSeriesColor3" backcolor="#FFEE99"/>
+	<style name="ChartSeriesColor4" backcolor="#6164FF"/>
+	<style name="ChartSeriesColor5" backcolor="#B0E992"/>
+	<style name="ChartSeriesColor6" backcolor="#AE9CEA"/>
+	<style name="ChartSeriesColor7" backcolor="#F5B05E"/>
+	<style name="ChartSeriesColor8" backcolor="#589EE1"/>
+	<style name="ChartSeriesColor9" backcolor="#AE4E59"/>
+	<style name="ChartSeriesColor10" backcolor="#747474"/>
+	<style name="ChartSeriesColor11" backcolor="#E2DC77"/>
+	<style name="ChartSeriesColor12" backcolor="#4749A5"/>
+	<style name="ChartSeriesColor13" backcolor="#81B963"/>
+	<style name="ChartSeriesColor14" backcolor="#7764B4"/>
+	<style name="ChartSeriesColor15" backcolor="#F27B4C"/>
+	<style name="ChartCategoryAxisLabelFormat" forecolor="#000000" fontName="DejaVu Sans" fontSize="11" isBold="true"/>
+	<style name="ChartCategoryAxisTickFormat" forecolor="#000000" fontName="DejaVu Sans" fontSize="9" isBold="false"/>
+	<style name="ChartValueAxisLabelFormat" forecolor="#000000" fontName="DejaVu Sans" fontSize="11" isBold="true"/>
+	<style name="ChartValueAxisTickFormat" forecolor="#000000" fontName="DejaVu Sans" fontSize="9" isBold="false"/>
+	<style name="ChartContext" backcolor="#D1CA67"/>
+	<style name="CrosstabElementStyle" mode="Transparent" forecolor="#000033" backcolor="#FFFFFF" hAlign="Center" vAlign="Middle" fontName="DejaVu Sans" fontSize="11">
+		<box bottomPadding="1" rightPadding="1">
+			<topPen lineWidth="0.0"/>
+			<leftPen lineWidth="0.0"/>
+			<bottomPen lineWidth="1.0" lineColor="#AAAAAA"/>
+			<rightPen lineWidth="1.0" lineColor="#AAAAAA"/>
+		</box>
+	</style>
+	<style name="CrosstabBaseCellStyle" mode="Transparent">
+		<box padding="0">
+			<pen lineWidth="0.0"/>
+		</box>
+	</style>
+	<style name="CrosstabBaseTextStyle" mode="Opaque" forecolor="#666666" backcolor="#FFFFFF" hAlign="Left" vAlign="Top" fontName="DejaVu Sans" fontSize="11" isBold="true">
+		<box topPadding="3" leftPadding="5" bottomPadding="3" rightPadding="5">
+			<topPen lineWidth="1.0" lineColor="#FFFFFF"/>
+			<leftPen lineWidth="1.0" lineColor="#FFFFFF"/>
+			<bottomPen lineWidth="1.0" lineColor="#B1B6BB"/>
+			<rightPen lineWidth="1.0" lineColor="#B1B6BB"/>
+		</box>
+	</style>
+	<style name="CrosstabTitleTextStyle" style="CrosstabBaseTextStyle" forecolor="#333333" fontSize="18" isBold="false">
+		<box>
+			<pen lineWidth="0.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="CrosstabHeaderTextStyle" style="CrosstabBaseTextStyle" backcolor="#D5DEE8"/>
+	<style name="CrosstabHeaderLabelStyle" style="CrosstabHeaderTextStyle" mode="Transparent">
+		<box>
+			<pen lineWidth="0.0"/>
+		</box>
+	</style>
+	<style name="CrosstabMeasureHeaderTextStyle" style="CrosstabBaseTextStyle" backcolor="#D3C8EB"/>
+	<style name="CrosstabMeasureHeaderLabelStyle" style="CrosstabMeasureHeaderTextStyle" mode="Transparent">
+		<box>
+			<pen lineWidth="0.0"/>
+		</box>
+	</style>
+	<style name="CrosstabColumnMeasureHeaderTextStyle" style="CrosstabMeasureHeaderTextStyle"/>
+	<style name="CrosstabRowMeasureHeaderTextStyle" style="CrosstabMeasureHeaderTextStyle" isBold="false"/>
+	<style name="CrosstabDimensionHeaderTextStyle" style="CrosstabBaseTextStyle" backcolor="#E7ECF2" isBold="false"/>
+	<style name="CrosstabDetailTextStyle" style="CrosstabBaseTextStyle" backcolor="#FFFFFF" hAlign="Right" isBold="false">
+		<box>
+			<topPen lineWidth="1.0" lineColor="#E3E9EF"/>
+			<leftPen lineWidth="1.0" lineColor="#E3E9EF"/>
+			<bottomPen lineWidth="1.0" lineColor="#E3E9EF"/>
+			<rightPen lineWidth="1.0" lineColor="#E3E9EF"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{CROSSTAB_TOTAL_DISCRIMINATOR}]]></conditionExpression>
+			<style backcolor="#F0F4F8" hAlign="Right" isBold="true">
+				<box>
+					<topPen lineWidth="1.0" lineColor="#E3E9EF"/>
+					<leftPen lineWidth="1.0" lineColor="#E3E9EF"/>
+					<bottomPen lineWidth="1.0" lineColor="#E3E9EF"/>
+					<rightPen lineWidth="1.0" lineColor="#E3E9EF"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<style name="CrosstabDummyHeaderTextStyle" style="CrosstabBaseTextStyle" backcolor="#D4D4D4"/>
+	<subDataset name="tableDataset" whenResourceMissingType="Key" uuid="256b3448-499e-4c0d-a17a-d2fa6355eca9">
+		<property name="net.sf.jasperreports.create.sort.fields.for.groups" value="true"/>
+		<parameter name="_dbo_Users.FirstName_AdHocFunctionMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Long", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.FirstName_AdHocMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.String", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.MiddleName_AdHocFunctionMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Long", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.MiddleName_AdHocMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.String", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.LastName_AdHocFunctionMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Long", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.LastName_AdHocMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.String", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.Email_AdHocFunctionMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Long", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.Email_AdHocMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.String", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.Company_AdHocFunctionMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Long", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.Company_AdHocMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.String", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.JobTitle_AdHocFunctionMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Long", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.JobTitle_AdHocMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.String", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.Phone_AdHocFunctionMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Long", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.Phone_AdHocMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.String", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.Extension_AdHocFunctionMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Long", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.Extension_AdHocMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.String", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.Mobile_AdHocFunctionMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Long", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.Mobile_AdHocMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.String", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.StopName_AdHocFunctionMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Long", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.StopName_AdHocMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.String", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Buildings.Name_AdHocFunctionMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Long", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Buildings.Name_AdHocMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.String", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_SpaceFloors.FloorName_AdHocFunctionMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Long", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_SpaceFloors.FloorName_AdHocMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.String", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_MoveRoomList.RoomName_AdHocFunctionMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Long", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_MoveRoomList.RoomName_AdHocMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.String", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_MoveRoomTypes.RoomTypeDesc_AdHocFunctionMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Long", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_MoveRoomTypes.RoomTypeDesc_AdHocMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.String", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.EmployeeID_AdHocFunctionMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Long", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.EmployeeID_AdHocMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.String", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.CostCenter1_AdHocFunctionMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Long", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.CostCenter1_AdHocMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.String", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.CostCenter2_AdHocFunctionMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Long", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.CostCenter2_AdHocMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.String", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.Department_AdHocFunctionMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Long", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.Department_AdHocMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.String", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.UserName_AdHocFunctionMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Long", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.UserName_AdHocMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.String", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.AssistantName_AdHocFunctionMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Long", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.AssistantName_AdHocMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.String", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.Custom01_AdHocFunctionMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Long", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.Custom01_AdHocMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.String", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.Custom02_AdHocFunctionMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Long", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.Custom02_AdHocMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.String", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.Custom03_AdHocFunctionMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Long", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.Custom03_AdHocMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.String", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.Custom04_AdHocFunctionMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Long", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.Custom04_AdHocMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.String", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.Custom05_AdHocFunctionMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Long", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.Custom05_AdHocMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.String", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.Custom06_AdHocFunctionMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Long", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.Custom06_AdHocMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.String", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.Custom07_AdHocFunctionMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Long", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.Custom07_AdHocMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.String", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.Custom08_AdHocFunctionMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Long", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.Custom08_AdHocMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.String", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.Custom09_AdHocFunctionMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Long", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.Custom09_AdHocMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.String", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Vw_CostCenters_15Levels.CCName_AdHocFunctionMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Long", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Vw_CostCenters_15Levels.CCName_AdHocMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.String", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Vw_CostCenters_15Levels.Level_1_Name_AdHocFunctionMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Long", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Vw_CostCenters_15Levels.Level_1_Name_AdHocMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.String", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Vw_CostCenters_15Levels.Level_2_Name_AdHocFunctionMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Long", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Vw_CostCenters_15Levels.Level_2_Name_AdHocMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.String", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Vw_CostCenters_15Levels.CCCode_AdHocFunctionMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Long", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Vw_CostCenters_15Levels.CCCode_AdHocMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.String", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Vw_CostCenters_15Levels.Level_1_CCCode_AdHocFunctionMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Long", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Vw_CostCenters_15Levels.Level_1_CCCode_AdHocMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.String", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Vw_CostCenters_15Levels.Level_2_CCCode_AdHocFunctionMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Long", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Vw_CostCenters_15Levels.Level_2_CCCode_AdHocMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.String", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.DateEntered_AdHocFunctionMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Long", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.DateEntered_AdHocMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.sql.Timestamp", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.LastUpdated_AdHocFunctionMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Long", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<parameter name="_dbo_Users.LastUpdated_AdHocMask" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.sql.Timestamp", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></defaultValueExpression>
+		</parameter>
+		<field name="dbo_Users.FirstName" class="java.lang.String">
+			<property name="fieldType" value="MEASURE"/>
+		</field>
+		<field name="dbo_Users.MiddleName" class="java.lang.String">
+			<property name="fieldType" value="MEASURE"/>
+		</field>
+		<field name="dbo_Users.LastName" class="java.lang.String">
+			<property name="fieldType" value="MEASURE"/>
+		</field>
+		<field name="dbo_Users.Email" class="java.lang.String">
+			<property name="fieldType" value="MEASURE"/>
+		</field>
+		<field name="dbo_Users.Company" class="java.lang.String">
+			<property name="fieldType" value="MEASURE"/>
+		</field>
+		<field name="dbo_Users.JobTitle" class="java.lang.String">
+			<property name="fieldType" value="MEASURE"/>
+		</field>
+		<field name="dbo_Users.Phone" class="java.lang.String">
+			<property name="fieldType" value="MEASURE"/>
+		</field>
+		<field name="dbo_Users.Extension" class="java.lang.String">
+			<property name="fieldType" value="MEASURE"/>
+		</field>
+		<field name="dbo_Users.Mobile" class="java.lang.String">
+			<property name="fieldType" value="MEASURE"/>
+		</field>
+		<field name="dbo_Users.StopName" class="java.lang.String">
+			<property name="fieldType" value="MEASURE"/>
+		</field>
+		<field name="dbo_Buildings.Name" class="java.lang.String">
+			<property name="fieldType" value="MEASURE"/>
+		</field>
+		<field name="dbo_SpaceFloors.FloorName" class="java.lang.String">
+			<property name="fieldType" value="MEASURE"/>
+		</field>
+		<field name="dbo_MoveRoomList.RoomName" class="java.lang.String">
+			<property name="fieldType" value="MEASURE"/>
+		</field>
+		<field name="dbo_MoveRoomTypes.RoomTypeDesc" class="java.lang.String">
+			<property name="fieldType" value="MEASURE"/>
+		</field>
+		<field name="dbo_Users.EmployeeID" class="java.lang.String">
+			<property name="fieldType" value="MEASURE"/>
+		</field>
+		<field name="dbo_Users.CostCenter1" class="java.lang.String">
+			<property name="fieldType" value="MEASURE"/>
+		</field>
+		<field name="dbo_Users.CostCenter2" class="java.lang.String">
+			<property name="fieldType" value="MEASURE"/>
+		</field>
+		<field name="dbo_Users.Department" class="java.lang.String">
+			<property name="fieldType" value="MEASURE"/>
+		</field>
+		<field name="dbo_Users.UserName" class="java.lang.String">
+			<property name="fieldType" value="MEASURE"/>
+		</field>
+		<field name="dbo_Users.AssistantName" class="java.lang.String">
+			<property name="fieldType" value="MEASURE"/>
+		</field>
+		<field name="dbo_Users.Custom01" class="java.lang.String">
+			<property name="fieldType" value="MEASURE"/>
+		</field>
+		<field name="dbo_Users.Custom02" class="java.lang.String">
+			<property name="fieldType" value="MEASURE"/>
+		</field>
+		<field name="dbo_Users.Custom03" class="java.lang.String">
+			<property name="fieldType" value="MEASURE"/>
+		</field>
+		<field name="dbo_Users.Custom04" class="java.lang.String">
+			<property name="fieldType" value="MEASURE"/>
+		</field>
+		<field name="dbo_Users.Custom05" class="java.lang.String">
+			<property name="fieldType" value="MEASURE"/>
+		</field>
+		<field name="dbo_Users.Custom06" class="java.lang.String">
+			<property name="fieldType" value="MEASURE"/>
+		</field>
+		<field name="dbo_Users.Custom07" class="java.lang.String">
+			<property name="fieldType" value="MEASURE"/>
+		</field>
+		<field name="dbo_Users.Custom08" class="java.lang.String">
+			<property name="fieldType" value="MEASURE"/>
+		</field>
+		<field name="dbo_Users.Custom09" class="java.lang.String">
+			<property name="fieldType" value="MEASURE"/>
+		</field>
+		<field name="dbo_Vw_CostCenters_15Levels.CCName" class="java.lang.String">
+			<property name="fieldType" value="MEASURE"/>
+		</field>
+		<field name="dbo_Vw_CostCenters_15Levels.Level_1_Name" class="java.lang.String">
+			<property name="fieldType" value="MEASURE"/>
+		</field>
+		<field name="dbo_Vw_CostCenters_15Levels.Level_2_Name" class="java.lang.String">
+			<property name="fieldType" value="MEASURE"/>
+		</field>
+		<field name="dbo_Vw_CostCenters_15Levels.CCCode" class="java.lang.String">
+			<property name="fieldType" value="MEASURE"/>
+		</field>
+		<field name="dbo_Vw_CostCenters_15Levels.Level_1_CCCode" class="java.lang.String">
+			<property name="fieldType" value="MEASURE"/>
+		</field>
+		<field name="dbo_Vw_CostCenters_15Levels.Level_2_CCCode" class="java.lang.String">
+			<property name="fieldType" value="MEASURE"/>
+		</field>
+		<field name="dbo_Users.DateEntered" class="java.sql.Timestamp">
+			<property name="fieldType" value="MEASURE"/>
+		</field>
+		<field name="dbo_Users.LastUpdated" class="java.sql.Timestamp">
+			<property name="fieldType" value="MEASURE"/>
+		</field>
+		<field name="_top_level__dbo_Users.FirstName" class="java.lang.Long">
+			<property name="measure" value="dbo_Users.FirstName"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_top_level_"/>
+		</field>
+		<field name="_top_level__dbo_Users.MiddleName" class="java.lang.Long">
+			<property name="measure" value="dbo_Users.MiddleName"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_top_level_"/>
+		</field>
+		<field name="_top_level__dbo_Users.LastName" class="java.lang.Long">
+			<property name="measure" value="dbo_Users.LastName"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_top_level_"/>
+		</field>
+		<field name="_top_level__dbo_Users.Email" class="java.lang.Long">
+			<property name="measure" value="dbo_Users.Email"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_top_level_"/>
+		</field>
+		<field name="_top_level__dbo_Users.Company" class="java.lang.Long">
+			<property name="measure" value="dbo_Users.Company"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_top_level_"/>
+		</field>
+		<field name="_top_level__dbo_Users.JobTitle" class="java.lang.Long">
+			<property name="measure" value="dbo_Users.JobTitle"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_top_level_"/>
+		</field>
+		<field name="_top_level__dbo_Users.Phone" class="java.lang.Long">
+			<property name="measure" value="dbo_Users.Phone"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_top_level_"/>
+		</field>
+		<field name="_top_level__dbo_Users.Extension" class="java.lang.Long">
+			<property name="measure" value="dbo_Users.Extension"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_top_level_"/>
+		</field>
+		<field name="_top_level__dbo_Users.Mobile" class="java.lang.Long">
+			<property name="measure" value="dbo_Users.Mobile"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_top_level_"/>
+		</field>
+		<field name="_top_level__dbo_Users.StopName" class="java.lang.Long">
+			<property name="measure" value="dbo_Users.StopName"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_top_level_"/>
+		</field>
+		<field name="_top_level__dbo_Buildings.Name" class="java.lang.Long">
+			<property name="measure" value="dbo_Buildings.Name"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_top_level_"/>
+		</field>
+		<field name="_top_level__dbo_SpaceFloors.FloorName" class="java.lang.Long">
+			<property name="measure" value="dbo_SpaceFloors.FloorName"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_top_level_"/>
+		</field>
+		<field name="_top_level__dbo_MoveRoomList.RoomName" class="java.lang.Long">
+			<property name="measure" value="dbo_MoveRoomList.RoomName"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_top_level_"/>
+		</field>
+		<field name="_top_level__dbo_MoveRoomTypes.RoomTypeDesc" class="java.lang.Long">
+			<property name="measure" value="dbo_MoveRoomTypes.RoomTypeDesc"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_top_level_"/>
+		</field>
+		<field name="_top_level__dbo_Users.EmployeeID" class="java.lang.Long">
+			<property name="measure" value="dbo_Users.EmployeeID"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_top_level_"/>
+		</field>
+		<field name="_top_level__dbo_Users.CostCenter1" class="java.lang.Long">
+			<property name="measure" value="dbo_Users.CostCenter1"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_top_level_"/>
+		</field>
+		<field name="_top_level__dbo_Users.CostCenter2" class="java.lang.Long">
+			<property name="measure" value="dbo_Users.CostCenter2"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_top_level_"/>
+		</field>
+		<field name="_top_level__dbo_Users.Department" class="java.lang.Long">
+			<property name="measure" value="dbo_Users.Department"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_top_level_"/>
+		</field>
+		<field name="_top_level__dbo_Users.UserName" class="java.lang.Long">
+			<property name="measure" value="dbo_Users.UserName"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_top_level_"/>
+		</field>
+		<field name="_top_level__dbo_Users.AssistantName" class="java.lang.Long">
+			<property name="measure" value="dbo_Users.AssistantName"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_top_level_"/>
+		</field>
+		<field name="_top_level__dbo_Users.Custom01" class="java.lang.Long">
+			<property name="measure" value="dbo_Users.Custom01"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_top_level_"/>
+		</field>
+		<field name="_top_level__dbo_Users.Custom02" class="java.lang.Long">
+			<property name="measure" value="dbo_Users.Custom02"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_top_level_"/>
+		</field>
+		<field name="_top_level__dbo_Users.Custom03" class="java.lang.Long">
+			<property name="measure" value="dbo_Users.Custom03"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_top_level_"/>
+		</field>
+		<field name="_top_level__dbo_Users.Custom04" class="java.lang.Long">
+			<property name="measure" value="dbo_Users.Custom04"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_top_level_"/>
+		</field>
+		<field name="_top_level__dbo_Users.Custom05" class="java.lang.Long">
+			<property name="measure" value="dbo_Users.Custom05"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_top_level_"/>
+		</field>
+		<field name="_top_level__dbo_Users.Custom06" class="java.lang.Long">
+			<property name="measure" value="dbo_Users.Custom06"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_top_level_"/>
+		</field>
+		<field name="_top_level__dbo_Users.Custom07" class="java.lang.Long">
+			<property name="measure" value="dbo_Users.Custom07"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_top_level_"/>
+		</field>
+		<field name="_top_level__dbo_Users.Custom08" class="java.lang.Long">
+			<property name="measure" value="dbo_Users.Custom08"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_top_level_"/>
+		</field>
+		<field name="_top_level__dbo_Users.Custom09" class="java.lang.Long">
+			<property name="measure" value="dbo_Users.Custom09"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_top_level_"/>
+		</field>
+		<field name="_top_level__dbo_Vw_CostCenters_15Levels.CCName" class="java.lang.Long">
+			<property name="measure" value="dbo_Vw_CostCenters_15Levels.CCName"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_top_level_"/>
+		</field>
+		<field name="_top_level__dbo_Vw_CostCenters_15Levels.Level_1_Name" class="java.lang.Long">
+			<property name="measure" value="dbo_Vw_CostCenters_15Levels.Level_1_Name"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_top_level_"/>
+		</field>
+		<field name="_top_level__dbo_Vw_CostCenters_15Levels.Level_2_Name" class="java.lang.Long">
+			<property name="measure" value="dbo_Vw_CostCenters_15Levels.Level_2_Name"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_top_level_"/>
+		</field>
+		<field name="_top_level__dbo_Vw_CostCenters_15Levels.CCCode" class="java.lang.Long">
+			<property name="measure" value="dbo_Vw_CostCenters_15Levels.CCCode"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_top_level_"/>
+		</field>
+		<field name="_top_level__dbo_Vw_CostCenters_15Levels.Level_1_CCCode" class="java.lang.Long">
+			<property name="measure" value="dbo_Vw_CostCenters_15Levels.Level_1_CCCode"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_top_level_"/>
+		</field>
+		<field name="_top_level__dbo_Vw_CostCenters_15Levels.Level_2_CCCode" class="java.lang.Long">
+			<property name="measure" value="dbo_Vw_CostCenters_15Levels.Level_2_CCCode"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_top_level_"/>
+		</field>
+		<field name="_top_level__dbo_Users.DateEntered" class="java.lang.Long">
+			<property name="measure" value="dbo_Users.DateEntered"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_top_level_"/>
+		</field>
+		<field name="_top_level__dbo_Users.LastUpdated" class="java.lang.Long">
+			<property name="measure" value="dbo_Users.LastUpdated"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_top_level_"/>
+		</field>
+		<field name="_detail_level__dbo_Users.FirstName" class="java.lang.String">
+			<property name="measure" value="dbo_Users.FirstName"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_detail_level_"/>
+		</field>
+		<field name="_detail_level__dbo_Users.MiddleName" class="java.lang.String">
+			<property name="measure" value="dbo_Users.MiddleName"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_detail_level_"/>
+		</field>
+		<field name="_detail_level__dbo_Users.LastName" class="java.lang.String">
+			<property name="measure" value="dbo_Users.LastName"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_detail_level_"/>
+		</field>
+		<field name="_detail_level__dbo_Users.Email" class="java.lang.String">
+			<property name="measure" value="dbo_Users.Email"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_detail_level_"/>
+		</field>
+		<field name="_detail_level__dbo_Users.Company" class="java.lang.String">
+			<property name="measure" value="dbo_Users.Company"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_detail_level_"/>
+		</field>
+		<field name="_detail_level__dbo_Users.JobTitle" class="java.lang.String">
+			<property name="measure" value="dbo_Users.JobTitle"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_detail_level_"/>
+		</field>
+		<field name="_detail_level__dbo_Users.Phone" class="java.lang.String">
+			<property name="measure" value="dbo_Users.Phone"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_detail_level_"/>
+		</field>
+		<field name="_detail_level__dbo_Users.Extension" class="java.lang.String">
+			<property name="measure" value="dbo_Users.Extension"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_detail_level_"/>
+		</field>
+		<field name="_detail_level__dbo_Users.Mobile" class="java.lang.String">
+			<property name="measure" value="dbo_Users.Mobile"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_detail_level_"/>
+		</field>
+		<field name="_detail_level__dbo_Users.StopName" class="java.lang.String">
+			<property name="measure" value="dbo_Users.StopName"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_detail_level_"/>
+		</field>
+		<field name="_detail_level__dbo_Buildings.Name" class="java.lang.String">
+			<property name="measure" value="dbo_Buildings.Name"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_detail_level_"/>
+		</field>
+		<field name="_detail_level__dbo_SpaceFloors.FloorName" class="java.lang.String">
+			<property name="measure" value="dbo_SpaceFloors.FloorName"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_detail_level_"/>
+		</field>
+		<field name="_detail_level__dbo_MoveRoomList.RoomName" class="java.lang.String">
+			<property name="measure" value="dbo_MoveRoomList.RoomName"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_detail_level_"/>
+		</field>
+		<field name="_detail_level__dbo_MoveRoomTypes.RoomTypeDesc" class="java.lang.String">
+			<property name="measure" value="dbo_MoveRoomTypes.RoomTypeDesc"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_detail_level_"/>
+		</field>
+		<field name="_detail_level__dbo_Users.EmployeeID" class="java.lang.String">
+			<property name="measure" value="dbo_Users.EmployeeID"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_detail_level_"/>
+		</field>
+		<field name="_detail_level__dbo_Users.CostCenter1" class="java.lang.String">
+			<property name="measure" value="dbo_Users.CostCenter1"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_detail_level_"/>
+		</field>
+		<field name="_detail_level__dbo_Users.CostCenter2" class="java.lang.String">
+			<property name="measure" value="dbo_Users.CostCenter2"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_detail_level_"/>
+		</field>
+		<field name="_detail_level__dbo_Users.Department" class="java.lang.String">
+			<property name="measure" value="dbo_Users.Department"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_detail_level_"/>
+		</field>
+		<field name="_detail_level__dbo_Users.UserName" class="java.lang.String">
+			<property name="measure" value="dbo_Users.UserName"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_detail_level_"/>
+		</field>
+		<field name="_detail_level__dbo_Users.AssistantName" class="java.lang.String">
+			<property name="measure" value="dbo_Users.AssistantName"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_detail_level_"/>
+		</field>
+		<field name="_detail_level__dbo_Users.Custom01" class="java.lang.String">
+			<property name="measure" value="dbo_Users.Custom01"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_detail_level_"/>
+		</field>
+		<field name="_detail_level__dbo_Users.Custom02" class="java.lang.String">
+			<property name="measure" value="dbo_Users.Custom02"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_detail_level_"/>
+		</field>
+		<field name="_detail_level__dbo_Users.Custom03" class="java.lang.String">
+			<property name="measure" value="dbo_Users.Custom03"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_detail_level_"/>
+		</field>
+		<field name="_detail_level__dbo_Users.Custom04" class="java.lang.String">
+			<property name="measure" value="dbo_Users.Custom04"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_detail_level_"/>
+		</field>
+		<field name="_detail_level__dbo_Users.Custom05" class="java.lang.String">
+			<property name="measure" value="dbo_Users.Custom05"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_detail_level_"/>
+		</field>
+		<field name="_detail_level__dbo_Users.Custom06" class="java.lang.String">
+			<property name="measure" value="dbo_Users.Custom06"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_detail_level_"/>
+		</field>
+		<field name="_detail_level__dbo_Users.Custom07" class="java.lang.String">
+			<property name="measure" value="dbo_Users.Custom07"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_detail_level_"/>
+		</field>
+		<field name="_detail_level__dbo_Users.Custom08" class="java.lang.String">
+			<property name="measure" value="dbo_Users.Custom08"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_detail_level_"/>
+		</field>
+		<field name="_detail_level__dbo_Users.Custom09" class="java.lang.String">
+			<property name="measure" value="dbo_Users.Custom09"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_detail_level_"/>
+		</field>
+		<field name="_detail_level__dbo_Vw_CostCenters_15Levels.CCName" class="java.lang.String">
+			<property name="measure" value="dbo_Vw_CostCenters_15Levels.CCName"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_detail_level_"/>
+		</field>
+		<field name="_detail_level__dbo_Vw_CostCenters_15Levels.Level_1_Name" class="java.lang.String">
+			<property name="measure" value="dbo_Vw_CostCenters_15Levels.Level_1_Name"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_detail_level_"/>
+		</field>
+		<field name="_detail_level__dbo_Vw_CostCenters_15Levels.Level_2_Name" class="java.lang.String">
+			<property name="measure" value="dbo_Vw_CostCenters_15Levels.Level_2_Name"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_detail_level_"/>
+		</field>
+		<field name="_detail_level__dbo_Vw_CostCenters_15Levels.CCCode" class="java.lang.String">
+			<property name="measure" value="dbo_Vw_CostCenters_15Levels.CCCode"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_detail_level_"/>
+		</field>
+		<field name="_detail_level__dbo_Vw_CostCenters_15Levels.Level_1_CCCode" class="java.lang.String">
+			<property name="measure" value="dbo_Vw_CostCenters_15Levels.Level_1_CCCode"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_detail_level_"/>
+		</field>
+		<field name="_detail_level__dbo_Vw_CostCenters_15Levels.Level_2_CCCode" class="java.lang.String">
+			<property name="measure" value="dbo_Vw_CostCenters_15Levels.Level_2_CCCode"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_detail_level_"/>
+		</field>
+		<field name="_detail_level__dbo_Users.DateEntered" class="java.sql.Timestamp">
+			<property name="measure" value="dbo_Users.DateEntered"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_detail_level_"/>
+		</field>
+		<field name="_detail_level__dbo_Users.LastUpdated" class="java.sql.Timestamp">
+			<property name="measure" value="dbo_Users.LastUpdated"/>
+			<property name="fieldType" value="LEVEL_MEASURE"/>
+			<property name="level" value="_detail_level_"/>
+		</field>
+	</subDataset>
+	<parameter name="REPORT_TITLE" class="java.lang.String" isForPrompting="false">
+		<property name="net.sf.jasperreports.data.cache.included" value="true"/>
+		<defaultValueExpression><![CDATA[null]]></defaultValueExpression>
+	</parameter>
+	<title>
+		<band splitType="Stretch">
+			<frame>
+				<reportElement style="TableTitleFrameStyle" x="0" y="0" width="4747" height="0" uuid="aba478f2-3ae7-4dad-b741-71b988a6bf5d">
+					<printWhenExpression><![CDATA[$P{REPORT_TITLE} != null && $P{REPORT_TITLE}.length() > 0]]></printWhenExpression>
+				</reportElement>
+				<textField isStretchWithOverflow="true">
+					<reportElement key="staticText" style="TableTitleTextStyle" x="0" y="0" width="4745" height="0" uuid="60cb26fc-07a4-4ace-a906-760e846cd48d">
+						<printWhenExpression><![CDATA[$P{REPORT_TITLE} != null && $P{REPORT_TITLE}.length() > 0]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$P{REPORT_TITLE}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<summary>
+		<band height="25" splitType="Stretch">
+			<componentElement>
+				<reportElement style="TableFrameStyle" x="0" y="0" width="4745" height="25" uuid="b06d0e03-df73-4ab0-afd6-7a51018e54ff"/>
+				<c:table xmlns:c="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" whenNoDataType="AllSectionsNoDetail">
+					<datasetRun subDataset="tableDataset" uuid="e870d57f-ff8a-409b-afe0-b5d6eecd328f">
+						<dataSourceExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}.get("com.jaspersoft.ji.adhoc.report.data.source")]]></dataSourceExpression>
+					</datasetRun>
+					<c:columnGroup width="4745" uuid="2e039211-ea10-4fc5-b7e6-fa1012963ca5">
+						<c:column width="125" uuid="1dc8e717-745b-45ed-8c37-abca10ffd64d">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="bc7f2386-2148-4fee-a150-89db656785b2">
+										<property name="net.sf.jasperreports.components.condition.type" value="Text"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["First Name"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="6b5e8937-bbd6-4226-97f2-3643fc05f0ef"/>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{_detail_level__dbo_Users.FirstName}]]></textFieldExpression>
+									<patternExpression><![CDATA[$P{_dbo_Users.FirstName_AdHocMask}]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column width="125" uuid="fc00190f-cfac-4c34-b1fe-7b96425010ae">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="931f448d-992c-46e5-8da0-8dfcb8345d92">
+										<property name="net.sf.jasperreports.components.condition.type" value="Text"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Middle Name"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="725483c6-a629-4d15-9670-81ccccf753d6"/>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{_detail_level__dbo_Users.MiddleName}]]></textFieldExpression>
+									<patternExpression><![CDATA[$P{_dbo_Users.MiddleName_AdHocMask}]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column width="125" uuid="a7133ebc-a08f-42e0-879b-db8ef3169a0f">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="4dbd8c13-a026-4309-a622-ef7485721c51">
+										<property name="net.sf.jasperreports.components.condition.type" value="Text"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Last Name"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="b13fdc79-a3db-45eb-a735-387b489705b8"/>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{_detail_level__dbo_Users.LastName}]]></textFieldExpression>
+									<patternExpression><![CDATA[$P{_dbo_Users.LastName_AdHocMask}]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column width="125" uuid="e85c6322-f830-43aa-ac1f-9fa97d929295">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="47097336-68f4-49a2-8e7c-18d39bdf6ba7">
+										<property name="net.sf.jasperreports.components.condition.type" value="Text"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Email"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="e6e7f5d8-7e86-4b32-b139-831ce30dfb3f"/>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{_detail_level__dbo_Users.Email}]]></textFieldExpression>
+									<patternExpression><![CDATA[$P{_dbo_Users.Email_AdHocMask}]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column width="125" uuid="c5843919-d8bf-4865-b116-a6379d1e39a0">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="4bd97ddb-19e2-4110-be11-c1aac6d63c78">
+										<property name="net.sf.jasperreports.components.condition.type" value="Text"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Company"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="e74e242b-d25a-4f84-8431-dcd11763da60"/>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{_detail_level__dbo_Users.Company}]]></textFieldExpression>
+									<patternExpression><![CDATA[$P{_dbo_Users.Company_AdHocMask}]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column width="125" uuid="0d53cd77-e92d-4719-9118-5dcd139b0f18">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="f253680b-1704-4124-8e17-64bd2a6bce79">
+										<property name="net.sf.jasperreports.components.condition.type" value="Text"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Job Title"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="d051ab69-c85a-4f6e-b1f4-515f01298887"/>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{_detail_level__dbo_Users.JobTitle}]]></textFieldExpression>
+									<patternExpression><![CDATA[$P{_dbo_Users.JobTitle_AdHocMask}]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column width="125" uuid="6e0cef18-39a3-47ed-bb3c-863308e94c1b">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="141d444f-0d9f-4d05-9c10-0dbaf4f3e83b">
+										<property name="net.sf.jasperreports.components.condition.type" value="Text"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Phone"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="085e4ec6-4f2c-4c58-8f2e-aad12e327a4e"/>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{_detail_level__dbo_Users.Phone}]]></textFieldExpression>
+									<patternExpression><![CDATA[$P{_dbo_Users.Phone_AdHocMask}]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column width="125" uuid="8e0436ba-0cb8-4e2b-9c1b-83e0ac4fc86e">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="8d42c75d-e5ce-468a-a361-f05829156bf5">
+										<property name="net.sf.jasperreports.components.condition.type" value="Text"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Extension"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="2ec2da74-be36-4d66-a474-6ef4de0c45d3"/>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{_detail_level__dbo_Users.Extension}]]></textFieldExpression>
+									<patternExpression><![CDATA[$P{_dbo_Users.Extension_AdHocMask}]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column width="125" uuid="45378a93-2e5e-4e78-9289-7f84b7323f0c">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="841451fe-a807-4e51-a17b-84bc21e06d7a">
+										<property name="net.sf.jasperreports.components.condition.type" value="Text"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Mobile"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="9b51b25c-a39f-4ee2-a39c-73f917cf0d0a"/>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{_detail_level__dbo_Users.Mobile}]]></textFieldExpression>
+									<patternExpression><![CDATA[$P{_dbo_Users.Mobile_AdHocMask}]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column width="137" uuid="2466a24f-023e-4e04-bdab-294564eccbe9">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="137" height="25" uuid="30128237-f760-476e-8512-6fe19e88cecf">
+										<property name="net.sf.jasperreports.components.condition.type" value="Text"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Mail Stop"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="137" height="25" uuid="c949eb42-c1a2-4376-a485-85f6f18788bf"/>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{_detail_level__dbo_Users.StopName}]]></textFieldExpression>
+									<patternExpression><![CDATA[$P{_dbo_Users.StopName_AdHocMask}]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column width="137" uuid="5fc83850-a0c3-4c6f-b6cb-97f16af980d0">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="137" height="25" uuid="6623807f-ebda-43ca-9a1e-693626db8341">
+										<property name="net.sf.jasperreports.components.condition.type" value="Text"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Building"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="137" height="25" uuid="219055f0-f31a-4775-80f0-3df9e7ee8451"/>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{_detail_level__dbo_Buildings.Name}]]></textFieldExpression>
+									<patternExpression><![CDATA[$P{_dbo_Buildings.Name_AdHocMask}]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column width="125" uuid="491a4045-4aa4-41b2-bcae-0d828b0514ee">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="9bad6f14-508b-44ad-9d00-114a1fb63a4e">
+										<property name="net.sf.jasperreports.components.condition.type" value="Text"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Floor"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="3a2a4e3f-5b76-4a6a-9b44-bb0545bb708a"/>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{_detail_level__dbo_SpaceFloors.FloorName}]]></textFieldExpression>
+									<patternExpression><![CDATA[$P{_dbo_SpaceFloors.FloorName_AdHocMask}]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column width="125" uuid="7913462a-327e-4d9c-9f22-75364bee4528">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="dadda744-a7b9-4a76-a9f1-a4c737e7963b">
+										<property name="net.sf.jasperreports.components.condition.type" value="Text"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Room"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="cdd70a8c-56d4-418e-83d1-285cbd23ca54"/>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{_detail_level__dbo_MoveRoomList.RoomName}]]></textFieldExpression>
+									<patternExpression><![CDATA[$P{_dbo_MoveRoomList.RoomName_AdHocMask}]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column width="125" uuid="6fb7e5d7-2e4a-4623-9b39-d80503b8046d">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="c513225e-1d37-4842-98a6-e2e6d44759ed">
+										<property name="net.sf.jasperreports.components.condition.type" value="Text"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Room Type"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="3f3eedca-c698-4104-b1ad-af3cd93dcdc5"/>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{_detail_level__dbo_MoveRoomTypes.RoomTypeDesc}]]></textFieldExpression>
+									<patternExpression><![CDATA[$P{_dbo_MoveRoomTypes.RoomTypeDesc_AdHocMask}]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column width="125" uuid="0a05760e-fb3d-4eec-a47c-74dacb94f877">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="ce9efe7a-6167-4cc8-8b02-68814e92cb33">
+										<property name="net.sf.jasperreports.components.condition.type" value="Text"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Employee ID"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="867f920b-3327-4788-836d-07a46f11b5c7"/>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{_detail_level__dbo_Users.EmployeeID}]]></textFieldExpression>
+									<patternExpression><![CDATA[$P{_dbo_Users.EmployeeID_AdHocMask}]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column width="125" uuid="050f08d7-fbff-4a2a-89db-8edab40a867b">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="e8b3417c-2062-446a-83dd-45e3953cf7d5">
+										<property name="net.sf.jasperreports.components.condition.type" value="Text"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Cost Center 1"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="2bf604c0-c8e3-4be5-892f-b31020a2dafc"/>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{_detail_level__dbo_Users.CostCenter1}]]></textFieldExpression>
+									<patternExpression><![CDATA[$P{_dbo_Users.CostCenter1_AdHocMask}]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column width="125" uuid="5fdba85f-f081-444b-92d7-758e845faeda">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="f7648523-1876-43a0-930c-66d09ad5a347">
+										<property name="net.sf.jasperreports.components.condition.type" value="Text"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Cost Center 2"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="25d7c71e-d42c-4bcf-a582-3e95b2595a3f"/>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{_detail_level__dbo_Users.CostCenter2}]]></textFieldExpression>
+									<patternExpression><![CDATA[$P{_dbo_Users.CostCenter2_AdHocMask}]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column width="125" uuid="c629d017-3741-4a6e-8a42-0724ba6f81b3">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="cbb489ff-38ba-468b-be27-2333a5234747">
+										<property name="net.sf.jasperreports.components.condition.type" value="Text"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Department"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="1aec57c5-0296-4d55-943b-10766ab857aa"/>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{_detail_level__dbo_Users.Department}]]></textFieldExpression>
+									<patternExpression><![CDATA[$P{_dbo_Users.Department_AdHocMask}]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column width="125" uuid="6eb2e900-80da-4c5c-b65c-8712626a61c0">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="e8dcc8fd-0812-48b2-af33-bff65b935523">
+										<property name="net.sf.jasperreports.components.condition.type" value="Text"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["User Name"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="af86fb69-6b27-42fc-9e13-b2e706bfb8a2"/>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{_detail_level__dbo_Users.UserName}]]></textFieldExpression>
+									<patternExpression><![CDATA[$P{_dbo_Users.UserName_AdHocMask}]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column width="125" uuid="c9161d72-fc62-4760-9971-b2f90386ac19">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="1dbf4e53-817b-4123-8094-35b060496bc9">
+										<property name="net.sf.jasperreports.components.condition.type" value="Text"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Assistant "]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="5247fda1-fc6a-4104-9628-942cbb2fc741"/>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{_detail_level__dbo_Users.AssistantName}]]></textFieldExpression>
+									<patternExpression><![CDATA[$P{_dbo_Users.AssistantName_AdHocMask}]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column width="125" uuid="b334e847-111e-425d-b980-a744d60fb77c">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="eb339d34-69d0-4065-be70-4d89deae0703">
+										<property name="net.sf.jasperreports.components.condition.type" value="Text"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Custom01"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="d5e0adb3-c4d1-402a-83b9-4ca985332241"/>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{_detail_level__dbo_Users.Custom01}]]></textFieldExpression>
+									<patternExpression><![CDATA[$P{_dbo_Users.Custom01_AdHocMask}]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column width="125" uuid="a82a9bbe-41d8-475d-acd9-e86b9c86cad2">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="b7d714f7-26ba-4377-be32-e55f6c27cc07">
+										<property name="net.sf.jasperreports.components.condition.type" value="Text"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Custom02"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="c1482645-a77e-4f8d-857b-fea6e56eefcf"/>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{_detail_level__dbo_Users.Custom02}]]></textFieldExpression>
+									<patternExpression><![CDATA[$P{_dbo_Users.Custom02_AdHocMask}]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column width="125" uuid="8f662e0a-d5a0-407d-ab0b-54f9f22153d9">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="e545de2e-7d62-4e36-a7ee-130d2f3acf6b">
+										<property name="net.sf.jasperreports.components.condition.type" value="Text"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Custom03"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="f3abb1e1-9e43-453f-98f7-7ebc0665c515"/>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{_detail_level__dbo_Users.Custom03}]]></textFieldExpression>
+									<patternExpression><![CDATA[$P{_dbo_Users.Custom03_AdHocMask}]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column width="125" uuid="e421e973-b70c-4095-a9e2-cc7afbaa1a05">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="c2999172-4dab-4c06-9161-b102af83c0d8">
+										<property name="net.sf.jasperreports.components.condition.type" value="Text"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Custom04"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="21d9baf9-8244-4799-97a6-48f180101805"/>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{_detail_level__dbo_Users.Custom04}]]></textFieldExpression>
+									<patternExpression><![CDATA[$P{_dbo_Users.Custom04_AdHocMask}]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column width="125" uuid="84ab8856-2078-4376-a7d3-274fdf4c1fb7">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="04202259-1ff2-4f44-bd55-4d465be7fe43">
+										<property name="net.sf.jasperreports.components.condition.type" value="Text"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Custom05"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="3f292069-6552-4956-9451-9f35817eddf6"/>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{_detail_level__dbo_Users.Custom05}]]></textFieldExpression>
+									<patternExpression><![CDATA[$P{_dbo_Users.Custom05_AdHocMask}]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column width="125" uuid="49b30271-25a2-4817-8c8d-b0417baeb574">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="6f27916c-24fd-492d-8900-97f05d621d3b">
+										<property name="net.sf.jasperreports.components.condition.type" value="Text"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Custom06"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="91152c6d-355a-4c78-b450-3c264f24c95a"/>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{_detail_level__dbo_Users.Custom06}]]></textFieldExpression>
+									<patternExpression><![CDATA[$P{_dbo_Users.Custom06_AdHocMask}]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column width="125" uuid="0eeea68b-090f-4ec1-ab9c-34e6ce6c8f6a">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="cc06a2c1-02bf-4349-8c27-a948598262da">
+										<property name="net.sf.jasperreports.components.condition.type" value="Text"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Custom07"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="631e5462-b289-4383-b24a-ca14deb76202"/>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{_detail_level__dbo_Users.Custom07}]]></textFieldExpression>
+									<patternExpression><![CDATA[$P{_dbo_Users.Custom07_AdHocMask}]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column width="125" uuid="d9cea3d1-a0c5-4448-bfcd-6610e2c23131">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="a8cc0bf9-c2e1-4f5a-9c77-50d8d181ba1c">
+										<property name="net.sf.jasperreports.components.condition.type" value="Text"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Custom08"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="40473bff-9e31-452c-bbe7-e565b40eb4de"/>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{_detail_level__dbo_Users.Custom08}]]></textFieldExpression>
+									<patternExpression><![CDATA[$P{_dbo_Users.Custom08_AdHocMask}]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column width="125" uuid="b562d9b4-bf8b-4718-9720-f5d8325ad548">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="e8abfc46-641e-4612-8806-a0a0cb9ec427">
+										<property name="net.sf.jasperreports.components.condition.type" value="Text"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Custom09"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="2da1890f-8b97-4093-9be1-0ea9bfa3706d"/>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{_detail_level__dbo_Users.Custom09}]]></textFieldExpression>
+									<patternExpression><![CDATA[$P{_dbo_Users.Custom09_AdHocMask}]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column width="137" uuid="fb58db09-e614-426c-b2b0-6d34191b2ff8">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="137" height="25" uuid="e16f4773-f734-4e10-ad21-8918e12c5180">
+										<property name="net.sf.jasperreports.components.condition.type" value="Text"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Cost Center Name"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="137" height="25" uuid="cb97c3e1-2b08-445c-b791-370a1e24ef8a"/>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{_detail_level__dbo_Vw_CostCenters_15Levels.CCName}]]></textFieldExpression>
+									<patternExpression><![CDATA[$P{_dbo_Vw_CostCenters_15Levels.CCName_AdHocMask}]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column width="149" uuid="684df553-202e-498f-a60c-d48d36483508">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="149" height="25" uuid="766e4511-c45a-42b6-8654-842cc07ec198">
+										<property name="net.sf.jasperreports.components.condition.type" value="Text"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Level 1 Cost Center Name"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="149" height="25" uuid="7dd38e96-65a8-4f10-afb7-cf2f47ae17c9"/>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{_detail_level__dbo_Vw_CostCenters_15Levels.Level_1_Name}]]></textFieldExpression>
+									<patternExpression><![CDATA[$P{_dbo_Vw_CostCenters_15Levels.Level_1_Name_AdHocMask}]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column width="149" uuid="2a8da1cc-fd59-4af1-9eff-7331c00bc653">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="149" height="25" uuid="b62e30cc-3167-4e17-9b08-dd75b24e5a88">
+										<property name="net.sf.jasperreports.components.condition.type" value="Text"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Level 2 Cost Center Name"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="149" height="25" uuid="bcca190f-19b2-4b66-a6c6-56278c05c110"/>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{_detail_level__dbo_Vw_CostCenters_15Levels.Level_2_Name}]]></textFieldExpression>
+									<patternExpression><![CDATA[$P{_dbo_Vw_CostCenters_15Levels.Level_2_Name_AdHocMask}]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column width="137" uuid="d42e184c-7007-4067-91f6-a3a84e183dd9">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="137" height="25" uuid="7b43de46-ad11-4318-af55-f29f042cc767">
+										<property name="net.sf.jasperreports.components.condition.type" value="Text"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Cost Center Code"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="137" height="25" uuid="6a7bbe38-cc1c-4ab7-8088-75fb8d4d4872"/>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{_detail_level__dbo_Vw_CostCenters_15Levels.CCCode}]]></textFieldExpression>
+									<patternExpression><![CDATA[$P{_dbo_Vw_CostCenters_15Levels.CCCode_AdHocMask}]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column width="137" uuid="5d68ff27-e825-453b-b478-ac14d243fcde">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="137" height="25" uuid="8a5ebdca-4bde-4b90-a217-1b535cbc2f3d">
+										<property name="net.sf.jasperreports.components.condition.type" value="Text"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Level 1 Cost Center Code"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="137" height="25" uuid="f81ce0b0-a8e7-46c9-a57b-5e943376160c"/>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{_detail_level__dbo_Vw_CostCenters_15Levels.Level_1_CCCode}]]></textFieldExpression>
+									<patternExpression><![CDATA[$P{_dbo_Vw_CostCenters_15Levels.Level_1_CCCode_AdHocMask}]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column width="137" uuid="2b4a9e48-f948-43ac-bbbd-6a944f6ab95a">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="137" height="25" uuid="5b5510f2-f7cd-4fd3-a074-169b5cbc684f">
+										<property name="net.sf.jasperreports.components.condition.type" value="Text"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Level 2 Cost Center Code"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="137" height="25" uuid="ec51dfa8-a571-49ac-80dc-abff83f95a4e"/>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{_detail_level__dbo_Vw_CostCenters_15Levels.Level_2_CCCode}]]></textFieldExpression>
+									<patternExpression><![CDATA[$P{_dbo_Vw_CostCenters_15Levels.Level_2_CCCode_AdHocMask}]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column width="125" uuid="b7a0b91d-363a-4bd8-83d5-34c40d7d70f9">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="5be0dcc0-1413-419e-a004-c1a6457cdbc9">
+										<property name="net.sf.jasperreports.components.condition.type" value="Text"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Created Date"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" pattern="medium,hide" isBlankWhenNull="true">
+									<reportElement key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="02d82c41-973a-45f9-9838-8e0526e0b06d"/>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{_detail_level__dbo_Users.DateEntered}]]></textFieldExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column width="125" uuid="80b97648-1638-4a3d-b462-eb38f7e4aaef">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="9112370c-7157-4b0d-9d82-3991b37bbfa5">
+										<property name="net.sf.jasperreports.components.condition.type" value="Text"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Last Updated Date"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" pattern="medium,hide" isBlankWhenNull="true">
+									<reportElement key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25" uuid="15eb1d87-1e1a-4517-a289-9a204c94209e"/>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{_detail_level__dbo_Users.LastUpdated}]]></textFieldExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+					</c:columnGroup>
+				</c:table>
+			</componentElement>
+		</band>
+	</summary>
+</jasperReport>

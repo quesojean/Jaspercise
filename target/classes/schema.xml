@@ -1,0 +1,1380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.jaspersoft.com/2007/SL/XMLSchema" version="1.0">
+  <dataSources>
+    <jdbcDataSource id="application">
+      <schemaMap>
+        <entry key="defaultSchema">
+          <string>dbo</string>
+        </entry>
+        <entry key="schema1">
+          <string>dbo</string>
+        </entry>
+      </schemaMap>
+    </jdbcDataSource>
+  </dataSources>
+  <itemGroups>
+    <itemGroup description="dbo_Users" descriptionId="" id="dbo_Users" label="Users" labelId="" resourceId="JoinTree_1">
+      <items>
+        <item defaultAgg="CountAll" description="Active" descriptionId="" dimensionOrMeasure="Dimension" id="Active" label="Active" labelId="" resourceId="JoinTree_1.dbo_Users.Active" />
+        <item description="FirstName" descriptionId="" dimensionOrMeasure="Dimension" id="FirstName" label="First Name" labelId="" resourceId="JoinTree_1.dbo_Users.FirstName" />
+        <item description="MiddleName" descriptionId="" dimensionOrMeasure="Dimension" id="MiddleName" label="Middle Name" labelId="" resourceId="JoinTree_1.dbo_Users.MiddleName" />
+        <item description="LastName" descriptionId="" dimensionOrMeasure="Dimension" id="LastName" label="Last Name" labelId="" resourceId="JoinTree_1.dbo_Users.LastName" />
+        <item description="KnownAs" descriptionId="" dimensionOrMeasure="Dimension" id="KnownAs" label="Known As" labelId="" resourceId="JoinTree_1.dbo_Users.KnownAs" />
+        <item description="AssistantName" descriptionId="" dimensionOrMeasure="Dimension" id="AssistantName" label="Assistant " labelId="" resourceId="JoinTree_1.dbo_Users.AssistantName" />
+        <item description="Email" descriptionId="" id="Email" label="Email" labelId="" resourceId="JoinTree_1.dbo_Users.Email" />
+        <item description="UserName" descriptionId="" dimensionOrMeasure="Dimension" id="UserName" label="User Name" labelId="" resourceId="JoinTree_1.dbo_Users.UserName" />
+        <item description="EmployeeID" descriptionId="" dimensionOrMeasure="Dimension" id="EmployeeID" label="Employee ID" labelId="" resourceId="JoinTree_1.dbo_Users.EmployeeID" />
+        <item description="Company" descriptionId="" id="Company" label="Company" labelId="" resourceId="JoinTree_1.dbo_Users.Company" />
+        <item description="CostCenter1" descriptionId="" dimensionOrMeasure="Dimension" id="CostCenter1" label="Cost Center 1" labelId="" resourceId="JoinTree_1.dbo_Users.CostCenter1" />
+        <item description="CostCenter2" descriptionId="" dimensionOrMeasure="Dimension" id="CostCenter2" label="Cost Center 2" labelId="" resourceId="JoinTree_1.dbo_Users.CostCenter2" />
+        <item defaultAgg="CountAll" description="User Type" descriptionId="" dimensionOrMeasure="Dimension" id="UserType" label="User Type" labelId="" resourceId="JoinTree_1.dbo_UserTypes.Name" />
+        <item description="Custom01" descriptionId="" id="Custom01" label="Custom01" labelId="" resourceId="JoinTree_1.dbo_Users.Custom01" />
+        <item description="Custom02" descriptionId="" id="Custom02" label="Custom02" labelId="" resourceId="JoinTree_1.dbo_Users.Custom02" />
+        <item description="Custom03" descriptionId="" id="Custom03" label="Custom03" labelId="" resourceId="JoinTree_1.dbo_Users.Custom03" />
+        <item description="Custom04" descriptionId="" id="Custom04" label="Custom04" labelId="" resourceId="JoinTree_1.dbo_Users.Custom04" />
+        <item description="Custom05" descriptionId="" id="Custom05" label="Custom05" labelId="" resourceId="JoinTree_1.dbo_Users.Custom05" />
+        <item description="Custom06" descriptionId="" id="Custom06" label="Custom06" labelId="" resourceId="JoinTree_1.dbo_Users.Custom06" />
+        <item description="Custom07" descriptionId="" id="Custom07" label="Custom07" labelId="" resourceId="JoinTree_1.dbo_Users.Custom07" />
+        <item description="Custom08" descriptionId="" id="Custom08" label="Custom08" labelId="" resourceId="JoinTree_1.dbo_Users.Custom08" />
+        <item description="Custom09" descriptionId="" id="Custom09" label="Custom09" labelId="" resourceId="JoinTree_1.dbo_Users.Custom09" />
+        <item description="Department" descriptionId="" id="Department" label="Department" labelId="" resourceId="JoinTree_1.dbo_Users.Department" />
+        <item description="Extension" descriptionId="" id="Extension" label="Extension" labelId="" resourceId="JoinTree_1.dbo_Users.Extension" />
+        <item description="Fax" descriptionId="" id="Fax" label="Fax" labelId="" resourceId="JoinTree_1.dbo_Users.Fax" />
+        <item description="JobTitle" descriptionId="" dimensionOrMeasure="Dimension" id="JobTitle" label="Job Title" labelId="" resourceId="JoinTree_1.dbo_Users.JobTitle" />
+        <item description="Mobile" descriptionId="" id="Mobile" label="Mobile" labelId="" resourceId="JoinTree_1.dbo_Users.Mobile" />
+        <item description="Pager" descriptionId="" id="Pager" label="Pager" labelId="" resourceId="JoinTree_1.dbo_Users.Pager" />
+        <item description="Phone" descriptionId="" id="Phone" label="Phone" labelId="" resourceId="JoinTree_1.dbo_Users.Phone" />
+        <item description="RouteName" descriptionId="" dimensionOrMeasure="Dimension" id="RouteName" label="Route Name" labelId="" resourceId="JoinTree_1.dbo_MailRoutes.RouteName" />
+        <item description="StopName" descriptionId="" dimensionOrMeasure="Dimension" id="StopName" label="Stop Name" labelId="" resourceId="JoinTree_1.dbo_MailInStops.StopName" />
+        <item defaultAgg="CountAll" description="FlWarden" descriptionId="" dimensionOrMeasure="Dimension" id="FlWarden" label="Floor Warden" labelId="" resourceId="JoinTree_1.dbo_Users.FlWarden" />
+        <item defaultAgg="CountAll" description="SpecialNeeds" descriptionId="" dimensionOrMeasure="Dimension" id="SpecialNeeds" label="Special Needs" labelId="" resourceId="JoinTree_1.dbo_Users.SpecialNeeds" />
+        <item defaultAgg="CountAll" description="SiteAdmin" descriptionId="" dimensionOrMeasure="Dimension" id="SiteAdmin" label="Site Admin" labelId="" resourceId="JoinTree_1.dbo_Users.SiteAdmin" />
+        <item description="DateEntered" descriptionId="" dimensionOrMeasure="Dimension" id="DateEntered" label="Created Date" labelId="" resourceId="JoinTree_1.dbo_Users.DateEntered" />
+        <item description="LastUpdated" descriptionId="" id="LastUpdated" label="Last Updated Date" labelId="" resourceId="JoinTree_1.dbo_Users.LastUpdated" />
+      </items>
+    </itemGroup>
+    <itemGroup description="dbo_Vw_CostCenters_15Levels" descriptionId="" id="dbo_Vw_CostCenters_15Levels" label="Cost Centers" labelId="" resourceId="JoinTree_1">
+      <items>
+        <item description="CCCode" descriptionId="" id="CCCode" label="CCCode" labelId="" resourceId="JoinTree_1.dbo_Vw_CostCenters_15Levels.CCCode" />
+        <item description="Level_1_CCCode" descriptionId="" id="Level_1_CCCode" label="Level_1_CCCode" labelId="" resourceId="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_1_CCCode" />
+        <item description="Level_2_CCCode" descriptionId="" id="Level_2_CCCode" label="Level_2_CCCode" labelId="" resourceId="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_2_CCCode" />
+        <item description="Level_3_CCCode" descriptionId="" id="Level_3_CCCode" label="Level_3_CCCode" labelId="" resourceId="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_3_CCCode" />
+        <item description="Level_4_CCCode" descriptionId="" id="Level_4_CCCode" label="Level_4_CCCode" labelId="" resourceId="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_4_CCCode" />
+        <item description="Level_5_CCCode" descriptionId="" id="Level_5_CCCode" label="Level_5_CCCode" labelId="" resourceId="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_5_CCCode" />
+        <item description="Level_6_CCCode" descriptionId="" id="Level_6_CCCode" label="Level_6_CCCode" labelId="" resourceId="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_6_CCCode" />
+        <item description="Level_7_CCCode" descriptionId="" id="Level_7_CCCode" label="Level_7_CCCode" labelId="" resourceId="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_7_CCCode" />
+        <item description="Level_8_CCCode" descriptionId="" id="Level_8_CCCode" label="Level_8_CCCode" labelId="" resourceId="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_8_CCCode" />
+        <item description="Level_9_CCCode" descriptionId="" id="Level_9_CCCode" label="Level_9_CCCode" labelId="" resourceId="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_9_CCCode" />
+        <item description="Level_10_CCCode" descriptionId="" id="Level_10_CCCode" label="Level_10_CCCode" labelId="" resourceId="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_10_CCCode" />
+        <item description="Level_11_CCCode" descriptionId="" id="Level_11_CCCode" label="Level_11_CCCode" labelId="" resourceId="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_11_CCCode" />
+        <item description="Level_12_CCCode" descriptionId="" id="Level_12_CCCode" label="Level_12_CCCode" labelId="" resourceId="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_12_CCCode" />
+        <item description="Level_13_CCCode" descriptionId="" id="Level_13_CCCode" label="Level_13_CCCode" labelId="" resourceId="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_13_CCCode" />
+        <item description="Level_14_CCCode" descriptionId="" id="Level_14_CCCode" label="Level_14_CCCode" labelId="" resourceId="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_14_CCCode" />
+        <item description="CCName" descriptionId="" id="CCName" label="CCName" labelId="" resourceId="JoinTree_1.dbo_Vw_CostCenters_15Levels.CCName" />
+        <item description="Level_1_Name" descriptionId="" id="Level_1_Name" label="Level_1_Name" labelId="" resourceId="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_1_Name" />
+        <item description="Level_2_Name" descriptionId="" id="Level_2_Name" label="Level_2_Name" labelId="" resourceId="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_2_Name" />
+        <item description="Level_3_Name" descriptionId="" id="Level_3_Name" label="Level_3_Name" labelId="" resourceId="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_3_Name" />
+        <item description="Level_4_Name" descriptionId="" id="Level_4_Name" label="Level_4_Name" labelId="" resourceId="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_4_Name" />
+        <item description="Level_5_Name" descriptionId="" id="Level_5_Name" label="Level_5_Name" labelId="" resourceId="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_5_Name" />
+        <item description="Level_6_Name" descriptionId="" id="Level_6_Name" label="Level_6_Name" labelId="" resourceId="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_6_Name" />
+        <item description="Level_7_Name" descriptionId="" id="Level_7_Name" label="Level_7_Name" labelId="" resourceId="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_7_Name" />
+        <item description="Level_8_Name" descriptionId="" id="Level_8_Name" label="Level_8_Name" labelId="" resourceId="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_8_Name" />
+        <item description="Level_9_Name" descriptionId="" id="Level_9_Name" label="Level_9_Name" labelId="" resourceId="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_9_Name" />
+        <item description="Level_10_Name" descriptionId="" id="Level_10_Name" label="Level_10_Name" labelId="" resourceId="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_10_Name" />
+        <item description="Level_11_Name" descriptionId="" id="Level_11_Name" label="Level_11_Name" labelId="" resourceId="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_11_Name" />
+        <item description="Level_12_Name" descriptionId="" id="Level_12_Name" label="Level_12_Name" labelId="" resourceId="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_12_Name" />
+        <item description="Level_13_Name" descriptionId="" id="Level_13_Name" label="Level_13_Name" labelId="" resourceId="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_13_Name" />
+        <item description="Level_14_Name" descriptionId="" id="Level_14_Name" label="Level_14_Name" labelId="" resourceId="JoinTree_1.dbo_Vw_CostCenters_15Levels.Level_14_Name" />
+      </items>
+    </itemGroup>
+    <itemGroup description="dbo_Buildings" descriptionId="" id="dbo_Buildings" label="Building" labelId="" resourceId="JoinTree_1">
+      <items>
+        <item description="Name" descriptionId="" dimensionOrMeasure="Dimension" id="Name" label="Building Name" labelId="" resourceId="JoinTree_1.dbo_Buildings.Name" />
+        <item description="BuildingCode" descriptionId="" dimensionOrMeasure="Dimension" id="BuildingCode" label="Building Code" labelId="" resourceId="JoinTree_1.dbo_Buildings.BuildingCode" />
+        <item description="Address" descriptionId="" id="Address" label="Address" labelId="" resourceId="JoinTree_1.dbo_Buildings.Address" />
+        <item description="City" descriptionId="" id="City" label="City" labelId="" resourceId="JoinTree_1.dbo_Buildings.City" />
+        <item description="PostalCode" descriptionId="" dimensionOrMeasure="Dimension" id="PostalCode" label="Postal Code" labelId="" resourceId="JoinTree_1.dbo_Buildings.PostalCode" />
+      </items>
+    </itemGroup>
+    <itemGroup description="dbo_SpaceFloors" descriptionId="" id="dbo_SpaceFloors" label="Floor" labelId="" resourceId="JoinTree_1">
+      <items>
+        <item description="FloorName" descriptionId="" dimensionOrMeasure="Dimension" id="FloorName" label="Floor" labelId="" resourceId="JoinTree_1.dbo_SpaceFloors.FloorName" />
+      </items>
+    </itemGroup>
+    <itemGroup description="dbo_MoveRoomList" descriptionId="" id="dbo_MoveRoomList" label="Room" labelId="" resourceId="JoinTree_1">
+      <items>
+        <item description="RoomName" descriptionId="" dimensionOrMeasure="Dimension" id="RoomName" label="Room" labelId="" resourceId="JoinTree_1.dbo_MoveRoomList.RoomName" />
+        <item description="Capacity" descriptionId="" id="Capacity" label="Capacity" labelId="" resourceId="JoinTree_1.dbo_MoveRoomList.Capacity" />
+        <item description="SquareFeet" descriptionId="" dimensionOrMeasure="Measure" id="SquareFeet" label="Area" labelId="" resourceId="JoinTree_1.dbo_MoveRoomList.SquareFeet" />
+        <item description="RentableSquareFeet" descriptionId="" dimensionOrMeasure="Measure" id="RentableSquareFeet" label="Rentable Area" labelId="" resourceId="JoinTree_1.dbo_MoveRoomList.RentableSquareFeet" />
+        <item description="SignNumber" descriptionId="" dimensionOrMeasure="Dimension" id="SignNumber" label="Description" labelId="" resourceId="JoinTree_1.dbo_MoveRoomList.SignNumber" />
+        <item defaultAgg="CountAll" description="IDFName" descriptionId="" dimensionOrMeasure="Dimension" id="IDFName" label="Jack Name" labelId="" resourceId="JoinTree_1.dbo_MoveRoomIDF.IDFName" />
+        <item defaultAgg="CountAll" description="IDFTypeName" descriptionId="" dimensionOrMeasure="Dimension" id="IDFTypeName" label="Jack Type" labelId="" resourceId="JoinTree_1.dbo_MoveRoomIDFTypes.IDFTypeName" />
+        <item defaultAgg="None" description="RoomID" descriptionId="" dimensionOrMeasure="Dimension" id="RoomID" label="iOffice Room ID" labelId="" resourceId="JoinTree_1.dbo_MoveRoomList.RoomID" />
+      </items>
+    </itemGroup>
+    <itemGroup description="dbo_MoveRoomTypes" descriptionId="" id="dbo_MoveRoomTypes" label="Room Type" labelId="" resourceId="JoinTree_1">
+      <items>
+        <item description="RoomTypeDesc" descriptionId="" dimensionOrMeasure="Dimension" id="RoomTypeDesc" label="Room Type" labelId="" resourceId="JoinTree_1.dbo_MoveRoomTypes.RoomTypeDesc" />
+      </items>
+    </itemGroup>
+    <itemGroup description="dbo_States" descriptionId="" id="dbo_States" label="State" labelId="" resourceId="JoinTree_1">
+      <items>
+        <item description="StateName" descriptionId="" dimensionOrMeasure="Dimension" id="StateName" label="State Name" labelId="" resourceId="JoinTree_1.dbo_States.StateName" />
+      </items>
+    </itemGroup>
+    <itemGroup description="dbo_Countries" descriptionId="" id="dbo_Countries" label="Country" labelId="" resourceId="JoinTree_1">
+      <items>
+        <item description="CountryName" descriptionId="" dimensionOrMeasure="Dimension" id="CountryName" label="Country" labelId="" resourceId="JoinTree_1.dbo_Countries.CountryName" />
+      </items>
+    </itemGroup>
+    <itemGroup description="dbo_CenterPermissions" descriptionId="" id="dbo_CenterPermissions" label="Center Permissions" labelId="" resourceId="JoinTree_1">
+      <items>
+        <item defaultAgg="CountAll" description="CenterName" descriptionId="" dimensionOrMeasure="Dimension" id="CenterName" label="Center" labelId="" resourceId="JoinTree_1.dbo_Centers.CenterName" />
+        <item defaultAgg="CountAll" description="UserPermission" descriptionId="" dimensionOrMeasure="Dimension" id="UserPermission" label="Center Permission" labelId="" resourceId="JoinTree_1.dbo_CenterPermissions.UserPermission" />
+      </items>
+    </itemGroup>
+    <itemGroup description="CreatedByUser" descriptionId="" id="CreatedByUser" label="Created By User" labelId="" resourceId="JoinTree_1">
+      <items>
+        <item description="FirstName1" descriptionId="" dimensionOrMeasure="Dimension" id="FirstName1" label="Created By First Name" labelId="" resourceId="JoinTree_1.CreatedByUser.FirstName" />
+        <item description="LastName1" descriptionId="" dimensionOrMeasure="Dimension" id="LastName1" label="Created By Last Name" labelId="" resourceId="JoinTree_1.CreatedByUser.LastName" />
+        <item description="UserName1" descriptionId="" dimensionOrMeasure="Dimension" id="UserName1" label="Created By User Name" labelId="" resourceId="JoinTree_1.CreatedByUser.UserName" />
+      </items>
+    </itemGroup>
+    <itemGroup description="LastUpdatedByUser" descriptionId="" id="LastUpdatedByUser" label="Last Updated By User" labelId="" resourceId="JoinTree_1">
+      <items>
+        <item description="FirstName2" descriptionId="" dimensionOrMeasure="Dimension" id="FirstName2" label="Last Updated By First Name" labelId="" resourceId="JoinTree_1.LastUpdatedByUser.FirstName" />
+        <item description="LastName2" descriptionId="" dimensionOrMeasure="Dimension" id="LastName2" label="Last Updated By Last Name" labelId="" resourceId="JoinTree_1.LastUpdatedByUser.LastName" />
+        <item description="UserName2" descriptionId="" dimensionOrMeasure="Dimension" id="UserName2" label="Last Updated By User Name" labelId="" resourceId="JoinTree_1.LastUpdatedByUser.UserName" />
+      </items>
+    </itemGroup>
+    <itemGroup description="dbo_ParkingBuildings" descriptionId="" id="dbo_ParkingBuildings" label="Parking" labelId="" resourceId="JoinTree_1">
+      <items>
+        <item defaultAgg="None" description="Name1" descriptionId="" dimensionOrMeasure="Dimension" id="Name1" label="Parking Building Name" labelId="" resourceId="JoinTree_1.dbo_ParkingBuildings.Name" />
+        <item defaultAgg="None" description="BuildingCode1" descriptionId="" dimensionOrMeasure="Dimension" id="BuildingCode1" label="Parking Building Code" labelId="" resourceId="JoinTree_1.dbo_ParkingBuildings.BuildingCode" />
+        <item defaultAgg="None" description="FloorName1" descriptionId="" dimensionOrMeasure="Dimension" id="FloorName1" label="Parking Floor" labelId="" resourceId="JoinTree_1.dbo_ParkingSpaceFloors.FloorName" />
+        <item defaultAgg="None" description="RoomName1" descriptionId="" dimensionOrMeasure="Dimension" id="RoomName1" label="Parking Room" labelId="" resourceId="JoinTree_1.dbo_ParkingMoveRoomList.RoomName" />
+        <item defaultAgg="None" description="Address1" descriptionId="" dimensionOrMeasure="Dimension" id="Address1" label="Parking Address" labelId="" resourceId="JoinTree_1.dbo_ParkingBuildings.Address" />
+        <item defaultAgg="None" description="City1" descriptionId="" dimensionOrMeasure="Dimension" id="City1" label="Parking City" labelId="" resourceId="JoinTree_1.dbo_ParkingBuildings.City" />
+        <item defaultAgg="None" description="StateName1" descriptionId="" dimensionOrMeasure="Dimension" id="StateName1" label="Parking State" labelId="" resourceId="JoinTree_1.dbo_ParkingStates.StateName" />
+        <item defaultAgg="None" description="PostalCode1" descriptionId="" dimensionOrMeasure="Dimension" id="PostalCode1" label="Parking Postal Code" labelId="" resourceId="JoinTree_1.dbo_ParkingBuildings.PostalCode" />
+      </items>
+    </itemGroup>
+  </itemGroups>
+  <resources>
+    <jdbcTable id="CreatedByUser" datasourceId="application" tableName="schema1.Users">
+      <fieldList>
+        <field id="Active" fieldDBName="Active" type="java.lang.String" />
+        <field id="AddedByID" fieldDBName="AddedByID" type="java.lang.Integer" />
+        <field id="Address" fieldDBName="Address" type="java.lang.String" />
+        <field id="AllowMessaging" fieldDBName="AllowMessaging" type="java.lang.String" />
+        <field id="AltDeliveryID" fieldDBName="AltDeliveryID" type="java.lang.Integer" />
+        <field id="AssistantID" fieldDBName="AssistantID" type="java.lang.Integer" />
+        <field id="AssistantName" fieldDBName="AssistantName" type="java.lang.String" />
+        <field id="BuildingID" fieldDBName="BuildingID" type="java.lang.Integer" />
+        <field id="City" fieldDBName="City" type="java.lang.String" />
+        <field id="Comments" fieldDBName="Comments" type="java.lang.String" />
+        <field id="Company" fieldDBName="Company" type="java.lang.String" />
+        <field id="CopyAlert" fieldDBName="CopyAlert" type="java.lang.String" />
+        <field id="CostCenter1" fieldDBName="CostCenter1" type="java.lang.String" />
+        <field id="CostCenter2" fieldDBName="CostCenter2" type="java.lang.String" />
+        <field id="CostCenterID" fieldDBName="CostCenterID" type="java.lang.Integer" />
+        <field id="Country" fieldDBName="Country" type="java.lang.String" />
+        <field id="CountryCode" fieldDBName="CountryCode" type="java.lang.String" />
+        <field id="Custom01" fieldDBName="Custom01" type="java.lang.String" />
+        <field id="Custom02" fieldDBName="Custom02" type="java.lang.String" />
+        <field id="Custom03" fieldDBName="Custom03" type="java.lang.String" />
+        <field id="Custom04" fieldDBName="Custom04" type="java.lang.String" />
+        <field id="Custom05" fieldDBName="Custom05" type="java.lang.String" />
+        <field id="Custom06" fieldDBName="Custom06" type="java.lang.String" />
+        <field id="Custom07" fieldDBName="Custom07" type="java.lang.String" />
+        <field id="Custom08" fieldDBName="Custom08" type="java.lang.String" />
+        <field id="Custom09" fieldDBName="Custom09" type="java.lang.String" />
+        <field id="DateEntered" fieldDBName="DateEntered" type="java.sql.Timestamp" />
+        <field id="DefAssetCenter" fieldDBName="DefAssetCenter" type="java.lang.Integer" />
+        <field id="DefCatalogCenter" fieldDBName="DefCatalogCenter" type="java.lang.Integer" />
+        <field id="DefCopyCenter" fieldDBName="DefCopyCenter" type="java.lang.Integer" />
+        <field id="DefEventsCenter" fieldDBName="DefEventsCenter" type="java.lang.Integer" />
+        <field id="DefFileRoomCenter" fieldDBName="DefFileRoomCenter" type="java.lang.Integer" />
+        <field id="DefInventoryCenter" fieldDBName="DefInventoryCenter" type="java.lang.Integer" />
+        <field id="DefMailCenter" fieldDBName="DefMailCenter" type="java.lang.Integer" />
+        <field id="DefMaintenanceCenter" fieldDBName="DefMaintenanceCenter" type="java.lang.Integer" />
+        <field id="DefMoveCenter" fieldDBName="DefMoveCenter" type="java.lang.Integer" />
+        <field id="defReservationCenter" fieldDBName="defReservationCenter" type="java.lang.Integer" />
+        <field id="DefSpaceCenter" fieldDBName="DefSpaceCenter" type="java.lang.Integer" />
+        <field id="DefVisitorCenter" fieldDBName="DefVisitorCenter" type="java.lang.Integer" />
+        <field id="DeleteAlert" fieldDBName="DeleteAlert" type="java.lang.String" />
+        <field id="Department" fieldDBName="Department" type="java.lang.String" />
+        <field id="Email" fieldDBName="Email" type="java.lang.String" />
+        <field id="EmployeeID" fieldDBName="EmployeeID" type="java.lang.String" />
+        <field id="EULAAgreementDate" fieldDBName="EULAAgreementDate" type="java.sql.Timestamp" />
+        <field id="Extension" fieldDBName="Extension" type="java.lang.String" />
+        <field id="Fax" fieldDBName="Fax" type="java.lang.String" />
+        <field id="FirstName" fieldDBName="FirstName" type="java.lang.String" />
+        <field id="Floor" fieldDBName="Floor" type="java.lang.String" />
+        <field id="FlWarden" fieldDBName="FlWarden" type="java.lang.String" />
+        <field id="InterfaceCSS" fieldDBName="InterfaceCSS" type="java.lang.String" />
+        <field id="isIOfficeAdmin" fieldDBName="isIOfficeAdmin" type="java.lang.String" />
+        <field id="ItemsPerPage" fieldDBName="ItemsPerPage" type="java.lang.Integer" />
+        <field id="JobTitle" fieldDBName="JobTitle" type="java.lang.String" />
+        <field id="KnownAs" fieldDBName="KnownAs" type="java.lang.String" />
+        <field id="LanguageCode" fieldDBName="LanguageCode" type="java.lang.String" />
+        <field id="LastLocationDate" fieldDBName="LastLocationDate" type="java.sql.Timestamp" />
+        <field id="LastName" fieldDBName="LastName" type="java.lang.String" />
+        <field id="LastUpdated" fieldDBName="LastUpdated" type="java.sql.Timestamp" />
+        <field id="LastUpdatedByUserID" fieldDBName="LastUpdatedByUserID" type="java.lang.Integer" />
+        <field id="LastVisited" fieldDBName="LastVisited" type="java.sql.Timestamp" />
+        <field id="Latitude" fieldDBName="Latitude" type="java.math.BigDecimal" />
+        <field id="LiveSearchItemsPerPage" fieldDBName="LiveSearchItemsPerPage" type="java.lang.Integer" />
+        <field id="Longitude" fieldDBName="Longitude" type="java.math.BigDecimal" />
+        <field id="MailAlert" fieldDBName="MailAlert" type="java.lang.String" />
+        <field id="MailStopID" fieldDBName="MailStopID" type="java.lang.Integer" />
+        <field id="MiddleName" fieldDBName="MiddleName" type="java.lang.String" />
+        <field id="Mobile" fieldDBName="Mobile" type="java.lang.String" />
+        <field id="MobileServiceId" fieldDBName="MobileServiceId" type="java.lang.Integer" />
+        <field id="MoveAlert" fieldDBName="MoveAlert" type="java.lang.String" />
+        <field id="Pager" fieldDBName="Pager" type="java.lang.String" />
+        <field id="ParkingSpace" fieldDBName="ParkingSpace" type="java.lang.String" />
+        <field id="ParkingSpaceRoomId" fieldDBName="ParkingSpaceRoomId" type="java.lang.Integer" />
+        <field id="Password" fieldDBName="Password" type="java.lang.String" />
+        <field id="Phone" fieldDBName="Phone" type="java.lang.String" />
+        <field id="PostalCode" fieldDBName="PostalCode" type="java.lang.String" />
+        <field id="Room" fieldDBName="Room" type="java.lang.String" />
+        <field id="RoomId" fieldDBName="RoomId" type="java.lang.Integer" />
+        <field id="ShowHelp" fieldDBName="ShowHelp" type="java.lang.String" />
+        <field id="SiteAdmin" fieldDBName="SiteAdmin" type="java.lang.String" />
+        <field id="SpecialNeeds" fieldDBName="SpecialNeeds" type="java.lang.String" />
+        <field id="State" fieldDBName="State" type="java.lang.String" />
+        <field id="SystemUse" fieldDBName="SystemUse" type="java.lang.Boolean" />
+        <field id="UserID" fieldDBName="UserID" type="java.lang.Integer" />
+        <field id="UserName" fieldDBName="UserName" type="java.lang.String" />
+        <field id="UserTypeId" fieldDBName="UserTypeId" type="java.lang.Integer" />
+        <field id="VisitorAlert" fieldDBName="VisitorAlert" type="java.lang.String" />
+      </fieldList>
+    </jdbcTable>
+    <jdbcTable id="dbo_Buildings" datasourceId="application" tableName="schema1.Buildings">
+      <fieldList>
+        <field id="Active" fieldDBName="Active" type="java.lang.String" />
+        <field id="Address" fieldDBName="Address" type="java.lang.String" />
+        <field id="Address2" fieldDBName="Address2" type="java.lang.String" />
+        <field id="BuildingCode" fieldDBName="BuildingCode" type="java.lang.String" />
+        <field id="City" fieldDBName="City" type="java.lang.String" />
+        <field id="CountryID" fieldDBName="CountryID" type="java.lang.Integer" />
+        <field id="DateEntered" fieldDBName="DateEntered" type="java.sql.Timestamp" />
+        <field id="dateUpdated" fieldDBName="dateUpdated" type="java.sql.Timestamp" />
+        <field id="DefaultBuilding" fieldDBName="DefaultBuilding" type="java.lang.String" />
+        <field id="enteredByUserId" fieldDBName="enteredByUserId" type="java.lang.Integer" />
+        <field id="FieldID" fieldDBName="FieldID" type="java.lang.Integer" />
+        <field id="lastUpdatedByUserId" fieldDBName="lastUpdatedByUserId" type="java.lang.Integer" />
+        <field id="Latitude" fieldDBName="Latitude" type="java.math.BigDecimal" />
+        <field id="LeaseCost" fieldDBName="LeaseCost" type="java.math.BigDecimal" />
+        <field id="Longitude" fieldDBName="Longitude" type="java.math.BigDecimal" />
+        <field id="Name" fieldDBName="Name" type="java.lang.String" />
+        <field id="ParkingFlag" fieldDBName="ParkingFlag" type="java.lang.String" />
+        <field id="PostalCode" fieldDBName="PostalCode" type="java.lang.String" />
+        <field id="Reassigned" fieldDBName="Reassigned" type="java.lang.String" />
+        <field id="SortOrder" fieldDBName="SortOrder" type="java.lang.Integer" />
+        <field id="StateID" fieldDBName="StateID" type="java.lang.Integer" />
+      </fieldList>
+    </jdbcTable>
+    <jdbcTable id="dbo_CenterPermissions" datasourceId="application" tableName="schema1.CenterPermissions">
+      <fieldList>
+        <field id="CenterID" fieldDBName="CenterID" type="java.lang.Integer" />
+        <field id="CenterPerID" fieldDBName="CenterPerID" type="java.lang.Integer" />
+        <field id="DateEntered" fieldDBName="DateEntered" type="java.sql.Timestamp" />
+        <field id="UserID" fieldDBName="UserID" type="java.lang.Integer" />
+        <field id="UserPermission" dataSetExpression="if(UserStatus=='mn','Manager',if(UserStatus=='cu','Customer',if(UserStatus=='tc','Technician',if(UserStatus=='op','Operator',if(UserStatus=='ad','Administrator','Unknown')))))" fieldDBName="UserPermission" type="java.lang.String" />
+        <field id="UserStatus" fieldDBName="UserStatus" type="java.lang.String" />
+      </fieldList>
+    </jdbcTable>
+    <jdbcTable id="dbo_Centers" datasourceId="application" tableName="schema1.Centers">
+      <fieldList>
+        <field id="Active" fieldDBName="Active" type="java.lang.String" />
+        <field id="Address" fieldDBName="Address" type="java.lang.String" />
+        <field id="CenterID" fieldDBName="CenterID" type="java.lang.Integer" />
+        <field id="CenterName" fieldDBName="CenterName" type="java.lang.String" />
+        <field id="CenterTypeCode" fieldDBName="CenterTypeCode" type="java.lang.String" />
+        <field id="CenterTypeID" fieldDBName="CenterTypeID" type="java.lang.Integer" />
+        <field id="City" fieldDBName="City" type="java.lang.String" />
+        <field id="Comments" fieldDBName="Comments" type="java.lang.String" />
+        <field id="DateEntered" fieldDBName="DateEntered" type="java.sql.Timestamp" />
+        <field id="EPIC" fieldDBName="EPIC" type="java.lang.String" />
+        <field id="Fax" fieldDBName="Fax" type="java.lang.String" />
+        <field id="HUBFlag" fieldDBName="HUBFlag" type="java.lang.String" />
+        <field id="LastUpdated" fieldDBName="LastUpdated" type="java.sql.Timestamp" />
+        <field id="Phone" fieldDBName="Phone" type="java.lang.String" />
+        <field id="PostalCode" fieldDBName="PostalCode" type="java.lang.String" />
+        <field id="StateID" fieldDBName="StateID" type="java.lang.Integer" />
+        <field id="TimeZoneID" fieldDBName="TimeZoneID" type="java.lang.Integer" />
+        <field id="UseTimeChange" fieldDBName="UseTimeChange" type="java.lang.String" />
+      </fieldList>
+    </jdbcTable>
+    <jdbcTable id="dbo_Countries" datasourceId="application" tableName="schema1.Countries">
+      <fieldList>
+        <field id="active" fieldDBName="active" type="java.lang.Boolean" />
+        <field id="alpha2Code" fieldDBName="alpha2Code" type="java.lang.String" />
+        <field id="alpha3Code" fieldDBName="alpha3Code" type="java.lang.String" />
+        <field id="CountryID" fieldDBName="CountryID" type="java.lang.Integer" />
+        <field id="CountryName" fieldDBName="CountryName" type="java.lang.String" />
+        <field id="DefaultSelected" fieldDBName="DefaultSelected" type="java.lang.String" />
+        <field id="isoCode" fieldDBName="isoCode" type="java.lang.String" />
+        <field id="numericCode" fieldDBName="numericCode" type="java.lang.String" />
+        <field id="status" fieldDBName="status" type="java.lang.String" />
+        <field id="subdivisionCategoryId" fieldDBName="subdivisionCategoryId" type="java.lang.Integer" />
+        <field id="subdivisionCategoryName" fieldDBName="subdivisionCategoryName" type="java.lang.String" />
+        <field id="validityEndDate" fieldDBName="validityEndDate" type="java.util.Date" />
+      </fieldList>
+    </jdbcTable>
+    <jdbcTable id="dbo_MailInStops" datasourceId="application" tableName="schema1.MailInStops">
+      <fieldList>
+        <field id="Active" fieldDBName="Active" type="java.lang.String" />
+        <field id="BuildingID" fieldDBName="BuildingID" type="java.lang.Integer" />
+        <field id="CenterID" fieldDBName="CenterID" type="java.lang.Integer" />
+        <field id="DateCreated" fieldDBName="DateCreated" type="java.sql.Timestamp" />
+        <field id="DateUpdated" fieldDBName="DateUpdated" type="java.sql.Timestamp" />
+        <field id="RouteID" fieldDBName="RouteID" type="java.lang.Integer" />
+        <field id="SortOrder" fieldDBName="SortOrder" type="java.lang.Integer" />
+        <field id="StopID" fieldDBName="StopID" type="java.lang.Integer" />
+        <field id="StopName" fieldDBName="StopName" type="java.lang.String" />
+      </fieldList>
+    </jdbcTable>
+    <jdbcTable id="dbo_MailRoutes" datasourceId="application" tableName="schema1.MailRoutes">
+      <fieldList>
+        <field id="Active" fieldDBName="Active" type="java.lang.String" />
+        <field id="CenterID" fieldDBName="CenterID" type="java.lang.Integer" />
+        <field id="DateCreated" fieldDBName="DateCreated" type="java.sql.Timestamp" />
+        <field id="DateUpdated" fieldDBName="DateUpdated" type="java.sql.Timestamp" />
+        <field id="EnteredByUserId" fieldDBName="EnteredByUserId" type="java.lang.Integer" />
+        <field id="ForShipping" fieldDBName="ForShipping" type="java.lang.String" />
+        <field id="LastUpdatedByUserId" fieldDBName="LastUpdatedByUserId" type="java.lang.Integer" />
+        <field id="OperatorUserID" fieldDBName="OperatorUserID" type="java.lang.Integer" />
+        <field id="RouteID" fieldDBName="RouteID" type="java.lang.Integer" />
+        <field id="RouteName" fieldDBName="RouteName" type="java.lang.String" />
+        <field id="SortOrder" fieldDBName="SortOrder" type="java.lang.Integer" />
+      </fieldList>
+    </jdbcTable>
+    <jdbcTable id="dbo_MoveRoomIDF" datasourceId="application" tableName="schema1.MoveRoomIDF">
+      <fieldList>
+        <field id="IDFID" fieldDBName="IDFID" type="java.lang.Integer" />
+        <field id="IDFName" fieldDBName="IDFName" type="java.lang.String" />
+        <field id="IDFTypeID" fieldDBName="IDFTypeID" type="java.lang.Integer" />
+        <field id="RoomID" fieldDBName="RoomID" type="java.lang.Integer" />
+      </fieldList>
+    </jdbcTable>
+    <jdbcTable id="dbo_MoveRoomIDFTypes" datasourceId="application" tableName="schema1.MoveRoomIDFTypes">
+      <fieldList>
+        <field id="IDFTypeID" fieldDBName="IDFTypeID" type="java.lang.Integer" />
+        <field id="IDFTypeName" fieldDBName="IDFTypeName" type="java.lang.String" />
+      </fieldList>
+    </jdbcTable>
+    <jdbcTable id="dbo_MoveRoomList" datasourceId="application" tableName="schema1.MoveRoomList">
+      <fieldList>
+        <field id="Active" fieldDBName="Active" type="java.lang.String" />
+        <field id="Capacity" fieldDBName="Capacity" type="java.lang.Integer" />
+        <field id="CostCenterId" fieldDBName="CostCenterId" type="java.lang.Integer" />
+        <field id="Custom01" fieldDBName="Custom01" type="java.lang.String" />
+        <field id="Custom02" fieldDBName="Custom02" type="java.lang.String" />
+        <field id="Custom03" fieldDBName="Custom03" type="java.lang.String" />
+        <field id="Custom04" fieldDBName="Custom04" type="java.lang.String" />
+        <field id="Custom05" fieldDBName="Custom05" type="java.lang.String" />
+        <field id="Custom06" fieldDBName="Custom06" type="java.lang.String" />
+        <field id="Custom07" fieldDBName="Custom07" type="java.lang.String" />
+        <field id="Custom08" fieldDBName="Custom08" type="java.lang.String" />
+        <field id="Custom09" fieldDBName="Custom09" type="java.lang.String" />
+        <field id="DateEntered" fieldDBName="DateEntered" type="java.sql.Timestamp" />
+        <field id="enteredByUserId" fieldDBName="enteredByUserId" type="java.lang.Integer" />
+        <field id="ExchangeAddress" fieldDBName="ExchangeAddress" type="java.lang.String" />
+        <field id="FieldID" fieldDBName="FieldID" type="java.lang.Integer" />
+        <field id="FloorID" fieldDBName="FloorID" type="java.lang.Integer" />
+        <field id="LastUpdated" fieldDBName="LastUpdated" type="java.sql.Timestamp" />
+        <field id="lastUpdatedByUserId" fieldDBName="lastUpdatedByUserId" type="java.lang.Integer" />
+        <field id="longDescription" fieldDBName="longDescription" type="java.lang.String" />
+        <field id="MailStopId" fieldDBName="MailStopId" type="java.lang.Integer" />
+        <field id="RentableSquareFeet" fieldDBName="RentableSquareFeet" type="java.math.BigDecimal" />
+        <field id="Reservable" fieldDBName="Reservable" type="java.lang.Boolean" />
+        <field id="RoomID" fieldDBName="RoomID" type="java.lang.Integer" />
+        <field id="RoomName" fieldDBName="RoomName" type="java.lang.String" />
+        <field id="RoomTypeID" fieldDBName="RoomTypeID" type="java.lang.Integer" />
+        <field id="SignNumber" fieldDBName="SignNumber" type="java.lang.String" />
+        <field id="Site" fieldDBName="Site" type="java.lang.String" />
+        <field id="SquareFeet" fieldDBName="SquareFeet" type="java.math.BigDecimal" />
+        <field id="Status" fieldDBName="Status" type="java.lang.String" />
+      </fieldList>
+    </jdbcTable>
+    <jdbcTable id="dbo_MoveRoomTypes" datasourceId="application" tableName="schema1.MoveRoomTypes">
+      <fieldList>
+        <field id="Active" fieldDBName="Active" type="java.lang.String" />
+        <field id="CenterId" fieldDBName="CenterId" type="java.lang.Integer" />
+        <field id="ContentFlag" fieldDBName="ContentFlag" type="java.lang.Integer" />
+        <field id="DateEntered" fieldDBName="DateEntered" type="java.sql.Timestamp" />
+        <field id="DateUpdated" fieldDBName="DateUpdated" type="java.sql.Timestamp" />
+        <field id="DefaultRoomType" fieldDBName="DefaultRoomType" type="java.lang.Boolean" />
+        <field id="EnteredByUserId" fieldDBName="EnteredByUserId" type="java.lang.Integer" />
+        <field id="LastUpdatedByUserId" fieldDBName="LastUpdatedByUserId" type="java.lang.Integer" />
+        <field id="RoomTypeColor" fieldDBName="RoomTypeColor" type="java.lang.String" />
+        <field id="RoomTypeCost" fieldDBName="RoomTypeCost" type="java.math.BigDecimal" />
+        <field id="RoomTypeDesc" fieldDBName="RoomTypeDesc" type="java.lang.String" />
+        <field id="RoomTypeID" fieldDBName="RoomTypeID" type="java.lang.Integer" />
+        <field id="SortOrder" fieldDBName="SortOrder" type="java.lang.Integer" />
+      </fieldList>
+    </jdbcTable>
+    <jdbcTable id="dbo_ParkingBuildings" datasourceId="application" tableName="schema1.Buildings">
+      <fieldList>
+        <field id="Active" fieldDBName="Active" type="java.lang.String" />
+        <field id="Address" fieldDBName="Address" type="java.lang.String" />
+        <field id="Address2" fieldDBName="Address2" type="java.lang.String" />
+        <field id="BuildingCode" fieldDBName="BuildingCode" type="java.lang.String" />
+        <field id="City" fieldDBName="City" type="java.lang.String" />
+        <field id="CountryID" fieldDBName="CountryID" type="java.lang.Integer" />
+        <field id="DateEntered" fieldDBName="DateEntered" type="java.sql.Timestamp" />
+        <field id="dateUpdated" fieldDBName="dateUpdated" type="java.sql.Timestamp" />
+        <field id="DefaultBuilding" fieldDBName="DefaultBuilding" type="java.lang.String" />
+        <field id="enteredByUserId" fieldDBName="enteredByUserId" type="java.lang.Integer" />
+        <field id="FieldID" fieldDBName="FieldID" type="java.lang.Integer" />
+        <field id="lastUpdatedByUserId" fieldDBName="lastUpdatedByUserId" type="java.lang.Integer" />
+        <field id="Latitude" fieldDBName="Latitude" type="java.math.BigDecimal" />
+        <field id="LeaseCost" fieldDBName="LeaseCost" type="java.math.BigDecimal" />
+        <field id="Longitude" fieldDBName="Longitude" type="java.math.BigDecimal" />
+        <field id="Name" fieldDBName="Name" type="java.lang.String" />
+        <field id="ParkingFlag" fieldDBName="ParkingFlag" type="java.lang.String" />
+        <field id="PostalCode" fieldDBName="PostalCode" type="java.lang.String" />
+        <field id="Reassigned" fieldDBName="Reassigned" type="java.lang.String" />
+        <field id="SortOrder" fieldDBName="SortOrder" type="java.lang.Integer" />
+        <field id="StateID" fieldDBName="StateID" type="java.lang.Integer" />
+      </fieldList>
+    </jdbcTable>
+    <jdbcTable id="dbo_ParkingMoveRoomList" datasourceId="application" tableName="schema1.MoveRoomList">
+      <fieldList>
+        <field id="Active" fieldDBName="Active" type="java.lang.String" />
+        <field id="Capacity" fieldDBName="Capacity" type="java.lang.Integer" />
+        <field id="CostCenterId" fieldDBName="CostCenterId" type="java.lang.Integer" />
+        <field id="Custom01" fieldDBName="Custom01" type="java.lang.String" />
+        <field id="Custom02" fieldDBName="Custom02" type="java.lang.String" />
+        <field id="Custom03" fieldDBName="Custom03" type="java.lang.String" />
+        <field id="Custom04" fieldDBName="Custom04" type="java.lang.String" />
+        <field id="Custom05" fieldDBName="Custom05" type="java.lang.String" />
+        <field id="Custom06" fieldDBName="Custom06" type="java.lang.String" />
+        <field id="Custom07" fieldDBName="Custom07" type="java.lang.String" />
+        <field id="Custom08" fieldDBName="Custom08" type="java.lang.String" />
+        <field id="Custom09" fieldDBName="Custom09" type="java.lang.String" />
+        <field id="DateEntered" fieldDBName="DateEntered" type="java.sql.Timestamp" />
+        <field id="enteredByUserId" fieldDBName="enteredByUserId" type="java.lang.Integer" />
+        <field id="ExchangeAddress" fieldDBName="ExchangeAddress" type="java.lang.String" />
+        <field id="FieldID" fieldDBName="FieldID" type="java.lang.Integer" />
+        <field id="FloorID" fieldDBName="FloorID" type="java.lang.Integer" />
+        <field id="LastUpdated" fieldDBName="LastUpdated" type="java.sql.Timestamp" />
+        <field id="lastUpdatedByUserId" fieldDBName="lastUpdatedByUserId" type="java.lang.Integer" />
+        <field id="longDescription" fieldDBName="longDescription" type="java.lang.String" />
+        <field id="MailStopId" fieldDBName="MailStopId" type="java.lang.Integer" />
+        <field id="RentableSquareFeet" fieldDBName="RentableSquareFeet" type="java.math.BigDecimal" />
+        <field id="Reservable" fieldDBName="Reservable" type="java.lang.Boolean" />
+        <field id="RoomID" fieldDBName="RoomID" type="java.lang.Integer" />
+        <field id="RoomName" fieldDBName="RoomName" type="java.lang.String" />
+        <field id="RoomTypeID" fieldDBName="RoomTypeID" type="java.lang.Integer" />
+        <field id="SignNumber" fieldDBName="SignNumber" type="java.lang.String" />
+        <field id="Site" fieldDBName="Site" type="java.lang.String" />
+        <field id="SquareFeet" fieldDBName="SquareFeet" type="java.math.BigDecimal" />
+        <field id="Status" fieldDBName="Status" type="java.lang.String" />
+      </fieldList>
+    </jdbcTable>
+    <jdbcTable id="dbo_ParkingSpaceFloors" datasourceId="application" tableName="schema1.SpaceFloors">
+      <fieldList>
+        <field id="Active" fieldDBName="Active" type="java.lang.String" />
+        <field id="CenterID" fieldDBName="CenterID" type="java.lang.Integer" />
+        <field id="CostPerSquareFt" fieldDBName="CostPerSquareFt" type="java.math.BigDecimal" />
+        <field id="CurrentDrawing" fieldDBName="CurrentDrawing" type="java.lang.Integer" />
+        <field id="DateEntered" fieldDBName="DateEntered" type="java.sql.Timestamp" />
+        <field id="enteredByUserId" fieldDBName="enteredByUserId" type="java.lang.Integer" />
+        <field id="FieldID" fieldDBName="FieldID" type="java.lang.Integer" />
+        <field id="FloorID" fieldDBName="FloorID" type="java.lang.Integer" />
+        <field id="FloorName" fieldDBName="FloorName" type="java.lang.String" />
+        <field id="LastUpdated" fieldDBName="LastUpdated" type="java.sql.Timestamp" />
+        <field id="lastUpdatedByUserId" fieldDBName="lastUpdatedByUserId" type="java.lang.Integer" />
+        <field id="SortOrder" fieldDBName="SortOrder" type="java.lang.Integer" />
+        <field id="SquareFeet" fieldDBName="SquareFeet" type="java.math.BigDecimal" />
+      </fieldList>
+    </jdbcTable>
+    <jdbcTable id="dbo_ParkingStates" datasourceId="application" tableName="schema1.States">
+      <fieldList>
+        <field id="CategoryId" fieldDBName="CategoryId" type="java.lang.Integer" />
+        <field id="CategoryName" fieldDBName="CategoryName" type="java.lang.String" />
+        <field id="CountryId" fieldDBName="CountryId" type="java.lang.Integer" />
+        <field id="CountryName" fieldDBName="CountryName" type="java.lang.String" />
+        <field id="DefaultSelected" fieldDBName="DefaultSelected" type="java.lang.String" />
+        <field id="ISOSubdivisionCode" fieldDBName="ISOSubdivisionCode" type="java.lang.String" />
+        <field id="StateCode" fieldDBName="StateCode" type="java.lang.String" />
+        <field id="StateID" fieldDBName="StateID" type="java.lang.Integer" />
+        <field id="StateName" fieldDBName="StateName" type="java.lang.String" />
+      </fieldList>
+    </jdbcTable>
+    <jdbcTable id="dbo_SpaceFloors" datasourceId="application" tableName="schema1.SpaceFloors">
+      <fieldList>
+        <field id="Active" fieldDBName="Active" type="java.lang.String" />
+        <field id="CenterID" fieldDBName="CenterID" type="java.lang.Integer" />
+        <field id="CostPerSquareFt" fieldDBName="CostPerSquareFt" type="java.math.BigDecimal" />
+        <field id="CurrentDrawing" fieldDBName="CurrentDrawing" type="java.lang.Integer" />
+        <field id="DateEntered" fieldDBName="DateEntered" type="java.sql.Timestamp" />
+        <field id="enteredByUserId" fieldDBName="enteredByUserId" type="java.lang.Integer" />
+        <field id="FieldID" fieldDBName="FieldID" type="java.lang.Integer" />
+        <field id="FloorID" fieldDBName="FloorID" type="java.lang.Integer" />
+        <field id="FloorName" fieldDBName="FloorName" type="java.lang.String" />
+        <field id="LastUpdated" fieldDBName="LastUpdated" type="java.sql.Timestamp" />
+        <field id="lastUpdatedByUserId" fieldDBName="lastUpdatedByUserId" type="java.lang.Integer" />
+        <field id="SortOrder" fieldDBName="SortOrder" type="java.lang.Integer" />
+        <field id="SquareFeet" fieldDBName="SquareFeet" type="java.math.BigDecimal" />
+      </fieldList>
+    </jdbcTable>
+    <jdbcTable id="dbo_States" datasourceId="application" tableName="schema1.States">
+      <fieldList>
+        <field id="CategoryId" fieldDBName="CategoryId" type="java.lang.Integer" />
+        <field id="CategoryName" fieldDBName="CategoryName" type="java.lang.String" />
+        <field id="CountryId" fieldDBName="CountryId" type="java.lang.Integer" />
+        <field id="CountryName" fieldDBName="CountryName" type="java.lang.String" />
+        <field id="DefaultSelected" fieldDBName="DefaultSelected" type="java.lang.String" />
+        <field id="ISOSubdivisionCode" fieldDBName="ISOSubdivisionCode" type="java.lang.String" />
+        <field id="StateCode" fieldDBName="StateCode" type="java.lang.String" />
+        <field id="StateID" fieldDBName="StateID" type="java.lang.Integer" />
+        <field id="StateName" fieldDBName="StateName" type="java.lang.String" />
+      </fieldList>
+    </jdbcTable>
+    <jdbcQuery id="dbo_Users" datasourceId="application">
+      <fieldList>
+        <field id="Active" fieldDBName="Active" type="java.lang.String" />
+        <field id="AddedByID" fieldDBName="AddedByID" type="java.lang.Integer" />
+        <field id="Address" fieldDBName="Address" type="java.lang.String" />
+        <field id="AllowMessaging" fieldDBName="AllowMessaging" type="java.lang.String" />
+        <field id="AltDeliveryID" fieldDBName="AltDeliveryID" type="java.lang.Integer" />
+        <field id="AssistantID" fieldDBName="AssistantID" type="java.lang.Integer" />
+        <field id="AssistantName" fieldDBName="AssistantName" type="java.lang.String" />
+        <field id="BuildingID" fieldDBName="BuildingID" type="java.lang.Integer" />
+        <field id="City" fieldDBName="City" type="java.lang.String" />
+        <field id="Comments" fieldDBName="Comments" type="java.lang.String" />
+        <field id="Company" fieldDBName="Company" type="java.lang.String" />
+        <field id="CopyAlert" fieldDBName="CopyAlert" type="java.lang.String" />
+        <field id="CostCenter1" fieldDBName="CostCenter1" type="java.lang.String" />
+        <field id="CostCenter2" fieldDBName="CostCenter2" type="java.lang.String" />
+        <field id="CostCenterID" fieldDBName="CostCenterID" type="java.lang.Integer" />
+        <field id="Country" fieldDBName="Country" type="java.lang.String" />
+        <field id="CountryCode" fieldDBName="CountryCode" type="java.lang.String" />
+        <field id="Custom01" fieldDBName="Custom01" type="java.lang.String" />
+        <field id="Custom02" fieldDBName="Custom02" type="java.lang.String" />
+        <field id="Custom03" fieldDBName="Custom03" type="java.lang.String" />
+        <field id="Custom04" fieldDBName="Custom04" type="java.lang.String" />
+        <field id="Custom05" fieldDBName="Custom05" type="java.lang.String" />
+        <field id="Custom06" fieldDBName="Custom06" type="java.lang.String" />
+        <field id="Custom07" fieldDBName="Custom07" type="java.lang.String" />
+        <field id="Custom08" fieldDBName="Custom08" type="java.lang.String" />
+        <field id="Custom09" fieldDBName="Custom09" type="java.lang.String" />
+        <field id="DateEntered" fieldDBName="DateEntered" type="java.sql.Timestamp" />
+        <field id="DefAssetCenter" fieldDBName="DefAssetCenter" type="java.lang.Integer" />
+        <field id="DefCatalogCenter" fieldDBName="DefCatalogCenter" type="java.lang.Integer" />
+        <field id="DefCopyCenter" fieldDBName="DefCopyCenter" type="java.lang.Integer" />
+        <field id="DefEventsCenter" fieldDBName="DefEventsCenter" type="java.lang.Integer" />
+        <field id="DefFileRoomCenter" fieldDBName="DefFileRoomCenter" type="java.lang.Integer" />
+        <field id="DefInventoryCenter" fieldDBName="DefInventoryCenter" type="java.lang.Integer" />
+        <field id="DefMailCenter" fieldDBName="DefMailCenter" type="java.lang.Integer" />
+        <field id="DefMaintenanceCenter" fieldDBName="DefMaintenanceCenter" type="java.lang.Integer" />
+        <field id="DefMoveCenter" fieldDBName="DefMoveCenter" type="java.lang.Integer" />
+        <field id="defReservationCenter" fieldDBName="defReservationCenter" type="java.lang.Integer" />
+        <field id="DefSpaceCenter" fieldDBName="DefSpaceCenter" type="java.lang.Integer" />
+        <field id="DefVisitorCenter" fieldDBName="DefVisitorCenter" type="java.lang.Integer" />
+        <field id="DeleteAlert" fieldDBName="DeleteAlert" type="java.lang.String" />
+        <field id="Department" fieldDBName="Department" type="java.lang.String" />
+        <field id="Email" fieldDBName="Email" type="java.lang.String" />
+        <field id="EmployeeID" fieldDBName="EmployeeID" type="java.lang.String" />
+        <field id="EULAAgreementDate" fieldDBName="EULAAgreementDate" type="java.sql.Timestamp" />
+        <field id="Extension" fieldDBName="Extension" type="java.lang.String" />
+        <field id="Fax" fieldDBName="Fax" type="java.lang.String" />
+        <field id="FirstName" fieldDBName="FirstName" type="java.lang.String" />
+        <field id="Floor" fieldDBName="Floor" type="java.lang.String" />
+        <field id="FlWarden" fieldDBName="FlWarden" type="java.lang.String" />
+        <field id="InterfaceCSS" fieldDBName="InterfaceCSS" type="java.lang.String" />
+        <field id="isIOfficeAdmin" fieldDBName="isIOfficeAdmin" type="java.lang.String" />
+        <field id="ItemsPerPage" fieldDBName="ItemsPerPage" type="java.lang.Integer" />
+        <field id="JobTitle" fieldDBName="JobTitle" type="java.lang.String" />
+        <field id="KnownAs" fieldDBName="KnownAs" type="java.lang.String" />
+        <field id="LanguageCode" fieldDBName="LanguageCode" type="java.lang.String" />
+        <field id="LastLocationDate" fieldDBName="LastLocationDate" type="java.sql.Timestamp" />
+        <field id="LastName" fieldDBName="LastName" type="java.lang.String" />
+        <field id="LastUpdated" fieldDBName="LastUpdated" type="java.sql.Timestamp" />
+        <field id="LastUpdatedByUserID" fieldDBName="LastUpdatedByUserID" type="java.lang.Integer" />
+        <field id="LastVisited" fieldDBName="LastVisited" type="java.sql.Timestamp" />
+        <field id="Latitude" fieldDBName="Latitude" type="java.math.BigDecimal" />
+        <field id="LiveSearchItemsPerPage" fieldDBName="LiveSearchItemsPerPage" type="java.lang.Integer" />
+        <field id="Longitude" fieldDBName="Longitude" type="java.math.BigDecimal" />
+        <field id="MailAlert" fieldDBName="MailAlert" type="java.lang.String" />
+        <field id="MailStopID" fieldDBName="MailStopID" type="java.lang.Integer" />
+        <field id="MiddleName" fieldDBName="MiddleName" type="java.lang.String" />
+        <field id="Mobile" fieldDBName="Mobile" type="java.lang.String" />
+        <field id="MobileServiceId" fieldDBName="MobileServiceId" type="java.lang.Integer" />
+        <field id="MoveAlert" fieldDBName="MoveAlert" type="java.lang.String" />
+        <field id="Pager" fieldDBName="Pager" type="java.lang.String" />
+        <field id="ParkingSpace" fieldDBName="ParkingSpace" type="java.lang.String" />
+        <field id="ParkingSpaceRoomId" fieldDBName="ParkingSpaceRoomId" type="java.lang.Integer" />
+        <field id="Password" fieldDBName="Password" type="java.lang.String" />
+        <field id="Phone" fieldDBName="Phone" type="java.lang.String" />
+        <field id="PostalCode" fieldDBName="PostalCode" type="java.lang.String" />
+        <field id="Room" fieldDBName="Room" type="java.lang.String" />
+        <field id="RoomId" fieldDBName="RoomId" type="java.lang.Integer" />
+        <field id="ShowHelp" fieldDBName="ShowHelp" type="java.lang.String" />
+        <field id="SiteAdmin" fieldDBName="SiteAdmin" type="java.lang.String" />
+        <field id="SpecialNeeds" fieldDBName="SpecialNeeds" type="java.lang.String" />
+        <field id="State" fieldDBName="State" type="java.lang.String" />
+        <field id="SystemUse" fieldDBName="SystemUse" type="java.lang.Boolean" />
+        <field id="UserID" fieldDBName="UserID" type="java.lang.Integer" />
+        <field id="UserName" fieldDBName="UserName" type="java.lang.String" />
+        <field id="UserTypeId" fieldDBName="UserTypeId" type="java.lang.Integer" />
+        <field id="VisitorAlert" fieldDBName="VisitorAlert" type="java.lang.String" />
+      </fieldList>
+      <query>select * from users where systemuse = 0</query>
+    </jdbcQuery>
+    <jdbcTable id="dbo_UserTypes" datasourceId="application" tableName="schema1.UserTypes">
+      <fieldList>
+        <field id="Active" fieldDBName="Active" type="java.lang.Boolean" />
+        <field id="DateCreated" fieldDBName="DateCreated" type="java.sql.Timestamp" />
+        <field id="DateUpdated" fieldDBName="DateUpdated" type="java.sql.Timestamp" />
+        <field id="EnteredByUserId" fieldDBName="EnteredByUserId" type="java.lang.Integer" />
+        <field id="LastUpdatedByUserId" fieldDBName="LastUpdatedByUserId" type="java.lang.Integer" />
+        <field id="Name" fieldDBName="Name" type="java.lang.String" />
+        <field id="UserTypeID" fieldDBName="UserTypeID" type="java.lang.Integer" />
+      </fieldList>
+    </jdbcTable>
+    <jdbcTable id="dbo_Vw_CostCenters_15Levels" datasourceId="application" tableName="schema1.Vw_CostCenters_15Levels">
+      <fieldList>
+        <field id="CCCode" fieldDBName="CCCode" type="java.lang.String" />
+        <field id="CCID" fieldDBName="CCID" type="java.lang.Integer" />
+        <field id="CCName" fieldDBName="CCName" type="java.lang.String" />
+        <field id="Level_10_CCCode" fieldDBName="Level_10_CCCode" type="java.lang.String" />
+        <field id="Level_10_CCID" fieldDBName="Level_10_CCID" type="java.lang.Integer" />
+        <field id="Level_10_Name" fieldDBName="Level_10_Name" type="java.lang.String" />
+        <field id="Level_11_CCCode" fieldDBName="Level_11_CCCode" type="java.lang.String" />
+        <field id="Level_11_CCID" fieldDBName="Level_11_CCID" type="java.lang.Integer" />
+        <field id="Level_11_Name" fieldDBName="Level_11_Name" type="java.lang.String" />
+        <field id="Level_12_CCCode" fieldDBName="Level_12_CCCode" type="java.lang.String" />
+        <field id="Level_12_CCID" fieldDBName="Level_12_CCID" type="java.lang.Integer" />
+        <field id="Level_12_Name" fieldDBName="Level_12_Name" type="java.lang.String" />
+        <field id="Level_13_CCCode" fieldDBName="Level_13_CCCode" type="java.lang.String" />
+        <field id="Level_13_CCID" fieldDBName="Level_13_CCID" type="java.lang.Integer" />
+        <field id="Level_13_Name" fieldDBName="Level_13_Name" type="java.lang.String" />
+        <field id="Level_14_CCCode" fieldDBName="Level_14_CCCode" type="java.lang.String" />
+        <field id="Level_14_CCID" fieldDBName="Level_14_CCID" type="java.lang.Integer" />
+        <field id="Level_14_Name" fieldDBName="Level_14_Name" type="java.lang.String" />
+        <field id="Level_1_CCCode" fieldDBName="Level_1_CCCode" type="java.lang.String" />
+        <field id="Level_1_CCID" fieldDBName="Level_1_CCID" type="java.lang.Integer" />
+        <field id="Level_1_Name" fieldDBName="Level_1_Name" type="java.lang.String" />
+        <field id="Level_2_CCCode" fieldDBName="Level_2_CCCode" type="java.lang.String" />
+        <field id="Level_2_CCID" fieldDBName="Level_2_CCID" type="java.lang.Integer" />
+        <field id="Level_2_Name" fieldDBName="Level_2_Name" type="java.lang.String" />
+        <field id="Level_3_CCCode" fieldDBName="Level_3_CCCode" type="java.lang.String" />
+        <field id="Level_3_CCID" fieldDBName="Level_3_CCID" type="java.lang.Integer" />
+        <field id="Level_3_Name" fieldDBName="Level_3_Name" type="java.lang.String" />
+        <field id="Level_4_CCCode" fieldDBName="Level_4_CCCode" type="java.lang.String" />
+        <field id="Level_4_CCID" fieldDBName="Level_4_CCID" type="java.lang.Integer" />
+        <field id="Level_4_Name" fieldDBName="Level_4_Name" type="java.lang.String" />
+        <field id="Level_5_CCCode" fieldDBName="Level_5_CCCode" type="java.lang.String" />
+        <field id="Level_5_CCID" fieldDBName="Level_5_CCID" type="java.lang.Integer" />
+        <field id="Level_5_Name" fieldDBName="Level_5_Name" type="java.lang.String" />
+        <field id="Level_6_CCCode" fieldDBName="Level_6_CCCode" type="java.lang.String" />
+        <field id="Level_6_CCID" fieldDBName="Level_6_CCID" type="java.lang.Integer" />
+        <field id="Level_6_Name" fieldDBName="Level_6_Name" type="java.lang.String" />
+        <field id="Level_7_CCCode" fieldDBName="Level_7_CCCode" type="java.lang.String" />
+        <field id="Level_7_CCID" fieldDBName="Level_7_CCID" type="java.lang.Integer" />
+        <field id="Level_7_Name" fieldDBName="Level_7_Name" type="java.lang.String" />
+        <field id="Level_8_CCCode" fieldDBName="Level_8_CCCode" type="java.lang.String" />
+        <field id="Level_8_CCID" fieldDBName="Level_8_CCID" type="java.lang.Integer" />
+        <field id="Level_8_Name" fieldDBName="Level_8_Name" type="java.lang.String" />
+        <field id="Level_9_CCCode" fieldDBName="Level_9_CCCode" type="java.lang.String" />
+        <field id="Level_9_CCID" fieldDBName="Level_9_CCID" type="java.lang.Integer" />
+        <field id="Level_9_Name" fieldDBName="Level_9_Name" type="java.lang.String" />
+      </fieldList>
+    </jdbcTable>
+    <jdbcTable id="LastUpdatedByUser" datasourceId="application" tableName="schema1.Users">
+      <fieldList>
+        <field id="Active" fieldDBName="Active" type="java.lang.String" />
+        <field id="AddedByID" fieldDBName="AddedByID" type="java.lang.Integer" />
+        <field id="Address" fieldDBName="Address" type="java.lang.String" />
+        <field id="AllowMessaging" fieldDBName="AllowMessaging" type="java.lang.String" />
+        <field id="AltDeliveryID" fieldDBName="AltDeliveryID" type="java.lang.Integer" />
+        <field id="AssistantID" fieldDBName="AssistantID" type="java.lang.Integer" />
+        <field id="AssistantName" fieldDBName="AssistantName" type="java.lang.String" />
+        <field id="BuildingID" fieldDBName="BuildingID" type="java.lang.Integer" />
+        <field id="City" fieldDBName="City" type="java.lang.String" />
+        <field id="Comments" fieldDBName="Comments" type="java.lang.String" />
+        <field id="Company" fieldDBName="Company" type="java.lang.String" />
+        <field id="CopyAlert" fieldDBName="CopyAlert" type="java.lang.String" />
+        <field id="CostCenter1" fieldDBName="CostCenter1" type="java.lang.String" />
+        <field id="CostCenter2" fieldDBName="CostCenter2" type="java.lang.String" />
+        <field id="CostCenterID" fieldDBName="CostCenterID" type="java.lang.Integer" />
+        <field id="Country" fieldDBName="Country" type="java.lang.String" />
+        <field id="CountryCode" fieldDBName="CountryCode" type="java.lang.String" />
+        <field id="Custom01" fieldDBName="Custom01" type="java.lang.String" />
+        <field id="Custom02" fieldDBName="Custom02" type="java.lang.String" />
+        <field id="Custom03" fieldDBName="Custom03" type="java.lang.String" />
+        <field id="Custom04" fieldDBName="Custom04" type="java.lang.String" />
+        <field id="Custom05" fieldDBName="Custom05" type="java.lang.String" />
+        <field id="Custom06" fieldDBName="Custom06" type="java.lang.String" />
+        <field id="Custom07" fieldDBName="Custom07" type="java.lang.String" />
+        <field id="Custom08" fieldDBName="Custom08" type="java.lang.String" />
+        <field id="Custom09" fieldDBName="Custom09" type="java.lang.String" />
+        <field id="DateEntered" fieldDBName="DateEntered" type="java.sql.Timestamp" />
+        <field id="DefAssetCenter" fieldDBName="DefAssetCenter" type="java.lang.Integer" />
+        <field id="DefCatalogCenter" fieldDBName="DefCatalogCenter" type="java.lang.Integer" />
+        <field id="DefCopyCenter" fieldDBName="DefCopyCenter" type="java.lang.Integer" />
+        <field id="DefEventsCenter" fieldDBName="DefEventsCenter" type="java.lang.Integer" />
+        <field id="DefFileRoomCenter" fieldDBName="DefFileRoomCenter" type="java.lang.Integer" />
+        <field id="DefInventoryCenter" fieldDBName="DefInventoryCenter" type="java.lang.Integer" />
+        <field id="DefMailCenter" fieldDBName="DefMailCenter" type="java.lang.Integer" />
+        <field id="DefMaintenanceCenter" fieldDBName="DefMaintenanceCenter" type="java.lang.Integer" />
+        <field id="DefMoveCenter" fieldDBName="DefMoveCenter" type="java.lang.Integer" />
+        <field id="defReservationCenter" fieldDBName="defReservationCenter" type="java.lang.Integer" />
+        <field id="DefSpaceCenter" fieldDBName="DefSpaceCenter" type="java.lang.Integer" />
+        <field id="DefVisitorCenter" fieldDBName="DefVisitorCenter" type="java.lang.Integer" />
+        <field id="DeleteAlert" fieldDBName="DeleteAlert" type="java.lang.String" />
+        <field id="Department" fieldDBName="Department" type="java.lang.String" />
+        <field id="Email" fieldDBName="Email" type="java.lang.String" />
+        <field id="EmployeeID" fieldDBName="EmployeeID" type="java.lang.String" />
+        <field id="EULAAgreementDate" fieldDBName="EULAAgreementDate" type="java.sql.Timestamp" />
+        <field id="Extension" fieldDBName="Extension" type="java.lang.String" />
+        <field id="Fax" fieldDBName="Fax" type="java.lang.String" />
+        <field id="FirstName" fieldDBName="FirstName" type="java.lang.String" />
+        <field id="Floor" fieldDBName="Floor" type="java.lang.String" />
+        <field id="FlWarden" fieldDBName="FlWarden" type="java.lang.String" />
+        <field id="InterfaceCSS" fieldDBName="InterfaceCSS" type="java.lang.String" />
+        <field id="isIOfficeAdmin" fieldDBName="isIOfficeAdmin" type="java.lang.String" />
+        <field id="ItemsPerPage" fieldDBName="ItemsPerPage" type="java.lang.Integer" />
+        <field id="JobTitle" fieldDBName="JobTitle" type="java.lang.String" />
+        <field id="KnownAs" fieldDBName="KnownAs" type="java.lang.String" />
+        <field id="LanguageCode" fieldDBName="LanguageCode" type="java.lang.String" />
+        <field id="LastLocationDate" fieldDBName="LastLocationDate" type="java.sql.Timestamp" />
+        <field id="LastName" fieldDBName="LastName" type="java.lang.String" />
+        <field id="LastUpdated" fieldDBName="LastUpdated" type="java.sql.Timestamp" />
+        <field id="LastUpdatedByUserID" fieldDBName="LastUpdatedByUserID" type="java.lang.Integer" />
+        <field id="LastVisited" fieldDBName="LastVisited" type="java.sql.Timestamp" />
+        <field id="Latitude" fieldDBName="Latitude" type="java.math.BigDecimal" />
+        <field id="LiveSearchItemsPerPage" fieldDBName="LiveSearchItemsPerPage" type="java.lang.Integer" />
+        <field id="Longitude" fieldDBName="Longitude" type="java.math.BigDecimal" />
+        <field id="MailAlert" fieldDBName="MailAlert" type="java.lang.String" />
+        <field id="MailStopID" fieldDBName="MailStopID" type="java.lang.Integer" />
+        <field id="MiddleName" fieldDBName="MiddleName" type="java.lang.String" />
+        <field id="Mobile" fieldDBName="Mobile" type="java.lang.String" />
+        <field id="MobileServiceId" fieldDBName="MobileServiceId" type="java.lang.Integer" />
+        <field id="MoveAlert" fieldDBName="MoveAlert" type="java.lang.String" />
+        <field id="Pager" fieldDBName="Pager" type="java.lang.String" />
+        <field id="ParkingSpace" fieldDBName="ParkingSpace" type="java.lang.String" />
+        <field id="ParkingSpaceRoomId" fieldDBName="ParkingSpaceRoomId" type="java.lang.Integer" />
+        <field id="Password" fieldDBName="Password" type="java.lang.String" />
+        <field id="Phone" fieldDBName="Phone" type="java.lang.String" />
+        <field id="PostalCode" fieldDBName="PostalCode" type="java.lang.String" />
+        <field id="Room" fieldDBName="Room" type="java.lang.String" />
+        <field id="RoomId" fieldDBName="RoomId" type="java.lang.Integer" />
+        <field id="ShowHelp" fieldDBName="ShowHelp" type="java.lang.String" />
+        <field id="SiteAdmin" fieldDBName="SiteAdmin" type="java.lang.String" />
+        <field id="SpecialNeeds" fieldDBName="SpecialNeeds" type="java.lang.String" />
+        <field id="State" fieldDBName="State" type="java.lang.String" />
+        <field id="SystemUse" fieldDBName="SystemUse" type="java.lang.Boolean" />
+        <field id="UserID" fieldDBName="UserID" type="java.lang.Integer" />
+        <field id="UserName" fieldDBName="UserName" type="java.lang.String" />
+        <field id="UserTypeId" fieldDBName="UserTypeId" type="java.lang.Integer" />
+        <field id="VisitorAlert" fieldDBName="VisitorAlert" type="java.lang.String" />
+      </fieldList>
+    </jdbcTable>
+    <jdbcTable id="JoinTree_1" datasourceId="application" tableName="schema1.MailInStops">
+      <fieldList>
+        <field id="dbo_UserTypes.Active" fieldDBName="Active" type="java.lang.Boolean" />
+        <field id="dbo_UserTypes.DateCreated" fieldDBName="DateCreated" type="java.sql.Timestamp" />
+        <field id="dbo_UserTypes.DateUpdated" fieldDBName="DateUpdated" type="java.sql.Timestamp" />
+        <field id="dbo_UserTypes.EnteredByUserId" fieldDBName="EnteredByUserId" type="java.lang.Integer" />
+        <field id="dbo_UserTypes.LastUpdatedByUserId" fieldDBName="LastUpdatedByUserId" type="java.lang.Integer" />
+        <field id="dbo_UserTypes.Name" fieldDBName="Name" type="java.lang.String" />
+        <field id="dbo_UserTypes.UserTypeID" fieldDBName="UserTypeID" type="java.lang.Integer" />
+        <field id="dbo_ParkingStates.CategoryId" fieldDBName="CategoryId" type="java.lang.Integer" />
+        <field id="dbo_ParkingStates.CategoryName" fieldDBName="CategoryName" type="java.lang.String" />
+        <field id="dbo_ParkingStates.CountryId" fieldDBName="CountryId" type="java.lang.Integer" />
+        <field id="dbo_ParkingStates.CountryName" fieldDBName="CountryName" type="java.lang.String" />
+        <field id="dbo_ParkingStates.DefaultSelected" fieldDBName="DefaultSelected" type="java.lang.String" />
+        <field id="dbo_ParkingStates.ISOSubdivisionCode" fieldDBName="ISOSubdivisionCode" type="java.lang.String" />
+        <field id="dbo_ParkingStates.StateCode" fieldDBName="StateCode" type="java.lang.String" />
+        <field id="dbo_ParkingStates.StateID" fieldDBName="StateID" type="java.lang.Integer" />
+        <field id="dbo_ParkingStates.StateName" fieldDBName="StateName" type="java.lang.String" />
+        <field id="CreatedByUser.Active" fieldDBName="Active" type="java.lang.String" />
+        <field id="CreatedByUser.AddedByID" fieldDBName="AddedByID" type="java.lang.Integer" />
+        <field id="CreatedByUser.Address" fieldDBName="Address" type="java.lang.String" />
+        <field id="CreatedByUser.AllowMessaging" fieldDBName="AllowMessaging" type="java.lang.String" />
+        <field id="CreatedByUser.AltDeliveryID" fieldDBName="AltDeliveryID" type="java.lang.Integer" />
+        <field id="CreatedByUser.AssistantID" fieldDBName="AssistantID" type="java.lang.Integer" />
+        <field id="CreatedByUser.AssistantName" fieldDBName="AssistantName" type="java.lang.String" />
+        <field id="CreatedByUser.BuildingID" fieldDBName="BuildingID" type="java.lang.Integer" />
+        <field id="CreatedByUser.City" fieldDBName="City" type="java.lang.String" />
+        <field id="CreatedByUser.Comments" fieldDBName="Comments" type="java.lang.String" />
+        <field id="CreatedByUser.Company" fieldDBName="Company" type="java.lang.String" />
+        <field id="CreatedByUser.CopyAlert" fieldDBName="CopyAlert" type="java.lang.String" />
+        <field id="CreatedByUser.CostCenter1" fieldDBName="CostCenter1" type="java.lang.String" />
+        <field id="CreatedByUser.CostCenter2" fieldDBName="CostCenter2" type="java.lang.String" />
+        <field id="CreatedByUser.CostCenterID" fieldDBName="CostCenterID" type="java.lang.Integer" />
+        <field id="CreatedByUser.Country" fieldDBName="Country" type="java.lang.String" />
+        <field id="CreatedByUser.CountryCode" fieldDBName="CountryCode" type="java.lang.String" />
+        <field id="CreatedByUser.Custom01" fieldDBName="Custom01" type="java.lang.String" />
+        <field id="CreatedByUser.Custom02" fieldDBName="Custom02" type="java.lang.String" />
+        <field id="CreatedByUser.Custom03" fieldDBName="Custom03" type="java.lang.String" />
+        <field id="CreatedByUser.Custom04" fieldDBName="Custom04" type="java.lang.String" />
+        <field id="CreatedByUser.Custom05" fieldDBName="Custom05" type="java.lang.String" />
+        <field id="CreatedByUser.Custom06" fieldDBName="Custom06" type="java.lang.String" />
+        <field id="CreatedByUser.Custom07" fieldDBName="Custom07" type="java.lang.String" />
+        <field id="CreatedByUser.Custom08" fieldDBName="Custom08" type="java.lang.String" />
+        <field id="CreatedByUser.Custom09" fieldDBName="Custom09" type="java.lang.String" />
+        <field id="CreatedByUser.DateEntered" fieldDBName="DateEntered" type="java.sql.Timestamp" />
+        <field id="CreatedByUser.DefAssetCenter" fieldDBName="DefAssetCenter" type="java.lang.Integer" />
+        <field id="CreatedByUser.DefCatalogCenter" fieldDBName="DefCatalogCenter" type="java.lang.Integer" />
+        <field id="CreatedByUser.DefCopyCenter" fieldDBName="DefCopyCenter" type="java.lang.Integer" />
+        <field id="CreatedByUser.DefEventsCenter" fieldDBName="DefEventsCenter" type="java.lang.Integer" />
+        <field id="CreatedByUser.DefFileRoomCenter" fieldDBName="DefFileRoomCenter" type="java.lang.Integer" />
+        <field id="CreatedByUser.DefInventoryCenter" fieldDBName="DefInventoryCenter" type="java.lang.Integer" />
+        <field id="CreatedByUser.DefMailCenter" fieldDBName="DefMailCenter" type="java.lang.Integer" />
+        <field id="CreatedByUser.DefMaintenanceCenter" fieldDBName="DefMaintenanceCenter" type="java.lang.Integer" />
+        <field id="CreatedByUser.DefMoveCenter" fieldDBName="DefMoveCenter" type="java.lang.Integer" />
+        <field id="CreatedByUser.defReservationCenter" fieldDBName="defReservationCenter" type="java.lang.Integer" />
+        <field id="CreatedByUser.DefSpaceCenter" fieldDBName="DefSpaceCenter" type="java.lang.Integer" />
+        <field id="CreatedByUser.DefVisitorCenter" fieldDBName="DefVisitorCenter" type="java.lang.Integer" />
+        <field id="CreatedByUser.DeleteAlert" fieldDBName="DeleteAlert" type="java.lang.String" />
+        <field id="CreatedByUser.Department" fieldDBName="Department" type="java.lang.String" />
+        <field id="CreatedByUser.Email" fieldDBName="Email" type="java.lang.String" />
+        <field id="CreatedByUser.EmployeeID" fieldDBName="EmployeeID" type="java.lang.String" />
+        <field id="CreatedByUser.EULAAgreementDate" fieldDBName="EULAAgreementDate" type="java.sql.Timestamp" />
+        <field id="CreatedByUser.Extension" fieldDBName="Extension" type="java.lang.String" />
+        <field id="CreatedByUser.Fax" fieldDBName="Fax" type="java.lang.String" />
+        <field id="CreatedByUser.FirstName" fieldDBName="FirstName" type="java.lang.String" />
+        <field id="CreatedByUser.Floor" fieldDBName="Floor" type="java.lang.String" />
+        <field id="CreatedByUser.FlWarden" fieldDBName="FlWarden" type="java.lang.String" />
+        <field id="CreatedByUser.InterfaceCSS" fieldDBName="InterfaceCSS" type="java.lang.String" />
+        <field id="CreatedByUser.isIOfficeAdmin" fieldDBName="isIOfficeAdmin" type="java.lang.String" />
+        <field id="CreatedByUser.ItemsPerPage" fieldDBName="ItemsPerPage" type="java.lang.Integer" />
+        <field id="CreatedByUser.JobTitle" fieldDBName="JobTitle" type="java.lang.String" />
+        <field id="CreatedByUser.KnownAs" fieldDBName="KnownAs" type="java.lang.String" />
+        <field id="CreatedByUser.LanguageCode" fieldDBName="LanguageCode" type="java.lang.String" />
+        <field id="CreatedByUser.LastLocationDate" fieldDBName="LastLocationDate" type="java.sql.Timestamp" />
+        <field id="CreatedByUser.LastName" fieldDBName="LastName" type="java.lang.String" />
+        <field id="CreatedByUser.LastUpdated" fieldDBName="LastUpdated" type="java.sql.Timestamp" />
+        <field id="CreatedByUser.LastUpdatedByUserID" fieldDBName="LastUpdatedByUserID" type="java.lang.Integer" />
+        <field id="CreatedByUser.LastVisited" fieldDBName="LastVisited" type="java.sql.Timestamp" />
+        <field id="CreatedByUser.Latitude" fieldDBName="Latitude" type="java.math.BigDecimal" />
+        <field id="CreatedByUser.LiveSearchItemsPerPage" fieldDBName="LiveSearchItemsPerPage" type="java.lang.Integer" />
+        <field id="CreatedByUser.Longitude" fieldDBName="Longitude" type="java.math.BigDecimal" />
+        <field id="CreatedByUser.MailAlert" fieldDBName="MailAlert" type="java.lang.String" />
+        <field id="CreatedByUser.MailStopID" fieldDBName="MailStopID" type="java.lang.Integer" />
+        <field id="CreatedByUser.MiddleName" fieldDBName="MiddleName" type="java.lang.String" />
+        <field id="CreatedByUser.Mobile" fieldDBName="Mobile" type="java.lang.String" />
+        <field id="CreatedByUser.MobileServiceId" fieldDBName="MobileServiceId" type="java.lang.Integer" />
+        <field id="CreatedByUser.MoveAlert" fieldDBName="MoveAlert" type="java.lang.String" />
+        <field id="CreatedByUser.Pager" fieldDBName="Pager" type="java.lang.String" />
+        <field id="CreatedByUser.ParkingSpace" fieldDBName="ParkingSpace" type="java.lang.String" />
+        <field id="CreatedByUser.ParkingSpaceRoomId" fieldDBName="ParkingSpaceRoomId" type="java.lang.Integer" />
+        <field id="CreatedByUser.Password" fieldDBName="Password" type="java.lang.String" />
+        <field id="CreatedByUser.Phone" fieldDBName="Phone" type="java.lang.String" />
+        <field id="CreatedByUser.PostalCode" fieldDBName="PostalCode" type="java.lang.String" />
+        <field id="CreatedByUser.Room" fieldDBName="Room" type="java.lang.String" />
+        <field id="CreatedByUser.RoomId" fieldDBName="RoomId" type="java.lang.Integer" />
+        <field id="CreatedByUser.ShowHelp" fieldDBName="ShowHelp" type="java.lang.String" />
+        <field id="CreatedByUser.SiteAdmin" fieldDBName="SiteAdmin" type="java.lang.String" />
+        <field id="CreatedByUser.SpecialNeeds" fieldDBName="SpecialNeeds" type="java.lang.String" />
+        <field id="CreatedByUser.State" fieldDBName="State" type="java.lang.String" />
+        <field id="CreatedByUser.SystemUse" fieldDBName="SystemUse" type="java.lang.Boolean" />
+        <field id="CreatedByUser.UserID" fieldDBName="UserID" type="java.lang.Integer" />
+        <field id="CreatedByUser.UserName" fieldDBName="UserName" type="java.lang.String" />
+        <field id="CreatedByUser.UserTypeId" fieldDBName="UserTypeId" type="java.lang.Integer" />
+        <field id="CreatedByUser.VisitorAlert" fieldDBName="VisitorAlert" type="java.lang.String" />
+        <field id="dbo_ParkingBuildings.Active" fieldDBName="Active" type="java.lang.String" />
+        <field id="dbo_ParkingBuildings.Address" fieldDBName="Address" type="java.lang.String" />
+        <field id="dbo_ParkingBuildings.Address2" fieldDBName="Address2" type="java.lang.String" />
+        <field id="dbo_ParkingBuildings.BuildingCode" fieldDBName="BuildingCode" type="java.lang.String" />
+        <field id="dbo_ParkingBuildings.City" fieldDBName="City" type="java.lang.String" />
+        <field id="dbo_ParkingBuildings.CountryID" fieldDBName="CountryID" type="java.lang.Integer" />
+        <field id="dbo_ParkingBuildings.DateEntered" fieldDBName="DateEntered" type="java.sql.Timestamp" />
+        <field id="dbo_ParkingBuildings.dateUpdated" fieldDBName="dateUpdated" type="java.sql.Timestamp" />
+        <field id="dbo_ParkingBuildings.DefaultBuilding" fieldDBName="DefaultBuilding" type="java.lang.String" />
+        <field id="dbo_ParkingBuildings.enteredByUserId" fieldDBName="enteredByUserId" type="java.lang.Integer" />
+        <field id="dbo_ParkingBuildings.FieldID" fieldDBName="FieldID" type="java.lang.Integer" />
+        <field id="dbo_ParkingBuildings.lastUpdatedByUserId" fieldDBName="lastUpdatedByUserId" type="java.lang.Integer" />
+        <field id="dbo_ParkingBuildings.Latitude" fieldDBName="Latitude" type="java.math.BigDecimal" />
+        <field id="dbo_ParkingBuildings.LeaseCost" fieldDBName="LeaseCost" type="java.math.BigDecimal" />
+        <field id="dbo_ParkingBuildings.Longitude" fieldDBName="Longitude" type="java.math.BigDecimal" />
+        <field id="dbo_ParkingBuildings.Name" fieldDBName="Name" type="java.lang.String" />
+        <field id="dbo_ParkingBuildings.ParkingFlag" fieldDBName="ParkingFlag" type="java.lang.String" />
+        <field id="dbo_ParkingBuildings.PostalCode" fieldDBName="PostalCode" type="java.lang.String" />
+        <field id="dbo_ParkingBuildings.Reassigned" fieldDBName="Reassigned" type="java.lang.String" />
+        <field id="dbo_ParkingBuildings.SortOrder" fieldDBName="SortOrder" type="java.lang.Integer" />
+        <field id="dbo_ParkingBuildings.StateID" fieldDBName="StateID" type="java.lang.Integer" />
+        <field id="LastUpdatedByUser.Active" fieldDBName="Active" type="java.lang.String" />
+        <field id="LastUpdatedByUser.AddedByID" fieldDBName="AddedByID" type="java.lang.Integer" />
+        <field id="LastUpdatedByUser.Address" fieldDBName="Address" type="java.lang.String" />
+        <field id="LastUpdatedByUser.AllowMessaging" fieldDBName="AllowMessaging" type="java.lang.String" />
+        <field id="LastUpdatedByUser.AltDeliveryID" fieldDBName="AltDeliveryID" type="java.lang.Integer" />
+        <field id="LastUpdatedByUser.AssistantID" fieldDBName="AssistantID" type="java.lang.Integer" />
+        <field id="LastUpdatedByUser.AssistantName" fieldDBName="AssistantName" type="java.lang.String" />
+        <field id="LastUpdatedByUser.BuildingID" fieldDBName="BuildingID" type="java.lang.Integer" />
+        <field id="LastUpdatedByUser.City" fieldDBName="City" type="java.lang.String" />
+        <field id="LastUpdatedByUser.Comments" fieldDBName="Comments" type="java.lang.String" />
+        <field id="LastUpdatedByUser.Company" fieldDBName="Company" type="java.lang.String" />
+        <field id="LastUpdatedByUser.CopyAlert" fieldDBName="CopyAlert" type="java.lang.String" />
+        <field id="LastUpdatedByUser.CostCenter1" fieldDBName="CostCenter1" type="java.lang.String" />
+        <field id="LastUpdatedByUser.CostCenter2" fieldDBName="CostCenter2" type="java.lang.String" />
+        <field id="LastUpdatedByUser.CostCenterID" fieldDBName="CostCenterID" type="java.lang.Integer" />
+        <field id="LastUpdatedByUser.Country" fieldDBName="Country" type="java.lang.String" />
+        <field id="LastUpdatedByUser.CountryCode" fieldDBName="CountryCode" type="java.lang.String" />
+        <field id="LastUpdatedByUser.Custom01" fieldDBName="Custom01" type="java.lang.String" />
+        <field id="LastUpdatedByUser.Custom02" fieldDBName="Custom02" type="java.lang.String" />
+        <field id="LastUpdatedByUser.Custom03" fieldDBName="Custom03" type="java.lang.String" />
+        <field id="LastUpdatedByUser.Custom04" fieldDBName="Custom04" type="java.lang.String" />
+        <field id="LastUpdatedByUser.Custom05" fieldDBName="Custom05" type="java.lang.String" />
+        <field id="LastUpdatedByUser.Custom06" fieldDBName="Custom06" type="java.lang.String" />
+        <field id="LastUpdatedByUser.Custom07" fieldDBName="Custom07" type="java.lang.String" />
+        <field id="LastUpdatedByUser.Custom08" fieldDBName="Custom08" type="java.lang.String" />
+        <field id="LastUpdatedByUser.Custom09" fieldDBName="Custom09" type="java.lang.String" />
+        <field id="LastUpdatedByUser.DateEntered" fieldDBName="DateEntered" type="java.sql.Timestamp" />
+        <field id="LastUpdatedByUser.DefAssetCenter" fieldDBName="DefAssetCenter" type="java.lang.Integer" />
+        <field id="LastUpdatedByUser.DefCatalogCenter" fieldDBName="DefCatalogCenter" type="java.lang.Integer" />
+        <field id="LastUpdatedByUser.DefCopyCenter" fieldDBName="DefCopyCenter" type="java.lang.Integer" />
+        <field id="LastUpdatedByUser.DefEventsCenter" fieldDBName="DefEventsCenter" type="java.lang.Integer" />
+        <field id="LastUpdatedByUser.DefFileRoomCenter" fieldDBName="DefFileRoomCenter" type="java.lang.Integer" />
+        <field id="LastUpdatedByUser.DefInventoryCenter" fieldDBName="DefInventoryCenter" type="java.lang.Integer" />
+        <field id="LastUpdatedByUser.DefMailCenter" fieldDBName="DefMailCenter" type="java.lang.Integer" />
+        <field id="LastUpdatedByUser.DefMaintenanceCenter" fieldDBName="DefMaintenanceCenter" type="java.lang.Integer" />
+        <field id="LastUpdatedByUser.DefMoveCenter" fieldDBName="DefMoveCenter" type="java.lang.Integer" />
+        <field id="LastUpdatedByUser.defReservationCenter" fieldDBName="defReservationCenter" type="java.lang.Integer" />
+        <field id="LastUpdatedByUser.DefSpaceCenter" fieldDBName="DefSpaceCenter" type="java.lang.Integer" />
+        <field id="LastUpdatedByUser.DefVisitorCenter" fieldDBName="DefVisitorCenter" type="java.lang.Integer" />
+        <field id="LastUpdatedByUser.DeleteAlert" fieldDBName="DeleteAlert" type="java.lang.String" />
+        <field id="LastUpdatedByUser.Department" fieldDBName="Department" type="java.lang.String" />
+        <field id="LastUpdatedByUser.Email" fieldDBName="Email" type="java.lang.String" />
+        <field id="LastUpdatedByUser.EmployeeID" fieldDBName="EmployeeID" type="java.lang.String" />
+        <field id="LastUpdatedByUser.EULAAgreementDate" fieldDBName="EULAAgreementDate" type="java.sql.Timestamp" />
+        <field id="LastUpdatedByUser.Extension" fieldDBName="Extension" type="java.lang.String" />
+        <field id="LastUpdatedByUser.Fax" fieldDBName="Fax" type="java.lang.String" />
+        <field id="LastUpdatedByUser.FirstName" fieldDBName="FirstName" type="java.lang.String" />
+        <field id="LastUpdatedByUser.Floor" fieldDBName="Floor" type="java.lang.String" />
+        <field id="LastUpdatedByUser.FlWarden" fieldDBName="FlWarden" type="java.lang.String" />
+        <field id="LastUpdatedByUser.InterfaceCSS" fieldDBName="InterfaceCSS" type="java.lang.String" />
+        <field id="LastUpdatedByUser.isIOfficeAdmin" fieldDBName="isIOfficeAdmin" type="java.lang.String" />
+        <field id="LastUpdatedByUser.ItemsPerPage" fieldDBName="ItemsPerPage" type="java.lang.Integer" />
+        <field id="LastUpdatedByUser.JobTitle" fieldDBName="JobTitle" type="java.lang.String" />
+        <field id="LastUpdatedByUser.KnownAs" fieldDBName="KnownAs" type="java.lang.String" />
+        <field id="LastUpdatedByUser.LanguageCode" fieldDBName="LanguageCode" type="java.lang.String" />
+        <field id="LastUpdatedByUser.LastLocationDate" fieldDBName="LastLocationDate" type="java.sql.Timestamp" />
+        <field id="LastUpdatedByUser.LastName" fieldDBName="LastName" type="java.lang.String" />
+        <field id="LastUpdatedByUser.LastUpdated" fieldDBName="LastUpdated" type="java.sql.Timestamp" />
+        <field id="LastUpdatedByUser.LastUpdatedByUserID" fieldDBName="LastUpdatedByUserID" type="java.lang.Integer" />
+        <field id="LastUpdatedByUser.LastVisited" fieldDBName="LastVisited" type="java.sql.Timestamp" />
+        <field id="LastUpdatedByUser.Latitude" fieldDBName="Latitude" type="java.math.BigDecimal" />
+        <field id="LastUpdatedByUser.LiveSearchItemsPerPage" fieldDBName="LiveSearchItemsPerPage" type="java.lang.Integer" />
+        <field id="LastUpdatedByUser.Longitude" fieldDBName="Longitude" type="java.math.BigDecimal" />
+        <field id="LastUpdatedByUser.MailAlert" fieldDBName="MailAlert" type="java.lang.String" />
+        <field id="LastUpdatedByUser.MailStopID" fieldDBName="MailStopID" type="java.lang.Integer" />
+        <field id="LastUpdatedByUser.MiddleName" fieldDBName="MiddleName" type="java.lang.String" />
+        <field id="LastUpdatedByUser.Mobile" fieldDBName="Mobile" type="java.lang.String" />
+        <field id="LastUpdatedByUser.MobileServiceId" fieldDBName="MobileServiceId" type="java.lang.Integer" />
+        <field id="LastUpdatedByUser.MoveAlert" fieldDBName="MoveAlert" type="java.lang.String" />
+        <field id="LastUpdatedByUser.Pager" fieldDBName="Pager" type="java.lang.String" />
+        <field id="LastUpdatedByUser.ParkingSpace" fieldDBName="ParkingSpace" type="java.lang.String" />
+        <field id="LastUpdatedByUser.ParkingSpaceRoomId" fieldDBName="ParkingSpaceRoomId" type="java.lang.Integer" />
+        <field id="LastUpdatedByUser.Password" fieldDBName="Password" type="java.lang.String" />
+        <field id="LastUpdatedByUser.Phone" fieldDBName="Phone" type="java.lang.String" />
+        <field id="LastUpdatedByUser.PostalCode" fieldDBName="PostalCode" type="java.lang.String" />
+        <field id="LastUpdatedByUser.Room" fieldDBName="Room" type="java.lang.String" />
+        <field id="LastUpdatedByUser.RoomId" fieldDBName="RoomId" type="java.lang.Integer" />
+        <field id="LastUpdatedByUser.ShowHelp" fieldDBName="ShowHelp" type="java.lang.String" />
+        <field id="LastUpdatedByUser.SiteAdmin" fieldDBName="SiteAdmin" type="java.lang.String" />
+        <field id="LastUpdatedByUser.SpecialNeeds" fieldDBName="SpecialNeeds" type="java.lang.String" />
+        <field id="LastUpdatedByUser.State" fieldDBName="State" type="java.lang.String" />
+        <field id="LastUpdatedByUser.SystemUse" fieldDBName="SystemUse" type="java.lang.Boolean" />
+        <field id="LastUpdatedByUser.UserID" fieldDBName="UserID" type="java.lang.Integer" />
+        <field id="LastUpdatedByUser.UserName" fieldDBName="UserName" type="java.lang.String" />
+        <field id="LastUpdatedByUser.UserTypeId" fieldDBName="UserTypeId" type="java.lang.Integer" />
+        <field id="LastUpdatedByUser.VisitorAlert" fieldDBName="VisitorAlert" type="java.lang.String" />
+        <field id="dbo_MoveRoomIDFTypes.IDFTypeID" fieldDBName="IDFTypeID" type="java.lang.Integer" />
+        <field id="dbo_MoveRoomIDFTypes.IDFTypeName" fieldDBName="IDFTypeName" type="java.lang.String" />
+        <field id="dbo_MailInStops.Active" fieldDBName="Active" type="java.lang.String" />
+        <field id="dbo_MailInStops.BuildingID" fieldDBName="BuildingID" type="java.lang.Integer" />
+        <field id="dbo_MailInStops.CenterID" fieldDBName="CenterID" type="java.lang.Integer" />
+        <field id="dbo_MailInStops.DateCreated" fieldDBName="DateCreated" type="java.sql.Timestamp" />
+        <field id="dbo_MailInStops.DateUpdated" fieldDBName="DateUpdated" type="java.sql.Timestamp" />
+        <field id="dbo_MailInStops.RouteID" fieldDBName="RouteID" type="java.lang.Integer" />
+        <field id="dbo_MailInStops.SortOrder" fieldDBName="SortOrder" type="java.lang.Integer" />
+        <field id="dbo_MailInStops.StopID" fieldDBName="StopID" type="java.lang.Integer" />
+        <field id="dbo_MailInStops.StopName" fieldDBName="StopName" type="java.lang.String" />
+        <field id="dbo_MoveRoomIDF.IDFID" fieldDBName="IDFID" type="java.lang.Integer" />
+        <field id="dbo_MoveRoomIDF.IDFName" fieldDBName="IDFName" type="java.lang.String" />
+        <field id="dbo_MoveRoomIDF.IDFTypeID" fieldDBName="IDFTypeID" type="java.lang.Integer" />
+        <field id="dbo_MoveRoomIDF.RoomID" fieldDBName="RoomID" type="java.lang.Integer" />
+        <field id="dbo_MoveRoomList.Active" fieldDBName="Active" type="java.lang.String" />
+        <field id="dbo_MoveRoomList.Capacity" fieldDBName="Capacity" type="java.lang.Integer" />
+        <field id="dbo_MoveRoomList.CostCenterId" fieldDBName="CostCenterId" type="java.lang.Integer" />
+        <field id="dbo_MoveRoomList.Custom01" fieldDBName="Custom01" type="java.lang.String" />
+        <field id="dbo_MoveRoomList.Custom02" fieldDBName="Custom02" type="java.lang.String" />
+        <field id="dbo_MoveRoomList.Custom03" fieldDBName="Custom03" type="java.lang.String" />
+        <field id="dbo_MoveRoomList.Custom04" fieldDBName="Custom04" type="java.lang.String" />
+        <field id="dbo_MoveRoomList.Custom05" fieldDBName="Custom05" type="java.lang.String" />
+        <field id="dbo_MoveRoomList.Custom06" fieldDBName="Custom06" type="java.lang.String" />
+        <field id="dbo_MoveRoomList.Custom07" fieldDBName="Custom07" type="java.lang.String" />
+        <field id="dbo_MoveRoomList.Custom08" fieldDBName="Custom08" type="java.lang.String" />
+        <field id="dbo_MoveRoomList.Custom09" fieldDBName="Custom09" type="java.lang.String" />
+        <field id="dbo_MoveRoomList.DateEntered" fieldDBName="DateEntered" type="java.sql.Timestamp" />
+        <field id="dbo_MoveRoomList.enteredByUserId" fieldDBName="enteredByUserId" type="java.lang.Integer" />
+        <field id="dbo_MoveRoomList.ExchangeAddress" fieldDBName="ExchangeAddress" type="java.lang.String" />
+        <field id="dbo_MoveRoomList.FieldID" fieldDBName="FieldID" type="java.lang.Integer" />
+        <field id="dbo_MoveRoomList.FloorID" fieldDBName="FloorID" type="java.lang.Integer" />
+        <field id="dbo_MoveRoomList.LastUpdated" fieldDBName="LastUpdated" type="java.sql.Timestamp" />
+        <field id="dbo_MoveRoomList.lastUpdatedByUserId" fieldDBName="lastUpdatedByUserId" type="java.lang.Integer" />
+        <field id="dbo_MoveRoomList.longDescription" fieldDBName="longDescription" type="java.lang.String" />
+        <field id="dbo_MoveRoomList.MailStopId" fieldDBName="MailStopId" type="java.lang.Integer" />
+        <field id="dbo_MoveRoomList.RentableSquareFeet" fieldDBName="RentableSquareFeet" type="java.math.BigDecimal" />
+        <field id="dbo_MoveRoomList.Reservable" fieldDBName="Reservable" type="java.lang.Boolean" />
+        <field id="dbo_MoveRoomList.RoomID" fieldDBName="RoomID" type="java.lang.Integer" />
+        <field id="dbo_MoveRoomList.RoomName" fieldDBName="RoomName" type="java.lang.String" />
+        <field id="dbo_MoveRoomList.RoomTypeID" fieldDBName="RoomTypeID" type="java.lang.Integer" />
+        <field id="dbo_MoveRoomList.SignNumber" fieldDBName="SignNumber" type="java.lang.String" />
+        <field id="dbo_MoveRoomList.Site" fieldDBName="Site" type="java.lang.String" />
+        <field id="dbo_MoveRoomList.SquareFeet" fieldDBName="SquareFeet" type="java.math.BigDecimal" />
+        <field id="dbo_MoveRoomList.Status" fieldDBName="Status" type="java.lang.String" />
+        <field id="dbo_MoveRoomTypes.Active" fieldDBName="Active" type="java.lang.String" />
+        <field id="dbo_MoveRoomTypes.CenterId" fieldDBName="CenterId" type="java.lang.Integer" />
+        <field id="dbo_MoveRoomTypes.ContentFlag" fieldDBName="ContentFlag" type="java.lang.Integer" />
+        <field id="dbo_MoveRoomTypes.DateEntered" fieldDBName="DateEntered" type="java.sql.Timestamp" />
+        <field id="dbo_MoveRoomTypes.DateUpdated" fieldDBName="DateUpdated" type="java.sql.Timestamp" />
+        <field id="dbo_MoveRoomTypes.DefaultRoomType" fieldDBName="DefaultRoomType" type="java.lang.Boolean" />
+        <field id="dbo_MoveRoomTypes.EnteredByUserId" fieldDBName="EnteredByUserId" type="java.lang.Integer" />
+        <field id="dbo_MoveRoomTypes.LastUpdatedByUserId" fieldDBName="LastUpdatedByUserId" type="java.lang.Integer" />
+        <field id="dbo_MoveRoomTypes.RoomTypeColor" fieldDBName="RoomTypeColor" type="java.lang.String" />
+        <field id="dbo_MoveRoomTypes.RoomTypeCost" fieldDBName="RoomTypeCost" type="java.math.BigDecimal" />
+        <field id="dbo_MoveRoomTypes.RoomTypeDesc" fieldDBName="RoomTypeDesc" type="java.lang.String" />
+        <field id="dbo_MoveRoomTypes.RoomTypeID" fieldDBName="RoomTypeID" type="java.lang.Integer" />
+        <field id="dbo_MoveRoomTypes.SortOrder" fieldDBName="SortOrder" type="java.lang.Integer" />
+        <field id="dbo_CenterPermissions.CenterID" fieldDBName="CenterID" type="java.lang.Integer" />
+        <field id="dbo_CenterPermissions.CenterPerID" fieldDBName="CenterPerID" type="java.lang.Integer" />
+        <field id="dbo_CenterPermissions.DateEntered" fieldDBName="DateEntered" type="java.sql.Timestamp" />
+        <field id="dbo_CenterPermissions.UserID" fieldDBName="UserID" type="java.lang.Integer" />
+        <field id="dbo_CenterPermissions.UserPermission" dataSetExpression="if(dbo_CenterPermissions.UserStatus=='mn','Manager',if(dbo_CenterPermissions.UserStatus=='cu','Customer',if(dbo_CenterPermissions.UserStatus=='tc','Technician',if(dbo_CenterPermissions.UserStatus=='op','Operator',if(dbo_CenterPermissions.UserStatus=='ad','Administrator','Unknown')))))" fieldDBName="UserPermission" type="java.lang.String" />
+        <field id="dbo_CenterPermissions.UserStatus" fieldDBName="UserStatus" type="java.lang.String" />
+        <field id="dbo_States.CategoryId" fieldDBName="CategoryId" type="java.lang.Integer" />
+        <field id="dbo_States.CategoryName" fieldDBName="CategoryName" type="java.lang.String" />
+        <field id="dbo_States.CountryId" fieldDBName="CountryId" type="java.lang.Integer" />
+        <field id="dbo_States.CountryName" fieldDBName="CountryName" type="java.lang.String" />
+        <field id="dbo_States.DefaultSelected" fieldDBName="DefaultSelected" type="java.lang.String" />
+        <field id="dbo_States.ISOSubdivisionCode" fieldDBName="ISOSubdivisionCode" type="java.lang.String" />
+        <field id="dbo_States.StateCode" fieldDBName="StateCode" type="java.lang.String" />
+        <field id="dbo_States.StateID" fieldDBName="StateID" type="java.lang.Integer" />
+        <field id="dbo_States.StateName" fieldDBName="StateName" type="java.lang.String" />
+        <field id="dbo_MailRoutes.Active" fieldDBName="Active" type="java.lang.String" />
+        <field id="dbo_MailRoutes.CenterID" fieldDBName="CenterID" type="java.lang.Integer" />
+        <field id="dbo_MailRoutes.DateCreated" fieldDBName="DateCreated" type="java.sql.Timestamp" />
+        <field id="dbo_MailRoutes.DateUpdated" fieldDBName="DateUpdated" type="java.sql.Timestamp" />
+        <field id="dbo_MailRoutes.EnteredByUserId" fieldDBName="EnteredByUserId" type="java.lang.Integer" />
+        <field id="dbo_MailRoutes.ForShipping" fieldDBName="ForShipping" type="java.lang.String" />
+        <field id="dbo_MailRoutes.LastUpdatedByUserId" fieldDBName="LastUpdatedByUserId" type="java.lang.Integer" />
+        <field id="dbo_MailRoutes.OperatorUserID" fieldDBName="OperatorUserID" type="java.lang.Integer" />
+        <field id="dbo_MailRoutes.RouteID" fieldDBName="RouteID" type="java.lang.Integer" />
+        <field id="dbo_MailRoutes.RouteName" fieldDBName="RouteName" type="java.lang.String" />
+        <field id="dbo_MailRoutes.SortOrder" fieldDBName="SortOrder" type="java.lang.Integer" />
+        <field id="dbo_ParkingSpaceFloors.Active" fieldDBName="Active" type="java.lang.String" />
+        <field id="dbo_ParkingSpaceFloors.CenterID" fieldDBName="CenterID" type="java.lang.Integer" />
+        <field id="dbo_ParkingSpaceFloors.CostPerSquareFt" fieldDBName="CostPerSquareFt" type="java.math.BigDecimal" />
+        <field id="dbo_ParkingSpaceFloors.CurrentDrawing" fieldDBName="CurrentDrawing" type="java.lang.Integer" />
+        <field id="dbo_ParkingSpaceFloors.DateEntered" fieldDBName="DateEntered" type="java.sql.Timestamp" />
+        <field id="dbo_ParkingSpaceFloors.enteredByUserId" fieldDBName="enteredByUserId" type="java.lang.Integer" />
+        <field id="dbo_ParkingSpaceFloors.FieldID" fieldDBName="FieldID" type="java.lang.Integer" />
+        <field id="dbo_ParkingSpaceFloors.FloorID" fieldDBName="FloorID" type="java.lang.Integer" />
+        <field id="dbo_ParkingSpaceFloors.FloorName" fieldDBName="FloorName" type="java.lang.String" />
+        <field id="dbo_ParkingSpaceFloors.LastUpdated" fieldDBName="LastUpdated" type="java.sql.Timestamp" />
+        <field id="dbo_ParkingSpaceFloors.lastUpdatedByUserId" fieldDBName="lastUpdatedByUserId" type="java.lang.Integer" />
+        <field id="dbo_ParkingSpaceFloors.SortOrder" fieldDBName="SortOrder" type="java.lang.Integer" />
+        <field id="dbo_ParkingSpaceFloors.SquareFeet" fieldDBName="SquareFeet" type="java.math.BigDecimal" />
+        <field id="dbo_ParkingMoveRoomList.Active" fieldDBName="Active" type="java.lang.String" />
+        <field id="dbo_ParkingMoveRoomList.Capacity" fieldDBName="Capacity" type="java.lang.Integer" />
+        <field id="dbo_ParkingMoveRoomList.CostCenterId" fieldDBName="CostCenterId" type="java.lang.Integer" />
+        <field id="dbo_ParkingMoveRoomList.Custom01" fieldDBName="Custom01" type="java.lang.String" />
+        <field id="dbo_ParkingMoveRoomList.Custom02" fieldDBName="Custom02" type="java.lang.String" />
+        <field id="dbo_ParkingMoveRoomList.Custom03" fieldDBName="Custom03" type="java.lang.String" />
+        <field id="dbo_ParkingMoveRoomList.Custom04" fieldDBName="Custom04" type="java.lang.String" />
+        <field id="dbo_ParkingMoveRoomList.Custom05" fieldDBName="Custom05" type="java.lang.String" />
+        <field id="dbo_ParkingMoveRoomList.Custom06" fieldDBName="Custom06" type="java.lang.String" />
+        <field id="dbo_ParkingMoveRoomList.Custom07" fieldDBName="Custom07" type="java.lang.String" />
+        <field id="dbo_ParkingMoveRoomList.Custom08" fieldDBName="Custom08" type="java.lang.String" />
+        <field id="dbo_ParkingMoveRoomList.Custom09" fieldDBName="Custom09" type="java.lang.String" />
+        <field id="dbo_ParkingMoveRoomList.DateEntered" fieldDBName="DateEntered" type="java.sql.Timestamp" />
+        <field id="dbo_ParkingMoveRoomList.enteredByUserId" fieldDBName="enteredByUserId" type="java.lang.Integer" />
+        <field id="dbo_ParkingMoveRoomList.ExchangeAddress" fieldDBName="ExchangeAddress" type="java.lang.String" />
+        <field id="dbo_ParkingMoveRoomList.FieldID" fieldDBName="FieldID" type="java.lang.Integer" />
+        <field id="dbo_ParkingMoveRoomList.FloorID" fieldDBName="FloorID" type="java.lang.Integer" />
+        <field id="dbo_ParkingMoveRoomList.LastUpdated" fieldDBName="LastUpdated" type="java.sql.Timestamp" />
+        <field id="dbo_ParkingMoveRoomList.lastUpdatedByUserId" fieldDBName="lastUpdatedByUserId" type="java.lang.Integer" />
+        <field id="dbo_ParkingMoveRoomList.longDescription" fieldDBName="longDescription" type="java.lang.String" />
+        <field id="dbo_ParkingMoveRoomList.MailStopId" fieldDBName="MailStopId" type="java.lang.Integer" />
+        <field id="dbo_ParkingMoveRoomList.RentableSquareFeet" fieldDBName="RentableSquareFeet" type="java.math.BigDecimal" />
+        <field id="dbo_ParkingMoveRoomList.Reservable" fieldDBName="Reservable" type="java.lang.Boolean" />
+        <field id="dbo_ParkingMoveRoomList.RoomID" fieldDBName="RoomID" type="java.lang.Integer" />
+        <field id="dbo_ParkingMoveRoomList.RoomName" fieldDBName="RoomName" type="java.lang.String" />
+        <field id="dbo_ParkingMoveRoomList.RoomTypeID" fieldDBName="RoomTypeID" type="java.lang.Integer" />
+        <field id="dbo_ParkingMoveRoomList.SignNumber" fieldDBName="SignNumber" type="java.lang.String" />
+        <field id="dbo_ParkingMoveRoomList.Site" fieldDBName="Site" type="java.lang.String" />
+        <field id="dbo_ParkingMoveRoomList.SquareFeet" fieldDBName="SquareFeet" type="java.math.BigDecimal" />
+        <field id="dbo_ParkingMoveRoomList.Status" fieldDBName="Status" type="java.lang.String" />
+        <field id="dbo_Buildings.Active" fieldDBName="Active" type="java.lang.String" />
+        <field id="dbo_Buildings.Address" fieldDBName="Address" type="java.lang.String" />
+        <field id="dbo_Buildings.Address2" fieldDBName="Address2" type="java.lang.String" />
+        <field id="dbo_Buildings.BuildingCode" fieldDBName="BuildingCode" type="java.lang.String" />
+        <field id="dbo_Buildings.City" fieldDBName="City" type="java.lang.String" />
+        <field id="dbo_Buildings.CountryID" fieldDBName="CountryID" type="java.lang.Integer" />
+        <field id="dbo_Buildings.DateEntered" fieldDBName="DateEntered" type="java.sql.Timestamp" />
+        <field id="dbo_Buildings.dateUpdated" fieldDBName="dateUpdated" type="java.sql.Timestamp" />
+        <field id="dbo_Buildings.DefaultBuilding" fieldDBName="DefaultBuilding" type="java.lang.String" />
+        <field id="dbo_Buildings.enteredByUserId" fieldDBName="enteredByUserId" type="java.lang.Integer" />
+        <field id="dbo_Buildings.FieldID" fieldDBName="FieldID" type="java.lang.Integer" />
+        <field id="dbo_Buildings.lastUpdatedByUserId" fieldDBName="lastUpdatedByUserId" type="java.lang.Integer" />
+        <field id="dbo_Buildings.Latitude" fieldDBName="Latitude" type="java.math.BigDecimal" />
+        <field id="dbo_Buildings.LeaseCost" fieldDBName="LeaseCost" type="java.math.BigDecimal" />
+        <field id="dbo_Buildings.Longitude" fieldDBName="Longitude" type="java.math.BigDecimal" />
+        <field id="dbo_Buildings.Name" fieldDBName="Name" type="java.lang.String" />
+        <field id="dbo_Buildings.ParkingFlag" fieldDBName="ParkingFlag" type="java.lang.String" />
+        <field id="dbo_Buildings.PostalCode" fieldDBName="PostalCode" type="java.lang.String" />
+        <field id="dbo_Buildings.Reassigned" fieldDBName="Reassigned" type="java.lang.String" />
+        <field id="dbo_Buildings.SortOrder" fieldDBName="SortOrder" type="java.lang.Integer" />
+        <field id="dbo_Buildings.StateID" fieldDBName="StateID" type="java.lang.Integer" />
+        <field id="dbo_Users.Active" fieldDBName="Active" type="java.lang.String" />
+        <field id="dbo_Users.AddedByID" fieldDBName="AddedByID" type="java.lang.Integer" />
+        <field id="dbo_Users.Address" fieldDBName="Address" type="java.lang.String" />
+        <field id="dbo_Users.AllowMessaging" fieldDBName="AllowMessaging" type="java.lang.String" />
+        <field id="dbo_Users.AltDeliveryID" fieldDBName="AltDeliveryID" type="java.lang.Integer" />
+        <field id="dbo_Users.AssistantID" fieldDBName="AssistantID" type="java.lang.Integer" />
+        <field id="dbo_Users.AssistantName" fieldDBName="AssistantName" type="java.lang.String" />
+        <field id="dbo_Users.BuildingID" fieldDBName="BuildingID" type="java.lang.Integer" />
+        <field id="dbo_Users.City" fieldDBName="City" type="java.lang.String" />
+        <field id="dbo_Users.Comments" fieldDBName="Comments" type="java.lang.String" />
+        <field id="dbo_Users.Company" fieldDBName="Company" type="java.lang.String" />
+        <field id="dbo_Users.CopyAlert" fieldDBName="CopyAlert" type="java.lang.String" />
+        <field id="dbo_Users.CostCenter1" fieldDBName="CostCenter1" type="java.lang.String" />
+        <field id="dbo_Users.CostCenter2" fieldDBName="CostCenter2" type="java.lang.String" />
+        <field id="dbo_Users.CostCenterID" fieldDBName="CostCenterID" type="java.lang.Integer" />
+        <field id="dbo_Users.Country" fieldDBName="Country" type="java.lang.String" />
+        <field id="dbo_Users.CountryCode" fieldDBName="CountryCode" type="java.lang.String" />
+        <field id="dbo_Users.Custom01" fieldDBName="Custom01" type="java.lang.String" />
+        <field id="dbo_Users.Custom02" fieldDBName="Custom02" type="java.lang.String" />
+        <field id="dbo_Users.Custom03" fieldDBName="Custom03" type="java.lang.String" />
+        <field id="dbo_Users.Custom04" fieldDBName="Custom04" type="java.lang.String" />
+        <field id="dbo_Users.Custom05" fieldDBName="Custom05" type="java.lang.String" />
+        <field id="dbo_Users.Custom06" fieldDBName="Custom06" type="java.lang.String" />
+        <field id="dbo_Users.Custom07" fieldDBName="Custom07" type="java.lang.String" />
+        <field id="dbo_Users.Custom08" fieldDBName="Custom08" type="java.lang.String" />
+        <field id="dbo_Users.Custom09" fieldDBName="Custom09" type="java.lang.String" />
+        <field id="dbo_Users.DateEntered" fieldDBName="DateEntered" type="java.sql.Timestamp" />
+        <field id="dbo_Users.DefAssetCenter" fieldDBName="DefAssetCenter" type="java.lang.Integer" />
+        <field id="dbo_Users.DefCatalogCenter" fieldDBName="DefCatalogCenter" type="java.lang.Integer" />
+        <field id="dbo_Users.DefCopyCenter" fieldDBName="DefCopyCenter" type="java.lang.Integer" />
+        <field id="dbo_Users.DefEventsCenter" fieldDBName="DefEventsCenter" type="java.lang.Integer" />
+        <field id="dbo_Users.DefFileRoomCenter" fieldDBName="DefFileRoomCenter" type="java.lang.Integer" />
+        <field id="dbo_Users.DefInventoryCenter" fieldDBName="DefInventoryCenter" type="java.lang.Integer" />
+        <field id="dbo_Users.DefMailCenter" fieldDBName="DefMailCenter" type="java.lang.Integer" />
+        <field id="dbo_Users.DefMaintenanceCenter" fieldDBName="DefMaintenanceCenter" type="java.lang.Integer" />
+        <field id="dbo_Users.DefMoveCenter" fieldDBName="DefMoveCenter" type="java.lang.Integer" />
+        <field id="dbo_Users.defReservationCenter" fieldDBName="defReservationCenter" type="java.lang.Integer" />
+        <field id="dbo_Users.DefSpaceCenter" fieldDBName="DefSpaceCenter" type="java.lang.Integer" />
+        <field id="dbo_Users.DefVisitorCenter" fieldDBName="DefVisitorCenter" type="java.lang.Integer" />
+        <field id="dbo_Users.DeleteAlert" fieldDBName="DeleteAlert" type="java.lang.String" />
+        <field id="dbo_Users.Department" fieldDBName="Department" type="java.lang.String" />
+        <field id="dbo_Users.Email" fieldDBName="Email" type="java.lang.String" />
+        <field id="dbo_Users.EmployeeID" fieldDBName="EmployeeID" type="java.lang.String" />
+        <field id="dbo_Users.EULAAgreementDate" fieldDBName="EULAAgreementDate" type="java.sql.Timestamp" />
+        <field id="dbo_Users.Extension" fieldDBName="Extension" type="java.lang.String" />
+        <field id="dbo_Users.Fax" fieldDBName="Fax" type="java.lang.String" />
+        <field id="dbo_Users.FirstName" fieldDBName="FirstName" type="java.lang.String" />
+        <field id="dbo_Users.Floor" fieldDBName="Floor" type="java.lang.String" />
+        <field id="dbo_Users.FlWarden" fieldDBName="FlWarden" type="java.lang.String" />
+        <field id="dbo_Users.InterfaceCSS" fieldDBName="InterfaceCSS" type="java.lang.String" />
+        <field id="dbo_Users.isIOfficeAdmin" fieldDBName="isIOfficeAdmin" type="java.lang.String" />
+        <field id="dbo_Users.ItemsPerPage" fieldDBName="ItemsPerPage" type="java.lang.Integer" />
+        <field id="dbo_Users.JobTitle" fieldDBName="JobTitle" type="java.lang.String" />
+        <field id="dbo_Users.KnownAs" fieldDBName="KnownAs" type="java.lang.String" />
+        <field id="dbo_Users.LanguageCode" fieldDBName="LanguageCode" type="java.lang.String" />
+        <field id="dbo_Users.LastLocationDate" fieldDBName="LastLocationDate" type="java.sql.Timestamp" />
+        <field id="dbo_Users.LastName" fieldDBName="LastName" type="java.lang.String" />
+        <field id="dbo_Users.LastUpdated" fieldDBName="LastUpdated" type="java.sql.Timestamp" />
+        <field id="dbo_Users.LastUpdatedByUserID" fieldDBName="LastUpdatedByUserID" type="java.lang.Integer" />
+        <field id="dbo_Users.LastVisited" fieldDBName="LastVisited" type="java.sql.Timestamp" />
+        <field id="dbo_Users.Latitude" fieldDBName="Latitude" type="java.math.BigDecimal" />
+        <field id="dbo_Users.LiveSearchItemsPerPage" fieldDBName="LiveSearchItemsPerPage" type="java.lang.Integer" />
+        <field id="dbo_Users.Longitude" fieldDBName="Longitude" type="java.math.BigDecimal" />
+        <field id="dbo_Users.MailAlert" fieldDBName="MailAlert" type="java.lang.String" />
+        <field id="dbo_Users.MailStopID" fieldDBName="MailStopID" type="java.lang.Integer" />
+        <field id="dbo_Users.MiddleName" fieldDBName="MiddleName" type="java.lang.String" />
+        <field id="dbo_Users.Mobile" fieldDBName="Mobile" type="java.lang.String" />
+        <field id="dbo_Users.MobileServiceId" fieldDBName="MobileServiceId" type="java.lang.Integer" />
+        <field id="dbo_Users.MoveAlert" fieldDBName="MoveAlert" type="java.lang.String" />
+        <field id="dbo_Users.Pager" fieldDBName="Pager" type="java.lang.String" />
+        <field id="dbo_Users.ParkingSpace" fieldDBName="ParkingSpace" type="java.lang.String" />
+        <field id="dbo_Users.ParkingSpaceRoomId" fieldDBName="ParkingSpaceRoomId" type="java.lang.Integer" />
+        <field id="dbo_Users.Password" fieldDBName="Password" type="java.lang.String" />
+        <field id="dbo_Users.Phone" fieldDBName="Phone" type="java.lang.String" />
+        <field id="dbo_Users.PostalCode" fieldDBName="PostalCode" type="java.lang.String" />
+        <field id="dbo_Users.Room" fieldDBName="Room" type="java.lang.String" />
+        <field id="dbo_Users.RoomId" fieldDBName="RoomId" type="java.lang.Integer" />
+        <field id="dbo_Users.ShowHelp" fieldDBName="ShowHelp" type="java.lang.String" />
+        <field id="dbo_Users.SiteAdmin" fieldDBName="SiteAdmin" type="java.lang.String" />
+        <field id="dbo_Users.SpecialNeeds" fieldDBName="SpecialNeeds" type="java.lang.String" />
+        <field id="dbo_Users.State" fieldDBName="State" type="java.lang.String" />
+        <field id="dbo_Users.SystemUse" fieldDBName="SystemUse" type="java.lang.Boolean" />
+        <field id="dbo_Users.UserID" fieldDBName="UserID" type="java.lang.Integer" />
+        <field id="dbo_Users.UserName" fieldDBName="UserName" type="java.lang.String" />
+        <field id="dbo_Users.UserTypeId" fieldDBName="UserTypeId" type="java.lang.Integer" />
+        <field id="dbo_Users.VisitorAlert" fieldDBName="VisitorAlert" type="java.lang.String" />
+        <field id="dbo_Vw_CostCenters_15Levels.CCCode" fieldDBName="CCCode" type="java.lang.String" />
+        <field id="dbo_Vw_CostCenters_15Levels.CCID" fieldDBName="CCID" type="java.lang.Integer" />
+        <field id="dbo_Vw_CostCenters_15Levels.CCName" fieldDBName="CCName" type="java.lang.String" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_10_CCCode" fieldDBName="Level_10_CCCode" type="java.lang.String" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_10_CCID" fieldDBName="Level_10_CCID" type="java.lang.Integer" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_10_Name" fieldDBName="Level_10_Name" type="java.lang.String" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_11_CCCode" fieldDBName="Level_11_CCCode" type="java.lang.String" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_11_CCID" fieldDBName="Level_11_CCID" type="java.lang.Integer" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_11_Name" fieldDBName="Level_11_Name" type="java.lang.String" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_12_CCCode" fieldDBName="Level_12_CCCode" type="java.lang.String" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_12_CCID" fieldDBName="Level_12_CCID" type="java.lang.Integer" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_12_Name" fieldDBName="Level_12_Name" type="java.lang.String" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_13_CCCode" fieldDBName="Level_13_CCCode" type="java.lang.String" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_13_CCID" fieldDBName="Level_13_CCID" type="java.lang.Integer" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_13_Name" fieldDBName="Level_13_Name" type="java.lang.String" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_14_CCCode" fieldDBName="Level_14_CCCode" type="java.lang.String" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_14_CCID" fieldDBName="Level_14_CCID" type="java.lang.Integer" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_14_Name" fieldDBName="Level_14_Name" type="java.lang.String" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_1_CCCode" fieldDBName="Level_1_CCCode" type="java.lang.String" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_1_CCID" fieldDBName="Level_1_CCID" type="java.lang.Integer" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_1_Name" fieldDBName="Level_1_Name" type="java.lang.String" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_2_CCCode" fieldDBName="Level_2_CCCode" type="java.lang.String" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_2_CCID" fieldDBName="Level_2_CCID" type="java.lang.Integer" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_2_Name" fieldDBName="Level_2_Name" type="java.lang.String" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_3_CCCode" fieldDBName="Level_3_CCCode" type="java.lang.String" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_3_CCID" fieldDBName="Level_3_CCID" type="java.lang.Integer" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_3_Name" fieldDBName="Level_3_Name" type="java.lang.String" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_4_CCCode" fieldDBName="Level_4_CCCode" type="java.lang.String" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_4_CCID" fieldDBName="Level_4_CCID" type="java.lang.Integer" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_4_Name" fieldDBName="Level_4_Name" type="java.lang.String" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_5_CCCode" fieldDBName="Level_5_CCCode" type="java.lang.String" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_5_CCID" fieldDBName="Level_5_CCID" type="java.lang.Integer" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_5_Name" fieldDBName="Level_5_Name" type="java.lang.String" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_6_CCCode" fieldDBName="Level_6_CCCode" type="java.lang.String" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_6_CCID" fieldDBName="Level_6_CCID" type="java.lang.Integer" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_6_Name" fieldDBName="Level_6_Name" type="java.lang.String" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_7_CCCode" fieldDBName="Level_7_CCCode" type="java.lang.String" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_7_CCID" fieldDBName="Level_7_CCID" type="java.lang.Integer" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_7_Name" fieldDBName="Level_7_Name" type="java.lang.String" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_8_CCCode" fieldDBName="Level_8_CCCode" type="java.lang.String" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_8_CCID" fieldDBName="Level_8_CCID" type="java.lang.Integer" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_8_Name" fieldDBName="Level_8_Name" type="java.lang.String" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_9_CCCode" fieldDBName="Level_9_CCCode" type="java.lang.String" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_9_CCID" fieldDBName="Level_9_CCID" type="java.lang.Integer" />
+        <field id="dbo_Vw_CostCenters_15Levels.Level_9_Name" fieldDBName="Level_9_Name" type="java.lang.String" />
+        <field id="dbo_Countries.active" fieldDBName="active" type="java.lang.Boolean" />
+        <field id="dbo_Countries.alpha2Code" fieldDBName="alpha2Code" type="java.lang.String" />
+        <field id="dbo_Countries.alpha3Code" fieldDBName="alpha3Code" type="java.lang.String" />
+        <field id="dbo_Countries.CountryID" fieldDBName="CountryID" type="java.lang.Integer" />
+        <field id="dbo_Countries.CountryName" fieldDBName="CountryName" type="java.lang.String" />
+        <field id="dbo_Countries.DefaultSelected" fieldDBName="DefaultSelected" type="java.lang.String" />
+        <field id="dbo_Countries.isoCode" fieldDBName="isoCode" type="java.lang.String" />
+        <field id="dbo_Countries.numericCode" fieldDBName="numericCode" type="java.lang.String" />
+        <field id="dbo_Countries.status" fieldDBName="status" type="java.lang.String" />
+        <field id="dbo_Countries.subdivisionCategoryId" fieldDBName="subdivisionCategoryId" type="java.lang.Integer" />
+        <field id="dbo_Countries.subdivisionCategoryName" fieldDBName="subdivisionCategoryName" type="java.lang.String" />
+        <field id="dbo_Countries.validityEndDate" fieldDBName="validityEndDate" type="java.util.Date" />
+        <field id="dbo_Centers.Active" fieldDBName="Active" type="java.lang.String" />
+        <field id="dbo_Centers.Address" fieldDBName="Address" type="java.lang.String" />
+        <field id="dbo_Centers.CenterID" fieldDBName="CenterID" type="java.lang.Integer" />
+        <field id="dbo_Centers.CenterName" fieldDBName="CenterName" type="java.lang.String" />
+        <field id="dbo_Centers.CenterTypeCode" fieldDBName="CenterTypeCode" type="java.lang.String" />
+        <field id="dbo_Centers.CenterTypeID" fieldDBName="CenterTypeID" type="java.lang.Integer" />
+        <field id="dbo_Centers.City" fieldDBName="City" type="java.lang.String" />
+        <field id="dbo_Centers.Comments" fieldDBName="Comments" type="java.lang.String" />
+        <field id="dbo_Centers.DateEntered" fieldDBName="DateEntered" type="java.sql.Timestamp" />
+        <field id="dbo_Centers.EPIC" fieldDBName="EPIC" type="java.lang.String" />
+        <field id="dbo_Centers.Fax" fieldDBName="Fax" type="java.lang.String" />
+        <field id="dbo_Centers.HUBFlag" fieldDBName="HUBFlag" type="java.lang.String" />
+        <field id="dbo_Centers.LastUpdated" fieldDBName="LastUpdated" type="java.sql.Timestamp" />
+        <field id="dbo_Centers.Phone" fieldDBName="Phone" type="java.lang.String" />
+        <field id="dbo_Centers.PostalCode" fieldDBName="PostalCode" type="java.lang.String" />
+        <field id="dbo_Centers.StateID" fieldDBName="StateID" type="java.lang.Integer" />
+        <field id="dbo_Centers.TimeZoneID" fieldDBName="TimeZoneID" type="java.lang.Integer" />
+        <field id="dbo_Centers.UseTimeChange" fieldDBName="UseTimeChange" type="java.lang.String" />
+        <field id="dbo_SpaceFloors.Active" fieldDBName="Active" type="java.lang.String" />
+        <field id="dbo_SpaceFloors.CenterID" fieldDBName="CenterID" type="java.lang.Integer" />
+        <field id="dbo_SpaceFloors.CostPerSquareFt" fieldDBName="CostPerSquareFt" type="java.math.BigDecimal" />
+        <field id="dbo_SpaceFloors.CurrentDrawing" fieldDBName="CurrentDrawing" type="java.lang.Integer" />
+        <field id="dbo_SpaceFloors.DateEntered" fieldDBName="DateEntered" type="java.sql.Timestamp" />
+        <field id="dbo_SpaceFloors.enteredByUserId" fieldDBName="enteredByUserId" type="java.lang.Integer" />
+        <field id="dbo_SpaceFloors.FieldID" fieldDBName="FieldID" type="java.lang.Integer" />
+        <field id="dbo_SpaceFloors.FloorID" fieldDBName="FloorID" type="java.lang.Integer" />
+        <field id="dbo_SpaceFloors.FloorName" fieldDBName="FloorName" type="java.lang.String" />
+        <field id="dbo_SpaceFloors.LastUpdated" fieldDBName="LastUpdated" type="java.sql.Timestamp" />
+        <field id="dbo_SpaceFloors.lastUpdatedByUserId" fieldDBName="lastUpdatedByUserId" type="java.lang.Integer" />
+        <field id="dbo_SpaceFloors.SortOrder" fieldDBName="SortOrder" type="java.lang.Integer" />
+        <field id="dbo_SpaceFloors.SquareFeet" fieldDBName="SquareFeet" type="java.math.BigDecimal" />
+      </fieldList>
+      <joinInfo alias="dbo_MailInStops" referenceId="dbo_MailInStops" />
+      <joinedDataSetList>
+        <joinedDataSetRef>
+          <joinString>left outer join dbo_MailRoutes dbo_MailRoutes on (dbo_MailInStops.RouteID == dbo_MailRoutes.RouteID)</joinString>
+        </joinedDataSetRef>
+        <joinedDataSetRef>
+          <joinString>left outer join dbo_Users dbo_Users on (dbo_Users.MailStopID == dbo_MailInStops.StopID)</joinString>
+        </joinedDataSetRef>
+        <joinedDataSetRef>
+          <joinString>left outer join dbo_Vw_CostCenters_15Levels dbo_Vw_CostCenters_15Levels on (dbo_Users.CostCenterID == dbo_Vw_CostCenters_15Levels.CCID)</joinString>
+        </joinedDataSetRef>
+        <joinedDataSetRef>
+          <joinString>left outer join dbo_MoveRoomList dbo_MoveRoomList on (dbo_Users.RoomId == dbo_MoveRoomList.RoomID)</joinString>
+        </joinedDataSetRef>
+        <joinedDataSetRef>
+          <joinString>left outer join dbo_SpaceFloors dbo_SpaceFloors on (dbo_MoveRoomList.FloorID == dbo_SpaceFloors.FloorID)</joinString>
+        </joinedDataSetRef>
+        <joinedDataSetRef>
+          <joinString>left outer join dbo_Buildings dbo_Buildings on (dbo_SpaceFloors.FieldID == dbo_Buildings.FieldID)</joinString>
+        </joinedDataSetRef>
+        <joinedDataSetRef>
+          <joinString>left outer join dbo_States dbo_States on (dbo_Buildings.StateID == dbo_States.StateID)</joinString>
+        </joinedDataSetRef>
+        <joinedDataSetRef>
+          <joinString>left outer join dbo_MoveRoomTypes dbo_MoveRoomTypes on (dbo_MoveRoomList.RoomTypeID == dbo_MoveRoomTypes.RoomTypeID)</joinString>
+        </joinedDataSetRef>
+        <joinedDataSetRef>
+          <joinString>left outer join CreatedByUser CreatedByUser on (dbo_Users.AddedByID == CreatedByUser.UserID)</joinString>
+        </joinedDataSetRef>
+        <joinedDataSetRef>
+          <joinString>left outer join LastUpdatedByUser LastUpdatedByUser on (dbo_Users.LastUpdatedByUserID == LastUpdatedByUser.UserID)</joinString>
+        </joinedDataSetRef>
+        <joinedDataSetRef>
+          <joinString>left outer join dbo_CenterPermissions dbo_CenterPermissions on (dbo_Users.UserID == dbo_CenterPermissions.UserID)</joinString>
+        </joinedDataSetRef>
+        <joinedDataSetRef>
+          <joinString>left outer join dbo_Centers dbo_Centers on (dbo_CenterPermissions.CenterID == dbo_Centers.CenterID)</joinString>
+        </joinedDataSetRef>
+        <joinedDataSetRef>
+          <joinString>left outer join dbo_MoveRoomIDF dbo_MoveRoomIDF on (dbo_MoveRoomList.RoomID == dbo_MoveRoomIDF.RoomID)</joinString>
+        </joinedDataSetRef>
+        <joinedDataSetRef>
+          <joinString>left outer join dbo_MoveRoomIDFTypes dbo_MoveRoomIDFTypes on (dbo_MoveRoomIDF.IDFTypeID == dbo_MoveRoomIDFTypes.IDFTypeID)</joinString>
+        </joinedDataSetRef>
+        <joinedDataSetRef>
+          <joinString>left outer join dbo_ParkingMoveRoomList dbo_ParkingMoveRoomList on (dbo_Users.ParkingSpaceRoomId == dbo_ParkingMoveRoomList.RoomID)</joinString>
+        </joinedDataSetRef>
+        <joinedDataSetRef>
+          <joinString>left outer join dbo_ParkingSpaceFloors dbo_ParkingSpaceFloors on (dbo_ParkingMoveRoomList.FloorID == dbo_ParkingSpaceFloors.FloorID)</joinString>
+        </joinedDataSetRef>
+        <joinedDataSetRef>
+          <joinString>left outer join dbo_ParkingBuildings dbo_ParkingBuildings on (dbo_ParkingSpaceFloors.FieldID == dbo_ParkingBuildings.FieldID)</joinString>
+        </joinedDataSetRef>
+        <joinedDataSetRef>
+          <joinString>left outer join dbo_ParkingStates dbo_ParkingStates on (dbo_ParkingBuildings.StateID == dbo_ParkingStates.StateID)</joinString>
+        </joinedDataSetRef>
+        <joinedDataSetRef>
+          <joinString>left outer join dbo_Countries dbo_Countries on (dbo_Buildings.CountryID == dbo_Countries.CountryID)</joinString>
+        </joinedDataSetRef>
+        <joinedDataSetRef>
+          <joinString>left outer join dbo_UserTypes dbo_UserTypes on (dbo_Users.UserTypeId == dbo_UserTypes.UserTypeID)</joinString>
+        </joinedDataSetRef>
+      </joinedDataSetList>
+    </jdbcTable>
+  </resources>
+</schema>

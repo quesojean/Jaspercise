@@ -1,9 +1,6 @@
 package com.iofficecorp.jasperserver
 
-import java.io.{FileInputStream, BufferedInputStream, InputStream}
-
-import com.iofficecorp.jasperserver.FieldProps.ID
-import com.iofficecorp.jasperserver.pumped._
+import java.io.{BufferedInputStream, FileInputStream, InputStream}
 
 
 object Main {
@@ -49,6 +46,7 @@ object Main {
     val fieldProps: Map[FieldProps, String] = Map(FieldProps.ID -> fieldId, FieldProps.LABEL -> fieldLabel,
         FieldProps.DATA_TYPE-> fieldDataType, FieldProps.ACTIVE -> isFieldActive.toString)
     val testResult: Option[String] = Jaspercise(reportStream, possibleTablesAssocWithMappingCode, fieldProps)
+    //val testResult: Option[String] = Jaspercise(schemaStream, possibleTablesAssocWithMappingCode, fieldProps)
     println(testResult.getOrElse("NOTHING TO SHOW HERE"))
 
 
